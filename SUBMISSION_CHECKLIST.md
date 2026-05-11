@@ -6,15 +6,10 @@
 - [x] Sample input: `examples/typologies/solar_trade_warning.txt`
 - [x] Sample outputs: `examples/sample_outputs/`
 - [x] README covers context, solution, evaluation, artifact snapshot, setup, and usage
-- [x] Lightning presentation notes: `docs/lightning_presentation.md`
+- [x] Final presentation deck: `docs/synthaml-final-presentation.pptx`
+- [x] Speech draft: `docs/synthaml_presentation_speech_draft.md`
 - [x] `.gitignore` excludes local environments, secrets, caches, and generated scratch outputs
 
-Before submitting, push this folder to:
+Final GitHub repository:
 
-```bash
-git remote add origin https://github.com/yq688m3JT/genAI_final.git
-git branch -M main
-git add .
-git commit -m "Finish SynthAML final project"
-git push -u origin main
-```
+https://github.com/yq688m3JT/genAI_final.git

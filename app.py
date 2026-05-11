@@ -120,7 +120,7 @@ st.markdown(
     }
     .metric-row {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
       margin: 16px 0 18px;
     }
@@ -130,10 +130,11 @@ st.markdown(
       padding: 14px 16px;
     }
     .metric-value {
-      font-size: 28px;
+      font-size: 26px;
       line-height: 1;
       font-weight: 850;
       color: var(--ink);
+      white-space: nowrap;
     }
     .metric-label {
       margin-top: 7px;
@@ -142,6 +143,7 @@ st.markdown(
       text-transform: uppercase;
       letter-spacing: .05em;
       font-weight: 700;
+      white-space: nowrap;
     }
     .gate-list {
       display: grid;
