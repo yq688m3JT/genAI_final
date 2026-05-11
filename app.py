@@ -208,14 +208,21 @@ with st.sidebar:
     records = st.slider("Records", 50, 1000, 250, step=50)
     suspicious_ratio = st.slider("Suspicious share", 0.05, 0.35, 0.18, step=0.01)
     seed = st.number_input("Random seed", min_value=1, value=42)
-    use_llm = st.toggle("Use LLM extraction when API key is available", value=has_llm_key)
     provider_options = ["openai", "deepseek"]
     provider_index = 1 if deepseek_key and not openai_key else 0
     provider = st.selectbox("LLM provider", provider_options, index=provider_index)
     default_model = "deepseek-v4-pro" if provider == "deepseek" else "gpt-4o-mini"
     model = st.text_input("Model", value=default_model)
-    provider_key = deepseek_key if provider == "deepseek" else openai_key
-    st.caption("LLM key detected on server" if provider_key else "No server-side key detected")
+    server_key = deepseek_key if provider == "deepseek" else openai_key
+    runtime_key = st.text_input(
+        "Runtime API key",
+        value="",
+        type="password",
+        help="Optional. Paste a grader-provided key for this local session only; it is not saved by the app.",
+    )
+    provider_key = runtime_key.strip() or server_key
+    use_llm = st.toggle("Use LLM extraction", value=bool(provider_key) or has_llm_key)
+    st.caption("Runtime key entered" if runtime_key.strip() else ("LLM key detected on server" if server_key else "No API key entered"))
     st.divider()
     st.caption("Reviewer mode")
     st.selectbox("Review queue", ["Record self-intake", "Detected pattern review", "Model QA package", "Export review"])

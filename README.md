@@ -63,6 +63,8 @@ DeepSeek V4 Pro is also supported for local runs:
 export DEEPSEEK_API_KEY="your_key_here"
 ```
 
+If a grader has an API key but does not want to set an environment variable, they can also run `streamlit run app.py`, choose the provider in the sidebar, and paste the key into the password-style `Runtime API key` field. That key is used only for the current local Streamlit session and is not saved to the repository.
+
 Do not commit `.env`, API keys, customer data, or private reports.
 
 ## Usage
