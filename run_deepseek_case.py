@@ -1,4 +1,4 @@
-"""Run one real DeepSeek V4 Pro typology extraction and evaluation.
+"""Run one real DeepSeek V4 Pro record-batch extraction and evaluation.
 
 The API key is read from the environment or securely from stdin. The key is not
 written to disk. Outputs are saved under examples/sample_outputs/deepseek_case.
@@ -16,7 +16,7 @@ from synthaml.evaluate import evaluate_generators, validate_fund_conservation
 
 
 ROOT = Path(__file__).parent
-INPUT = ROOT / "examples" / "typologies" / "solar_trade_warning.txt"
+INPUT = ROOT / "examples" / "typologies" / "solar_case_records.txt"
 OUT = ROOT / "examples" / "sample_outputs" / "deepseek_case"
 
 
@@ -25,9 +25,9 @@ def main() -> None:
     if not api_key:
         api_key = getpass.getpass("DeepSeek API key: ")
 
-    warning = INPUT.read_text(encoding="utf-8")
+    record_batch = INPUT.read_text(encoding="utf-8")
     config = extract_typology(
-        warning,
+        record_batch,
         use_llm=True,
         provider="deepseek",
         model="deepseek-v4-pro",

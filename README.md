@@ -96,7 +96,7 @@ python -m pytest -q
 
 ## Example Input
 
-The repository includes a sample typology source at `examples/typologies/solar_trade_warning.txt`, and the browser demo reframes the same scenario as a synced suspicious-record queue for live presentation.
+The repository includes a sample suspicious-record batch at `examples/typologies/solar_case_records.txt`. It also keeps the earlier warning-style source at `examples/typologies/solar_trade_warning.txt` for comparison.
 
 It describes shell companies using solar panel import/export invoices, rapid splitting, vague logistics narratives, and cross-border transfers to Hong Kong, Singapore, and the United Arab Emirates.
 
@@ -123,7 +123,7 @@ The app itself presents the artifact as a B2B compliance workbench with record s
 
 ### DeepSeek V4 Pro Real Case
 
-I also ran the sample typology through DeepSeek V4 Pro using the OpenAI-compatible DeepSeek API. The key was supplied at runtime and was not written to the repository.
+I also ran the solar AML case through DeepSeek V4 Pro using the OpenAI-compatible DeepSeek API. The key was supplied at runtime and was not written to the repository.
 
 The real run artifacts are saved under `examples/sample_outputs/deepseek_case/`.
 
@@ -142,7 +142,7 @@ DeepSeek case evaluation:
 | Guided SynthAML data | 1.000 | 1.000 | 1.000 |
 | Rule baseline data | 1.000 | 0.064 | 0.120 |
 
-The first DeepSeek run misassigned origin and destination regions, which is a realistic LLM failure. I added a deterministic role-correction guardrail for explicit phrases such as "originate in" and "to counterparties in"; the final run preserves the region roles correctly.
+The first DeepSeek run misassigned origin and destination regions, which is a realistic LLM failure. I added a deterministic role-correction guardrail for explicit phrases such as "originate in", "sent ... to", and "to counterparties in"; the final run preserves the region roles correctly when those cues are present.
 
 ## Evaluation and Results
 

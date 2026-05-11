@@ -1,6 +1,6 @@
 """Typology extraction for SynthAML.
 
-The LLM path turns a plain-language AML warning into a compact scenario
+The LLM path turns suspicious AML records or case notes into a compact scenario
 configuration. The heuristic path keeps the demo and evaluation reproducible
 when an API key is not available.
 """
@@ -106,10 +106,10 @@ def extract_typology(
     provider: str = "openai",
     api_key: str | None = None,
 ) -> TypologyConfig:
-    """Extract a structured typology from a warning report.
+    """Extract a structured typology from suspicious records or case notes.
 
     Args:
-        text: Warning report or case description.
+        text: Suspicious record batch, case notes, warning report, or case description.
         use_llm: If true and an API key is present, use OpenAI for extraction.
         model: Model name for the selected provider.
         provider: "openai" or "deepseek".
@@ -159,7 +159,7 @@ def _extract_with_heuristics(text: str) -> TypologyConfig:
 
     name = _make_name(industry, suspicious_methods)
     summary = (
-        f"The warning describes {industry} activity where funds are moved through "
+        f"The record batch describes {industry} activity where funds are moved through "
         f"{', '.join(suspicious_methods[:3])}. The generator should create noisy "
         "legitimate traffic plus labeled suspicious chains that preserve timing and "
         "fund-flow consistency."
@@ -184,6 +184,9 @@ def _extract_with_heuristics(text: str) -> TypologyConfig:
 def _extract_amount_range(text: str) -> tuple[float, float]:
     amounts = []
     for match in re.finditer(r"\$?\s?([0-9]{1,3}(?:,[0-9]{3})+|[0-9]+)(?:\.\d+)?", text):
+        prefix = text[max(0, match.start() - 8) : match.start()]
+        if "case-" in prefix:
+            continue
         value = float(match.group(1).replace(",", ""))
         if value >= 100:
             amounts.append(value)
@@ -239,12 +242,15 @@ def _correct_region_roles(config: TypologyConfig, text: str) -> TypologyConfig:
             r"originate(?:s|d)? in (?P<span>[^.]+?)(?:,?\s+then|\.)",
             r"originat(?:e|es|ed) from (?P<span>[^.]+?)(?:,?\s+then|\.)",
             r"payments? from (?P<span>[^.]+?)(?:,?\s+then|\.)",
+            r"(?P<span>uk|united kingdom)[- ]based",
+            r"(?P<span>us|united states) exporter",
         ],
     )
     destination_regions = _regions_in_role_span(
         lowered,
         [
             r"to counterparties in (?P<span>[^.]+)(?:\.)",
+            r"sent [^.]+? to counterparties in (?P<span>[^.]+)(?:\.)",
             r"split (?:quickly )?to (?P<span>[^.]+)(?:\.)",
             r"sent (?:quickly )?to (?P<span>[^.]+)(?:\.)",
             r"moved (?:quickly )?to (?P<span>[^.]+)(?:\.)",
@@ -270,6 +276,7 @@ def _correct_region_roles(config: TypologyConfig, text: str) -> TypologyConfig:
 
 
 def _regions_in_role_span(text: str, patterns: list[str]) -> list[str]:
+    regions = []
     for pattern in patterns:
         match = re.search(pattern, text)
         if not match:
@@ -280,13 +287,10 @@ def _regions_in_role_span(text: str, patterns: list[str]) -> list[str]:
             match_for_region = re.search(rf"\b{re.escape(key)}\b", span)
             if match_for_region:
                 hits.append((match_for_region.start(), label))
-        regions = []
         for _position, label in sorted(hits, key=lambda item: item[0]):
             if label not in regions:
                 regions.append(label)
-        if regions:
-            return regions
-    return []
+    return regions
 
 
 def _provider_key(provider: str, api_key: str | None = None) -> str | None:
@@ -329,13 +333,14 @@ def _extract_with_openai_compatible(
 
     prompt = (
         "Extract only defensive AML synthetic-data generation constraints from this "
-        "warning. Avoid tactical evasion advice. Return strict JSON matching this "
+        "batch of suspicious records or case notes. Avoid tactical evasion advice. "
+        "Return strict JSON matching this "
         f"shape: {json.dumps(schema)}\n\n"
         "Important role rules: origin_regions are where payments or funds originate. "
         "destination_regions are where funds are sent, split, consolidated, or moved to. "
         "For example, if text says payments originate in A and split to B, A belongs "
         "in origin_regions and B belongs in destination_regions.\n\n"
-        f"Warning:\n{text}"
+        f"Suspicious records:\n{text}"
     )
     request = {
         "model": model,
@@ -344,8 +349,8 @@ def _extract_with_openai_compatible(
             {
                 "role": "system",
                 "content": (
-                    "You help compliance teams convert AML warnings into safe, "
-                    "high-level synthetic test-data constraints."
+                    "You help compliance teams convert suspicious AML records and "
+                    "case notes into safe, high-level synthetic test-data constraints."
                 ),
             },
             {"role": "user", "content": prompt},
