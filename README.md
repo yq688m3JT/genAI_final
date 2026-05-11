@@ -75,7 +75,7 @@ streamlit run app.py
 
 Open the no-login browser demo:
 
-- Public preview link: https://rawcdn.githack.com/yq688m3JT/genAI_final/fa4ed4cc3ab6dd13d10fa40e40ec5e6036816755/docs/demo.html
+- Public preview link: https://rawcdn.githack.com/yq688m3JT/genAI_final/ae9c84ea574e9f8c48c84f1863ce82f77ea4f24e/docs/demo.html
 - GitHub Pages link, if Pages is enabled for `/docs`: https://yq688m3jt.github.io/genAI_final/
 
 The browser demo uses committed sample artifacts, so it works on a public computer without a Streamlit account or API key. The full Streamlit app remains available for local interactive runs.

@@ -7,7 +7,7 @@ The presentation demo is designed to work from a plain browser link with no Stre
 Use this link in Google Slides or PowerPoint:
 
 ```text
-https://rawcdn.githack.com/yq688m3JT/genAI_final/fa4ed4cc3ab6dd13d10fa40e40ec5e6036816755/docs/demo.html
+https://rawcdn.githack.com/yq688m3JT/genAI_final/ae9c84ea574e9f8c48c84f1863ce82f77ea4f24e/docs/demo.html
 ```
 
 The committed demo file is:
