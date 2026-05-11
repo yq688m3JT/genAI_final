@@ -2,7 +2,7 @@
 
 Total target: 3 minutes.
 
-Use the slides for the first 2 minutes, then switch to the running app for a 1-minute demo.
+Use the first four slides for the project story, then use the final three UI walkthrough slides as the demo. This version does not require a live localhost app.
 
 ## Title Slide
 
@@ -36,33 +36,17 @@ I trained one classifier on SynthAML data and one on baseline data, then tested 
 
 This is not a production AML benchmark, but it does show why the GenAI-guided workflow is more useful than a simple rule-only generator for this narrow task.
 
-## Slide 4: Demo Setup
+## Slide 4: UI Walkthrough 1
 
-Now I’ll show the artifact quickly.
+This is the main command center. The reviewer pastes a regulatory warning on the left, and the app turns it into a structured scenario brief on the right.
 
-## 1-Minute Demo Playthrough
+## Slide 5: UI Walkthrough 2
 
-Open the app at `http://localhost:8501`.
+This is the evaluation tab. It compares SynthAML’s guided synthetic data against the simpler rule baseline, so the project is evaluated against a real alternative.
 
-First, show the sample warning text in the main text area. Say:
+## Slide 6: UI Walkthrough 3
 
-"This is the kind of regulatory warning the user starts with."
-
-Next, point to the extracted typology JSON. Say:
-
-"The app turns the prose into structured constraints: regions, narratives, suspicious methods, amount range, and timing."
-
-Then scroll to the generated data table or chart. Say:
-
-"Here are labeled synthetic records. Some are legitimate background traffic, and some are suspicious chain transactions."
-
-Open the Evaluation tab. Say:
-
-"The app also compares the guided generator against the simpler rule baseline and checks fund conservation for suspicious chains."
-
-Finally, point to the download buttons. Say:
-
-"The output is usable: the reviewer can inspect it and export CSVs for model testing. A human compliance expert should still approve the scenario before using it in real model development."
+This is the export package. The user can download the guided CSV, the baseline CSV, and the evaluation JSON. So the output is usable as a model QA package, while still keeping a human reviewer in the loop.
 
 ## Short Closing
 
