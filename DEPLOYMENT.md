@@ -1,36 +1,33 @@
-# Public Demo Deployment
+# Public Browser Demo
 
-The safest public-demo setup is Streamlit Community Cloud. It gives you a live link while keeping the DeepSeek API key server-side.
+The presentation demo is designed to work from a plain browser link with no Streamlit account, no API key, and no local setup.
 
-## Deploy on Streamlit Cloud
+## Click-ready Demo Link
 
-1. Push the repo to GitHub.
-2. Go to `https://share.streamlit.io/`.
-3. Create a new app from the GitHub repo.
-4. Set:
-   - Repository: `yq688m3JT/genAI_final`
-   - Branch: `main`
-   - Main file path: `app.py`
-5. Open the app's Settings -> Secrets.
-6. Add:
+Use this link in Google Slides or PowerPoint:
 
-```toml
-DEEPSEEK_API_KEY = "your_deepseek_key_here"
+```text
+https://htmlpreview.github.io/?https://github.com/yq688m3JT/genAI_final/blob/main/docs/demo.html
 ```
 
-7. Deploy.
+The committed demo file is:
 
-The app sidebar should show `LLM key detected on server`, and the LLM extraction toggle should be on by default.
+```text
+docs/demo.html
+```
 
-## Why Not a Static Website With the Key?
+## Optional GitHub Pages Setup
 
-A static website would expose the DeepSeek key in browser JavaScript. Anyone could inspect the page and copy the key. Streamlit avoids this because the API call happens on the server.
+If GitHub Pages is enabled for the repository and configured to serve the `/docs` folder, the cleaner URL is:
 
-## Demo Script
+```text
+https://yq688m3jt.github.io/genAI_final/
+```
 
-Use the default warning text, leave provider as `deepseek`, and keep model as `deepseek-v4-pro`.
+This is optional. The HTMLPreview link above works directly from the public GitHub repository.
 
-1. Show the scenario brief updating from the warning text.
-2. Open the Synthetic Ledger tab to show labeled transactions.
-3. Open Evaluation to show guided data beating the baseline.
-4. Open Export Package to show the downloadable CSV/JSON outputs.
+## Why the Demo Is Static
+
+Putting a DeepSeek API key in browser JavaScript would expose it to anyone who opens the page. The browser demo therefore uses the committed sample run and evaluation artifacts.
+
+The full Streamlit app is still included for local runs where an API key can stay in an environment variable or server-side secret.

@@ -16,6 +16,7 @@ SynthAML helps the user move from a plain-language warning to a small labeled sy
 
 SynthAML includes:
 
+- A click-ready browser demo in `docs/demo.html`
 - A polished Streamlit workbench in `app.py`
 - A reusable typology extractor in `synthaml/typology.py`
 - A guided synthetic transaction generator in `synthaml/generator.py`
@@ -72,9 +73,12 @@ Run the app:
 streamlit run app.py
 ```
 
-Deploy a public demo website:
+Open the no-login browser demo:
 
-See `DEPLOYMENT.md`. The recommended path is Streamlit Community Cloud with `DEEPSEEK_API_KEY` stored as a server-side secret.
+- Public preview link: https://htmlpreview.github.io/?https://github.com/yq688m3JT/genAI_final/blob/main/docs/demo.html
+- GitHub Pages link, if Pages is enabled for `/docs`: https://yq688m3jt.github.io/genAI_final/
+
+The browser demo uses committed sample artifacts, so it works on a public computer without a Streamlit account or API key. The full Streamlit app remains available for local interactive runs.
 
 Run the reproducible evaluation:
 

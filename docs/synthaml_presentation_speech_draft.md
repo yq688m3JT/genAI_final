@@ -2,7 +2,7 @@
 
 Target length: about 3 minutes.
 
-Use the deck itself as the demo. The last three slides are visual UI walkthrough slides, so you do not need to run the app live.
+Use the clickable browser demo link in the deck for the final minute. The demo is a static commercial-style web walkthrough, so it works on a public computer without a Streamlit account or API key.
 
 ## Slide 1: Title
 
@@ -38,15 +38,15 @@ This is not a production AML benchmark, but it shows why the GenAI-guided workfl
 
 ## Slide 5: UI Walkthrough 1
 
-This is the main command center. The reviewer pastes a regulatory warning on the left, and the app turns it into a structured scenario brief on the right.
+For the demo, I will click the browser link in the deck. The first screen is the command center: the reviewer pastes a regulatory warning on the left, and the app turns it into a structured scenario brief on the right.
 
 ## Slide 6: UI Walkthrough 2
 
-This is the evaluation tab. It compares SynthAML’s guided synthetic data against the simpler rule baseline, so the project is evaluated against a real alternative instead of only showing one successful example.
+Then I click into generated data and evaluation. The demo shows sample synthetic transactions and compares SynthAML’s guided synthetic data against the simpler rule baseline, so the project is evaluated against a real alternative instead of only showing one successful example.
 
 ## Slide 7: UI Walkthrough 3
 
-This is the export package. The user can download the guided CSV, the baseline CSV, and the evaluation JSON. So the output is usable as a model QA package, while still keeping a human reviewer in the loop.
+Finally I open the export package. The user can access the guided CSV, the baseline CSV, and the evaluation JSON. So the output is usable as a model QA package, while still keeping a human reviewer in the loop.
 
 ## Closing
 

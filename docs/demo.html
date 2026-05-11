@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SynthAML Browser Demo</title>
+  <style>
+    :root {
+      --ink: #14213d;
+      --muted: #647084;
+      --line: #d8d0c0;
+      --paper: #f7f3ea;
+      --panel: #ffffff;
+      --accent: #0e7c66;
+      --gold: #d89c27;
+      --danger: #b33a3a;
+      --blue: #2f6690;
+      --shadow: 0 16px 46px rgba(20, 33, 61, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: #ece7dc;
+      font-family: Inter, Aptos, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    button, textarea {
+      font: inherit;
+    }
+
+    .shell {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 272px 1fr;
+    }
+
+    aside {
+      background: #111d32;
+      color: #f7f3ea;
+      padding: 26px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .mark {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    .mark span {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      background: var(--paper);
+      color: #111d32;
+      font-weight: 900;
+    }
+
+    .nav {
+      display: grid;
+      gap: 8px;
+    }
+
+    .nav button {
+      border: 0;
+      color: #d4e7dd;
+      background: transparent;
+      text-align: left;
+      padding: 12px 14px;
+      cursor: pointer;
+      border-left: 3px solid transparent;
+    }
+
+    .nav button.active {
+      background: rgba(247, 243, 234, 0.08);
+      border-left-color: var(--gold);
+      color: #fff;
+      font-weight: 700;
+    }
+
+    .side-note {
+      margin-top: auto;
+      padding-top: 18px;
+      border-top: 1px solid rgba(247, 243, 234, 0.16);
+      font-size: 13px;
+      line-height: 1.45;
+      color: #b9c8d0;
+    }
+
+    main {
+      padding: 28px;
+      display: grid;
+      gap: 22px;
+      align-content: start;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.05;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 15px;
+      max-width: 760px;
+    }
+
+    .demo-pill {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 10px 13px;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: minmax(340px, 0.92fr) minmax(440px, 1.08fr);
+      gap: 20px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+
+    .panel h2 {
+      margin: 0 0 14px;
+      font-size: 19px;
+      letter-spacing: 0;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 236px;
+      resize: vertical;
+      border: 1px solid #cfc7b8;
+      padding: 14px;
+      color: var(--ink);
+      line-height: 1.45;
+      background: #fbfaf6;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 14px;
+      flex-wrap: wrap;
+    }
+
+    .primary {
+      border: 0;
+      background: var(--accent);
+      color: #fff;
+      padding: 11px 15px;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .secondary {
+      border: 1px solid var(--line);
+      color: var(--ink);
+      background: #fff;
+      padding: 10px 14px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .status {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .brief {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric, .field {
+      border: 1px solid #e3dccf;
+      background: #fbfaf6;
+      padding: 14px;
+    }
+
+    .label {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 7px;
+    }
+
+    .value {
+      font-weight: 800;
+      font-size: 17px;
+    }
+
+    .tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      border: 1px solid #d7deda;
+      background: #eef7f3;
+      color: #0e6c59;
+      padding: 7px 9px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .wide { grid-column: 1 / -1; }
+
+    .table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      background: #fff;
+      max-height: 430px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 860px;
+      font-size: 13px;
+    }
+
+    th, td {
+      padding: 10px 11px;
+      border-bottom: 1px solid #eee7dc;
+      text-align: left;
+      white-space: nowrap;
+    }
+
+    th {
+      position: sticky;
+      top: 0;
+      background: #f3efe5;
+      color: #4d5665;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    tr.suspicious td {
+      background: #fff4ee;
+    }
+
+    .badge {
+      padding: 5px 8px;
+      font-weight: 800;
+      font-size: 11px;
+    }
+
+    .badge.suspicious { background: #f7d8d2; color: var(--danger); }
+    .badge.legitimate { background: #e7f1ee; color: var(--accent); }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1;
+      margin-bottom: 7px;
+    }
+
+    .metric small {
+      color: var(--muted);
+    }
+
+    .chart {
+      display: grid;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: 150px 1fr 66px;
+      gap: 12px;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    .bar-track {
+      height: 18px;
+      background: #e8e1d5;
+      overflow: hidden;
+    }
+
+    .bar {
+      height: 100%;
+      background: var(--accent);
+    }
+
+    .bar.baseline {
+      background: var(--gold);
+    }
+
+    .export-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .download-card {
+      border: 1px solid var(--line);
+      background: #fbfaf6;
+      padding: 16px;
+      min-height: 134px;
+      display: grid;
+      align-content: space-between;
+      gap: 16px;
+    }
+
+    .download-card h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .download-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    .screen { display: none; }
+    .screen.active { display: grid; gap: 20px; }
+
+    @media (max-width: 980px) {
+      .shell { grid-template-columns: 1fr; }
+      aside { position: static; }
+      .grid, .brief, .metrics, .export-grid { grid-template-columns: 1fr; }
+      .topbar { align-items: flex-start; flex-direction: column; }
+      .demo-pill { white-space: normal; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <aside>
+      <div class="mark"><span>SA</span> SynthAML</div>
+      <nav class="nav" aria-label="Demo screens">
+        <button class="active" data-screen="intake">1. Typology intake</button>
+        <button data-screen="data">2. Generated data</button>
+        <button data-screen="eval">3. Evaluation</button>
+        <button data-screen="export">4. Export package</button>
+      </nav>
+      <div class="side-note">
+        Browser demo for presentation. It uses committed sample artifacts so the walkthrough works from a public computer without API keys or a Streamlit account.
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <h1>AML typology to synthetic transaction QA package</h1>
+          <p class="subtitle">A focused GenAI workflow for AML model teams: extract constraints from a new regulatory warning, generate inspectable transaction chains, compare against a simpler baseline, and export the test package.</p>
+        </div>
+        <div class="demo-pill">Static browser demo | sample run loaded</div>
+      </header>
+
+      <section class="screen active" id="intake">
+        <div class="grid">
+          <div class="panel">
+            <h2>Regulatory warning input</h2>
+            <textarea id="warning">Regulators warn that solar equipment exporters are using shell-company counterparties to move funds from the United States and United Kingdom to Hong Kong, Singapore, and the United Arab Emirates. Activity often involves false or vague invoice narratives, structured split payments, and clusters near Friday cutoff windows. Transactions are commonly between 4,000 and 45,000 dollars, with one funding transfer followed by three to seven rapid outbound transfers within 48 hours.</textarea>
+            <div class="actions">
+              <button class="primary" id="run-demo">Generate demo run</button>
+              <span class="status" id="status">Ready. Click once during the presentation.</span>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h2>Structured scenario brief</h2>
+            <div class="brief">
+              <div class="field">
+                <span class="label">Typology</span>
+                <span class="value">Solar exports with shell counterparties</span>
+              </div>
+              <div class="field">
+                <span class="label">Amount range</span>
+                <span class="value">$4k-$45k</span>
+              </div>
+              <div class="field">
+                <span class="label">Origins</span>
+                <span class="value">US, UK</span>
+              </div>
+              <div class="field">
+                <span class="label">Destinations</span>
+                <span class="value">HK, SG, UAE</span>
+              </div>
+              <div class="field wide">
+                <span class="label">Extracted suspicious methods</span>
+                <div class="tags">
+                  <span class="tag">shell-company counterparties</span>
+                  <span class="tag">structured splitting</span>
+                  <span class="tag">vague invoices</span>
+                  <span class="tag">Friday cutoff clustering</span>
+                </div>
+              </div>
+              <div class="field wide">
+                <span class="label">Human review checkpoint</span>
+                <span class="value">Reviewer confirms extracted constraints before using the synthetic data.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="data">
+        <div class="panel">
+          <h2>Generated transaction sample</h2>
+          <div class="metrics">
+            <div class="metric"><strong>500</strong><small>guided records</small></div>
+            <div class="metric"><strong>18.8%</strong><small>suspicious share</small></div>
+            <div class="metric"><strong>48h</strong><small>chain timing window</small></div>
+            <div class="metric"><strong>3-7</strong><small>split payments per chain</small></div>
+          </div>
+          <div class="table-wrap" style="margin-top:16px">
+            <table>
+              <thead>
+                <tr>
+                  <th>tx_id</th>
+                  <th>timestamp</th>
+                  <th>origin</th>
+                  <th>destination</th>
+                  <th>amount</th>
+                  <th>narrative</th>
+                  <th>risk signal</th>
+                  <th>label</th>
+                </tr>
+              </thead>
+              <tbody id="tx-body"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="eval">
+        <div class="panel">
+          <h2>Evaluation against a simpler baseline</h2>
+          <div class="metrics">
+            <div class="metric"><strong>1.000</strong><small>SynthAML F1</small></div>
+            <div class="metric"><strong>0.133</strong><small>threshold baseline F1</small></div>
+            <div class="metric"><strong>1.000</strong><small>SynthAML recall</small></div>
+            <div class="metric"><strong>0.074</strong><small>baseline recall</small></div>
+          </div>
+          <div class="chart" aria-label="Evaluation bar chart">
+            <div class="bar-row">
+              <span>Guided precision</span>
+              <span class="bar-track"><span class="bar" style="display:block;width:100%"></span></span>
+              <strong>1.000</strong>
+            </div>
+            <div class="bar-row">
+              <span>Guided recall</span>
+              <span class="bar-track"><span class="bar" style="display:block;width:100%"></span></span>
+              <strong>1.000</strong>
+            </div>
+            <div class="bar-row">
+              <span>Baseline precision</span>
+              <span class="bar-track"><span class="bar baseline" style="display:block;width:63.6%"></span></span>
+              <strong>0.636</strong>
+            </div>
+            <div class="bar-row">
+              <span>Baseline recall</span>
+              <span class="bar-track"><span class="bar baseline" style="display:block;width:7.4%"></span></span>
+              <strong>0.074</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="screen" id="export">
+        <div class="panel">
+          <h2>Submission-ready artifact package</h2>
+          <div class="export-grid">
+            <div class="download-card">
+              <div>
+                <h3>Guided transactions CSV</h3>
+                <p>Generated chain-style transactions with labels and risk signals.</p>
+              </div>
+              <a class="secondary" href="#" data-download="guided">Open CSV</a>
+            </div>
+            <div class="download-card">
+              <div>
+                <h3>Baseline transactions CSV</h3>
+                <p>Simpler threshold-style comparison data for evaluation.</p>
+              </div>
+              <a class="secondary" href="#" data-download="baseline">Open CSV</a>
+            </div>
+            <div class="download-card">
+              <div>
+                <h3>Evaluation JSON</h3>
+                <p>Precision, recall, F1, record counts, and rubric summary.</p>
+              </div>
+              <a class="secondary" href="#" data-download="evaluation">Open JSON</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    const rows = [
+      ["TX-000008", "2026-01-06 19:00", "United Kingdom", "United Kingdom", "$20,331.15", "solar panel shipment", "funding transfer before rapid split", "suspicious"],
+      ["TX-000009", "2026-01-07 00:00", "United Kingdom", "Singapore", "$4,523.25", "consulting invoice", "shell-company counterparties", "suspicious"],
+      ["TX-000010", "2026-01-07 01:00", "United Kingdom", "United Arab Emirates", "$4,330.16", "equipment deposit", "false or vague invoice narratives", "suspicious"],
+      ["TX-000014", "2026-01-07 10:00", "United Kingdom", "Singapore", "$3,628.26", "import services", "structured splitting of transfers", "suspicious"],
+      ["TX-000015", "2026-01-07 12:00", "United States", "United Arab Emirates", "$3,951.79", "import services", "false or vague invoice narratives", "suspicious"],
+      ["TX-000031", "2026-01-08 06:00", "United Kingdom", "Hong Kong", "$3,897.69", "equipment deposit", "structured splitting of transfers", "suspicious"],
+      ["TX-000001", "2026-01-05 16:00", "United States", "United Arab Emirates", "$1,778.01", "shipping invoice", "none", "legitimate"],
+      ["TX-000002", "2026-01-05 17:00", "United States", "Hong Kong", "$4,502.33", "platform settlement", "none", "legitimate"],
+      ["TX-000003", "2026-01-05 18:00", "United Kingdom", "United Kingdom", "$7,444.96", "software subscription", "none", "legitimate"],
+      ["TX-000004", "2026-01-06 04:00", "United Kingdom", "United States", "$3,542.02", "tax remittance", "none", "legitimate"],
+      ["TX-000005", "2026-01-06 05:00", "United Kingdom", "Hong Kong", "$15,495.36", "payroll batch", "none", "legitimate"],
+      ["TX-000006", "2026-01-06 18:00", "United Kingdom", "United Arab Emirates", "$3,651.20", "monthly supplier payment", "none", "legitimate"]
+    ];
+
+    const body = document.getElementById("tx-body");
+    body.innerHTML = rows.map((row) => {
+      const label = row[7];
+      return `<tr class="${label}">
+        ${row.slice(0, 7).map((cell) => `<td>${cell}</td>`).join("")}
+        <td><span class="badge ${label}">${label}</span></td>
+      </tr>`;
+    }).join("");
+
+    function showScreen(id) {
+      document.querySelectorAll(".screen").forEach((el) => el.classList.toggle("active", el.id === id));
+      document.querySelectorAll(".nav button").forEach((btn) => btn.classList.toggle("active", btn.dataset.screen === id));
+    }
+
+    document.querySelectorAll(".nav button").forEach((button) => {
+      button.addEventListener("click", () => showScreen(button.dataset.screen));
+    });
+
+    document.getElementById("run-demo").addEventListener("click", () => {
+      const status = document.getElementById("status");
+      status.textContent = "Extracting constraints...";
+      setTimeout(() => { status.textContent = "Generating synthetic chains..."; }, 450);
+      setTimeout(() => {
+        status.textContent = "Demo run complete. Generated 500 guided records.";
+        showScreen("data");
+      }, 900);
+    });
+
+    const downloads = {
+      guided: {
+        name: "guided_transactions_sample.csv",
+        type: "text/csv",
+        body: "tx_id,timestamp,origin_region,destination_region,amount,narrative,risk_signal,label\n" +
+          rows.map((row) => row.map((cell) => `"${cell}"`).join(",")).join("\n")
+      },
+      baseline: {
+        name: "rule_baseline_transactions_sample.csv",
+        type: "text/csv",
+        body: "tx_id,timestamp,amount,risk_signal,label\n" +
+          "BASE-0001,2026-01-07 00:00,46100,large amount rule,suspicious\n" +
+          "BASE-0002,2026-01-07 04:00,790,none,legitimate\n" +
+          "BASE-0003,2026-01-08 11:00,51200,large amount rule,suspicious\n"
+      },
+      evaluation: {
+        name: "evaluation_summary_sample.json",
+        type: "application/json",
+        body: JSON.stringify({
+          guided: { precision: 1.0, recall: 1.0, f1: 1.0, suspicious_share: 0.188 },
+          baseline: { precision: 0.636, recall: 0.074, f1: 0.133, suspicious_share: 0.188 },
+          guided_records: 500,
+          baseline_records: 500
+        }, null, 2)
+      }
+    };
+
+    document.querySelectorAll("[data-download]").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        event.preventDefault();
+        const file = downloads[link.dataset.download];
+        const blob = new Blob([file.body], { type: file.type });
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement("a");
+        anchor.href = url;
+        anchor.download = file.name;
+        document.body.appendChild(anchor);
+        anchor.click();
+        anchor.remove();
+        URL.revokeObjectURL(url);
+      });
+    });
+  </script>
+</body>
+</html>
