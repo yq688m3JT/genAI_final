@@ -2,9 +2,8 @@
 
 from __future__ import annotations
 
-from datetime import datetime, timedelta
 import random
-import uuid
+from datetime import datetime, timedelta
 
 import numpy as np
 import pandas as pd
@@ -140,7 +139,7 @@ def _make_suspicious_chain(
     base_time: datetime,
     account_pool: list[str],
 ) -> list[dict]:
-    chain_id = f"CHAIN-{uuid.uuid4().hex[:8].upper()}"
+    chain_id = f"CHAIN-{rng.getrandbits(32):08X}"
     hub = rng.choice(account_pool)
     funder = f"SHELL-{rng.randint(10000, 99999)}"
     splits = rng.randint(config.split_count_min, config.split_count_max)

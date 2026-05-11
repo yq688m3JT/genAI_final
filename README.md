@@ -1,6 +1,6 @@
 # SynthAML
 
-SynthAML is a small GenAI workflow for AML compliance data teams. It converts a short regulatory typology warning into synthetic cross-border transaction records that can be used to test whether existing financial-crime models recognize a new pattern.
+SynthAML is a commercial-style GenAI workbench for AML compliance data teams. It converts a short regulatory typology warning into synthetic cross-border transaction records that can be used to test whether existing financial-crime models recognize a new pattern.
 
 The app is intentionally narrow: it focuses on one workflow, defensive synthetic data generation for a newly reported AML typology. It does not produce advice for evading controls.
 
@@ -16,19 +16,20 @@ SynthAML helps the user move from a plain-language warning to a small labeled sy
 
 SynthAML includes:
 
-- A Streamlit app in `app.py`
+- A polished Streamlit workbench in `app.py`
 - A reusable typology extractor in `synthaml/typology.py`
 - A guided synthetic transaction generator in `synthaml/generator.py`
 - A baseline generator and evaluation workflow in `synthaml/evaluate.py`
 - A reproducible evaluation script in `run_evaluation.py`
 
-The workflow is:
+The application workflow is:
 
 1. Paste a typology warning into the app.
 2. Extract structured constraints: industry, regions, narratives, suspicious methods, amount range, split count, and time window.
-3. Generate labeled synthetic transactions with legitimate background traffic and suspicious multi-step chains.
-4. Validate that suspicious chains preserve basic fund-flow consistency.
-5. Compare the guided generator against a simple amount-threshold baseline.
+3. Review the commercial-style scenario brief, quality gates, and run settings.
+4. Generate labeled synthetic transactions with legitimate background traffic and suspicious multi-step chains.
+5. Validate that suspicious chains preserve basic fund-flow consistency.
+6. Compare the guided generator against a simple amount-threshold baseline and export the QA package.
 
 The GenAI design choice is the typology extraction step. If `OPENAI_API_KEY` is set, SynthAML can use an OpenAI model to convert warning text into structured generation constraints. If no key is available, it falls back to a deterministic heuristic extractor so the grader can still run the app and evaluation.
 
@@ -97,9 +98,11 @@ Sample evaluation from the included typology:
 | Training data | Precision | Recall | F1 |
 | --- | ---: | ---: | ---: |
 | Guided SynthAML data | 1.000 | 1.000 | 1.000 |
-| Rule baseline data | 0.643 | 0.098 | 0.170 |
+| Rule baseline data | 0.667 | 0.110 | 0.189 |
 
 This is a small synthetic evaluation, not proof of production AML performance. It shows that a model trained on guided chain-style data transfers better to a hidden chain-style test set than a model trained only on amount-threshold examples.
+
+The app itself presents the artifact as a B2B compliance workbench with a scenario intake panel, extracted typology brief, quality gates, synthetic ledger, evaluation dashboard, and export package.
 
 ## Evaluation and Results
 
@@ -155,4 +158,8 @@ What failed or remains limited:
 
 ## Lightning Presentation
 
-Presentation notes are included in `docs/lightning_presentation.md`.
+Presentation materials are included in:
+
+- `docs/synthaml-final-presentation.pptx`
+- `docs/synthaml_presentation_speech_draft.md`
+- `docs/lightning_presentation.md`

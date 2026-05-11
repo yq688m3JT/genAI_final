@@ -4,9 +4,13 @@ Total target: 3 minutes.
 
 Use the slides for the first 2 minutes, then switch to the running app for a 1-minute demo.
 
-## Slide 1: Context, User, and Problem
+## Title Slide
 
-Hi everyone. My project is SynthAML, a small GenAI workflow for AML compliance data teams.
+Hi everyone. My project is SynthAML, a commercial-style GenAI workbench for AML compliance model teams.
+
+The narrow workflow is typology intake to test-data export. The user starts with a regulatory warning, and the goal is to create inspectable synthetic transactions that help test whether current models have a blind spot.
+
+## Slide 1: Context, User, and Problem
 
 The target user is an AML algorithm engineer or compliance data scientist at a cross-border payments company or bank.
 
@@ -28,7 +32,7 @@ For evaluation, I compared SynthAML against a simpler baseline.
 
 The baseline generates suspicious records mostly using a large-amount rule. SynthAML generates chain-style behavior with timing, narratives, counterparties, and fund-flow consistency.
 
-I trained one classifier on SynthAML data and one on baseline data, then tested both on a hidden guided test set from the same typology. In this sample, SynthAML reached an F1 of 1.000, while the rule baseline reached 0.170. The important result is recall: SynthAML found the hidden chain-style examples, while the threshold baseline missed most of them.
+I trained one classifier on SynthAML data and one on baseline data, then tested both on a hidden guided test set from the same typology. In this sample, SynthAML reached an F1 of 1.000, while the rule baseline reached 0.189. The important result is recall: SynthAML found the hidden chain-style examples, while the threshold baseline missed most of them.
 
 This is not a production AML benchmark, but it does show why the GenAI-guided workflow is more useful than a simple rule-only generator for this narrow task.
 
