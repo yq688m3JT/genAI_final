@@ -696,7 +696,7 @@
       </div>
 
       <nav aria-label="Workspace navigation">
-        <button class="active" data-screen="intake">Intake</button>
+        <button class="active" data-screen="intake">Source intake</button>
         <button data-screen="scenario">Scenario review</button>
         <button data-screen="generator">Generation plan</button>
         <button data-screen="ledger">Ledger analysis</button>
@@ -713,7 +713,7 @@
       <header>
         <div>
           <h1>New AML typology intake</h1>
-          <p class="subtitle">Convert a regulatory warning into reviewed synthetic transaction data for model blind-spot testing.</p>
+          <p class="subtitle">Convert an imported regulatory intelligence packet into reviewed synthetic transaction data for model blind-spot testing.</p>
         </div>
         <div class="header-actions">
           <span class="status-pill" id="case-status">Scenario ready for review</span>
@@ -726,12 +726,12 @@
         <section class="screen active" id="intake">
           <div class="grid-2">
             <div class="panel">
-              <h2>Source warning</h2>
-              <p class="muted">Paste or review the alert text. In the full app, this step can call a configured LLM provider or fall back to deterministic extraction.</p>
+              <h2>Imported source packet</h2>
+              <p class="muted">In real use, this source would come from a regulatory watch feed, case queue, uploaded memo, or internal knowledge base. The text remains visible for traceability and reviewer correction.</p>
               <textarea id="warning">Regulators warn that solar equipment exporters are using shell-company counterparties to move funds from the United States and United Kingdom to Hong Kong, Singapore, and the United Arab Emirates. Activity often involves false or vague invoice narratives, structured split payments, and clusters near Friday cutoff windows. Transactions are commonly between 4,000 and 45,000 dollars, with one funding transfer followed by three to seven rapid outbound transfers within 48 hours.</textarea>
               <div class="actions">
-                <button class="primary" id="extract">Extract typology</button>
-                <button class="secondary" id="reset-warning">Reset sample</button>
+                <button class="primary" id="extract">Run extraction</button>
+                <button class="secondary" id="reset-warning">Load sample packet</button>
                 <span class="muted" id="extract-status">Last extraction: provider-assisted sample run, reviewed.</span>
               </div>
               <div class="progress" aria-label="Extraction confidence"><span id="progress-bar"></span></div>
@@ -1062,7 +1062,7 @@
 
     document.getElementById("reset-warning").addEventListener("click", () => {
       document.getElementById("warning").value = sampleWarning;
-      showToast("Sample warning restored");
+      showToast("Sample source packet loaded");
     });
 
     document.getElementById("generate").addEventListener("click", () => {

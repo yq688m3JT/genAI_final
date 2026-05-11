@@ -1,57 +1,61 @@
 # SynthAML Presentation Speech Draft
 
-Target length: about 3 minutes.
-
-Use the clickable browser demo link in the deck for the final minute. The demo is a static commercial-style web walkthrough, so it works on a public computer without a Streamlit account or API key.
+Target length: about 3 minutes total: roughly 2 minutes of slides, then 1 minute live browser demo.
 
 ## Slide 1: Title
 
-Hi everyone. My project is SynthAML, a commercial-style GenAI workbench for AML compliance model teams.
+Hi everyone. My project is SynthAML, a GenAI workbench for AML model QA teams.
 
-The narrow workflow is typology intake to test-data export. A user starts with a regulatory warning, and SynthAML helps turn that warning into inspectable synthetic transactions for model QA.
+The narrow business workflow is typology intake to model QA export. A regulatory warning or internal typology note enters the compliance workflow, and SynthAML helps turn that source into reviewed synthetic transaction data for testing model blind spots.
 
 ## Slide 2: Context, User, and Problem
 
-The target user is an AML algorithm engineer or compliance data scientist at a cross-border payments company or bank.
+The target user is an AML algorithm engineer or compliance data scientist at a bank or cross-border payments company.
 
-The problem is a cold start. When a regulator publishes a new laundering typology, the company may know the pattern exists, but it may not have labeled historical transactions for that pattern yet.
+The core problem is a data cold start. When a regulator publishes a new typology, the team may understand the risk, but it often has no labeled historical examples yet. That makes it hard to test whether current monitoring logic would catch the pattern.
 
-That matters because a simple threshold rule can miss behavior that is spread across a chain of transactions.
+This matters because many typologies are not just one large suspicious transaction. They are behaviors across a chain: a funding transfer, rapid splits, cross-border counterparties, vague invoices, and timing patterns. A simple threshold rule can miss that structure.
 
-## Slide 3: Solution and Design
+## Slide 3: Application Workflow
 
-SynthAML turns a short typology warning into labeled synthetic transaction data.
+SynthAML is designed around that workflow, not as a general chatbot.
 
-The user pastes a warning into the app. The system extracts structured constraints like industry, regions, amount range, suspicious methods, narratives, and timing window. Then it generates normal background traffic plus suspicious chains: a funding transfer followed by rapid split payments to cross-border counterparties.
+In a real workflow, the source would come from a regulatory watch feed, an uploaded memo, a case queue, or an internal knowledge base. The demo preloads one source packet so I can show the workflow quickly.
 
-The GenAI design choice is the translation step from unstructured compliance prose into structured generation constraints. I also included a deterministic fallback, so the app and evaluation can still run without an API key.
+The system extracts a structured typology: regions, amount range, timing window, split count, narratives, and suspicious methods. A human reviewer then approves or edits those constraints. After approval, the app generates normal background traffic plus suspicious transaction chains, evaluates the guided data against a baseline, and exports a QA package.
+
+The GenAI design choice is focused: use the model to translate unstructured compliance prose into structured, reviewable generation constraints. The deterministic fallback keeps the project runnable without an API key.
 
 ## Slide 4: Evaluation and Results
 
-For evaluation, I compared SynthAML against a simpler baseline.
+I included a baseline because in real AML QA, a new GenAI workflow has to beat the cheap alternative.
 
-The baseline generates suspicious records mostly using a large-amount rule. SynthAML generates chain-style behavior with timing, narratives, counterparties, and fund-flow consistency.
+The baseline is a simpler threshold-style generator. SynthAML generates chain-style behavior with timing, counterparties, narratives, and fund-flow consistency. In the included evaluation, the guided SynthAML data reached an F1 of 1.000 on a hidden guided test set, while the baseline reached 0.133. The important difference is recall: SynthAML found the chain-style examples, while the simple baseline missed most of them.
 
-I trained one classifier on SynthAML data and one on baseline data, then tested both on a hidden guided test set from the same typology. In this sample, SynthAML reached an F1 of 1.000, while the rule baseline reached 0.133. The important result is recall: SynthAML found the hidden chain-style examples, while the threshold baseline missed most of them.
+This is not a production AML benchmark, but it shows that the workflow adds value beyond making a nicer-looking dataset.
 
-This is not a production AML benchmark, but it shows why the GenAI-guided workflow is more useful than a simple rule-only generator for this narrow task.
+## Slide 5: Why This Workflow Matters
 
-## Slide 5: UI Walkthrough 1
+The real bottleneck is not just generating rows. It is converting vague typology language into testable behavior.
 
-For the demo, I will click the browser link in the deck. The first screen is the command center: the reviewer pastes a regulatory warning on the left, and the app turns it into a structured scenario brief on the right.
+The status quo could be an analyst reviewing an incoming warning, writing ad hoc rules, and creating a small prompt-only or spreadsheet sample. The risk is that the data overfits obvious signals like high amount. SynthAML makes the intermediate scenario explicit, so the reviewer can inspect what the system believes the typology means before any export is used.
 
-## Slide 6: UI Walkthrough 2
+## Slide 6: What the App Does
 
-Then I click into generated data and evaluation. The demo shows sample synthetic transactions and compares SynthAML’s guided synthetic data against the simpler rule baseline, so the project is evaluated against a real alternative instead of only showing one successful example.
+The app has five practical work areas: intake, scenario review, generation plan, ledger analysis, and evaluation plus export.
 
-## Slide 7: UI Walkthrough 3
+That makes it look and behave like a real internal tool. The analyst can review constraints, adjust settings, filter generated transactions, compare against a baseline, and export the files a model QA team would actually need.
 
-Finally I open the export package. The user can access the guided CSV, the baseline CSV, and the evaluation JSON. So the output is usable as a model QA package, while still keeping a human reviewer in the loop.
+## Slide 7: Live Demo Plan
+
+For the final minute, I will click the browser demo link.
+
+I will show four things quickly: imported-source intake and extraction, editable scenario review, the ledger and evaluation comparison, and the export package. The goal is to show that the artifact exists as a usable workflow, not only as slides.
 
 ## Closing
 
-The business value is not replacing AML experts. It is helping them turn a new typology warning into inspectable test data faster, so model teams can evaluate blind spots before real labeled cases exist.
+The business value is not replacing AML experts. It is helping them move faster from a new typology warning to inspectable test data, so model teams can evaluate blind spots before real labeled cases exist.
 
 ## Ultra-Short Version
 
-SynthAML is a GenAI workbench for AML model teams. It solves a cold-start problem: when a new laundering typology is published, teams often do not have labeled examples yet. The app extracts structured constraints from the warning, generates synthetic transaction chains, compares them against a simple baseline, and exports a model QA package. The evaluation shows the guided data transfers much better to hidden chain-style examples than a threshold baseline. A human reviewer still stays involved before any output is used.
+SynthAML solves a cold-start problem for AML model QA. It turns a new typology warning into reviewed synthetic transaction chains, compares the guided output against a simpler baseline, and exports a QA package. GenAI is useful because the input is unstructured compliance prose, but a human reviewer stays involved before the synthetic data is used.
