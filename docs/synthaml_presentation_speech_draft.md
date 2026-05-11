@@ -1,24 +1,24 @@
 # SynthAML Presentation Speech Draft
 
-Total target: 3 minutes.
+Target length: about 3 minutes.
 
-Use the first four slides for the project story, then use the final three UI walkthrough slides as the demo. This version does not require a live localhost app.
+Use the deck itself as the demo. The last three slides are visual UI walkthrough slides, so you do not need to run the app live.
 
-## Title Slide
+## Slide 1: Title
 
 Hi everyone. My project is SynthAML, a commercial-style GenAI workbench for AML compliance model teams.
 
-The narrow workflow is typology intake to test-data export. The user starts with a regulatory warning, and the goal is to create inspectable synthetic transactions that help test whether current models have a blind spot.
+The narrow workflow is typology intake to test-data export. A user starts with a regulatory warning, and SynthAML helps turn that warning into inspectable synthetic transactions for model QA.
 
-## Slide 1: Context, User, and Problem
+## Slide 2: Context, User, and Problem
 
 The target user is an AML algorithm engineer or compliance data scientist at a cross-border payments company or bank.
 
-The workflow problem is a cold start. When a regulator publishes a warning about a new laundering typology, the company may not have any labeled historical transactions for that pattern yet. So the model team knows what kind of behavior to look for, but they do not have examples to test against.
+The problem is a cold start. When a regulator publishes a new laundering typology, the company may know the pattern exists, but it may not have labeled historical transactions for that pattern yet.
 
 That matters because a simple threshold rule can miss behavior that is spread across a chain of transactions.
 
-## Slide 2: Solution and Design
+## Slide 3: Solution and Design
 
 SynthAML turns a short typology warning into labeled synthetic transaction data.
 
@@ -26,7 +26,7 @@ The user pastes a warning into the app. The system extracts structured constrain
 
 The GenAI design choice is the translation step from unstructured compliance prose into structured generation constraints. I also included a deterministic fallback, so the app and evaluation can still run without an API key.
 
-## Slide 3: Evaluation and Results
+## Slide 4: Evaluation and Results
 
 For evaluation, I compared SynthAML against a simpler baseline.
 
@@ -34,20 +34,24 @@ The baseline generates suspicious records mostly using a large-amount rule. Synt
 
 I trained one classifier on SynthAML data and one on baseline data, then tested both on a hidden guided test set from the same typology. In this sample, SynthAML reached an F1 of 1.000, while the rule baseline reached 0.189. The important result is recall: SynthAML found the hidden chain-style examples, while the threshold baseline missed most of them.
 
-This is not a production AML benchmark, but it does show why the GenAI-guided workflow is more useful than a simple rule-only generator for this narrow task.
+This is not a production AML benchmark, but it shows why the GenAI-guided workflow is more useful than a simple rule-only generator for this narrow task.
 
-## Slide 4: UI Walkthrough 1
+## Slide 5: UI Walkthrough 1
 
 This is the main command center. The reviewer pastes a regulatory warning on the left, and the app turns it into a structured scenario brief on the right.
 
-## Slide 5: UI Walkthrough 2
+## Slide 6: UI Walkthrough 2
 
-This is the evaluation tab. It compares SynthAML’s guided synthetic data against the simpler rule baseline, so the project is evaluated against a real alternative.
+This is the evaluation tab. It compares SynthAML’s guided synthetic data against the simpler rule baseline, so the project is evaluated against a real alternative instead of only showing one successful example.
 
-## Slide 6: UI Walkthrough 3
+## Slide 7: UI Walkthrough 3
 
 This is the export package. The user can download the guided CSV, the baseline CSV, and the evaluation JSON. So the output is usable as a model QA package, while still keeping a human reviewer in the loop.
 
-## Short Closing
+## Closing
 
-So the business value is not replacing AML experts. It is helping them turn a new typology warning into inspectable test data faster, so model teams can evaluate blind spots before real labeled cases exist.
+The business value is not replacing AML experts. It is helping them turn a new typology warning into inspectable test data faster, so model teams can evaluate blind spots before real labeled cases exist.
+
+## Ultra-Short Version
+
+SynthAML is a GenAI workbench for AML model teams. It solves a cold-start problem: when a new laundering typology is published, teams often do not have labeled examples yet. The app extracts structured constraints from the warning, generates synthetic transaction chains, compares them against a simple baseline, and exports a model QA package. The evaluation shows the guided data transfers much better to hidden chain-style examples than a threshold baseline. A human reviewer still stays involved before any output is used.
