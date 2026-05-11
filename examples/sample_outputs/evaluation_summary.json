@@ -1,0 +1,23 @@
+{
+  "guided": {
+    "precision": 1.0,
+    "recall": 1.0,
+    "f1": 1.0,
+    "suspicious_share": 0.184
+  },
+  "baseline": {
+    "precision": 0.643,
+    "recall": 0.098,
+    "f1": 0.17,
+    "suspicious_share": 0.184
+  },
+  "guided_records": 500,
+  "baseline_records": 500,
+  "rubric": {
+    "good_output": [
+      "suspicious chains preserve fund conservation within each chain",
+      "suspicious activity is not only an amount threshold",
+      "classifier trained on guided data transfers better to a hidden guided test set"
+    ]
+  }
+}

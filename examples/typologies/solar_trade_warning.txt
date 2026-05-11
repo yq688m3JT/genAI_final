@@ -1,0 +1,8 @@
+Regulatory warning: shell companies are being used to move funds through solar
+panel import/export invoices. Payments often originate in the United States or
+United Kingdom, then split quickly to counterparties in Hong Kong, Singapore,
+and the United Arab Emirates. Narratives mention equipment deposits, logistics
+fees, or solar panel shipments. Transactions may cluster near Friday afternoon
+cutoff windows and range from $4,000 to $45,000. Compliance teams should watch
+for newly formed counterparties, repeated generic invoice wording, and rapid
+cross-border movement of funds after a funding transfer.
