@@ -1,53 +1,79 @@
 # Project Plan: SynthAML
 
 ## 1. Project Title
-**SynthAML**: Cross-Border AML "Zero-Day Typology" Synthetic Transaction Data Generation Engine
+
+**SynthAML**: Record-Driven AML Typology Discovery and Synthetic Model QA Workbench
 
 ## 2. Target User, Workflow, and Business Value
-*   **Target User:** Anti-Money Laundering (AML) algorithm engineers and compliance data scientists at cross-border payment firms (e.g., Airwallex, Payoneer) or mid-sized multinational banks.
-*   **Workflow:** 
-    1.  **Start:** User uploads a "New Typology Warning Report" (PDF) from regulatory bodies like FATF (e.g., "Using shell companies to launder money via fake solar panel exports").
-    2.  **Process:** The system automatically extracts complex criminal logic and features from the text.
-    3.  **End:** The system generates 10,000 structured, highly realistic synthetic transaction records (including SWIFT narratives, amounts, and temporal spacing) to be used for fine-tuning existing risk models (e.g., XGBoost or Graph Neural Networks).
-*   **Business Value:** Addresses the "Zero-Day" gap in AML. When a new laundering method is discovered, banks have no historical data to train models. Waiting for real cases to occur takes months, exposing banks to massive fines. SynthAML reduces this defensive lag from months to days.
+
+**Target user:** AML algorithm engineers and compliance data scientists at cross-border payments companies or banks.
+
+**Narrow workflow:** Move from suspicious laundering records to a validated candidate typology, then generate synthetic transaction chains for model QA.
+
+**Business value:** AML teams often see scattered suspicious records before an emerging pattern is formalized as a reusable typology. SynthAML helps reduce that pattern cold-start gap by using GenAI to infer a reviewable typology from messy records, then turning the validated pattern into inspectable synthetic test data.
 
 ## 3. Problem Statement and GenAI Fit
-*   **Problem Statement:** Existing risk detection models suffer from a "cold start" problem when facing novel financial crime patterns due to a total lack of negative samples.
-*   **GenAI Fit:** 
-    *   **Contextual Translation:** Traditional algorithms cannot "read" a PDF story. GenAI possesses the deep world knowledge and reasoning required to translate natural language rules into complex, multi-node business data flows.
-    *   **Reasoning:** Only GenAI can maintain the logical consistency of a multi-step money laundering chain while simulating realistic noise.
-*   **Why a simpler tool fails:** Manual data synthesis by experts is slow and cannot maintain mathematical consistency (e.g., FX rates, fees) at scale. Simple rule-based generators produce "perfect" patterns that are too easy for models to learn, failing to simulate the stealthiness of real fraud.
 
-## 4. Planned System Design and Baseline
-*   **System Design:** A lightweight web dashboard where users upload reports and configure generation parameters (e.g., "Complexity Level").
-*   **Course Concepts Integrated:**
-    *   **RAG (Retrieval-Augmented Generation):** The system chunks and embeds the uploaded PDF. During generation, the agent retrieves specific constraints (e.g., "Funds are typically split and sent on Friday afternoons") to ensure the synthetic data strictly matches the latest typology.
-    *   **Multi-step/Multi-agent Orchestration:** A dual-agent architecture. **Agent A (Noise Generator)** simulates legitimate e-commerce traffic, while **Agent B (Signal Generator)** acts as the laundering syndicate, strategically splitting and injecting illicit funds into the legitimate stream based on RAG insights.
-*   **Baseline Comparison:** We will compare SynthAML's data against "Rule-based Synthetic Data" (e.g., simple IF-THEN logic based on amount thresholds). We will measure the F1-Score of an Isolation Forest model trained on both datasets when tested against a hidden ground-truth set.
-*   **App Experience:** A "Data Factory" UI showing real-time logs of the "Synthetic Crime Network" construction, statistical distribution charts, and a one-click CSV export.
+**Problem:** Existing monitoring models are usually strongest on known patterns. When suspicious records suggest a new chain-style behavior, teams need a faster way to convert that evidence into model-test scenarios.
+
+**Why GenAI fits:** The input is unstructured: case notes, closed SAR summaries, suspicious transaction samples, and analyst comments. A GenAI model can detect recurring structure across the records, such as industries, regions, narratives, timing windows, split behavior, and shell-company counterparty signals.
+
+**Why a simpler tool is not enough:** A threshold rule can flag large transactions, but it misses behavior expressed across a chain: funding transfer, rapid splitting, cross-border destinations, vague invoice narratives, and fund-flow consistency.
+
+## 4. Final System Design and Baseline
+
+SynthAML includes:
+
+- A static browser demo for live presentation: `docs/demo.html`
+- A Streamlit workbench for local runs: `app.py`
+- A typology extractor with provider-based LLM support and deterministic fallback: `synthaml/typology.py`
+- A guided synthetic transaction generator: `synthaml/generator.py`
+- A baseline generator and evaluation script: `run_evaluation.py`
+
+Workflow:
+
+1. Self-intake suspicious records or closed case notes.
+2. Use GenAI to detect a candidate typology.
+3. Let a human reviewer approve or reject the detected pattern.
+4. Generate legitimate background records plus suspicious multi-step chains.
+5. Validate fund conservation and compare against a simple amount-threshold baseline.
+6. Export a model QA package.
 
 ## 5. Evaluation Plan
-*   **Success Metrics:** 
-    1.  **Downstream Model Uplift:** The increase in Recall for a traditional ML model when fine-tuned with synthetic data compared to being trained on legitimate data only.
-    2.  **Data Realism:** Statistical tests (e.g., Benford's Law for amounts) to ensure synthetic data mimics real-world financial distributions.
-*   **Test Set:** A manually curated "Ground Truth" set of 100 entities and 500 transactions containing 5 hidden novel laundering networks to test the detection capabilities of the baseline vs. the system.
+
+The evaluation compares:
+
+- **Guided SynthAML data:** chain-style records generated from the detected typology.
+- **Rule baseline data:** simpler suspicious examples driven mainly by transaction amount.
+
+Metrics:
+
+- Precision, recall, and F1 on a hidden guided test set.
+- Fund-conservation checks for suspicious chains.
+- Human inspectability of the detected typology and generated records.
+
+Included sample result:
+
+| Training data | Precision | Recall | F1 |
+| --- | ---: | ---: | ---: |
+| Guided SynthAML data | 1.000 | 1.000 | 1.000 |
+| Rule baseline data | 0.636 | 0.074 | 0.133 |
+
+This is an illustrative class project evaluation, not a production AML benchmark.
 
 ## 6. Example Inputs and Failure Cases
-*   **Example Inputs:**
-    1.  *Input:* FATF report on "Money Laundering through Virtual Assets and Online Gaming."
-    2.  *Expected Output:* Transactions showing frequent small-value "top-ups" followed by late-night consolidations into offshore accounts.
-*   **Failure Cases:**
-    1.  **Violation of Conservation of Funds:** The model might generate a chain where an account sends more money than it received (requires a post-processing logic layer).
-    2.  **Over-regularization:** Laundering patterns that are too precise (e.g., exactly $10,000 every time), which leads to overfitting and poor generalization in the real world.
+
+Example input records describe solar equipment exporters receiving funding transfers, rapidly splitting funds to Hong Kong, Singapore, and the United Arab Emirates, and using vague invoice narratives such as consulting invoice, equipment deposit, and logistics fee.
+
+Failure cases:
+
+- The LLM can infer the wrong origin/destination roles from messy prose.
+- Synthetic data can become too clean or regular if the generator is not constrained.
+- A detected typology may be plausible but still not supported strongly enough by the record evidence.
 
 ## 7. Risks and Governance
-*   **Risks:** Generated typologies could theoretically be reversed to "teach" actual criminals how to avoid detection.
-*   **Governance:** 
-    *   **Deployment:** Strictly intended for on-premise/VPC deployment for licensed financial institutions only.
-    *   **Privacy:** High privacy compliance; as the data is entirely synthetic, it contains no real customer PII (Personally Identifiable Information).
-    *   **Human-in-the-loop:** Compliance experts must review a sample of the generated logic before full-scale export.
 
-## 8. Plan for the Week 6 Check-in
-*   **Working App:** A functional UI that accepts text prompts and uses Structured Outputs to generate 50 logically coherent SWIFT transaction records.
-*   **Evaluation:** A Python script to validate basic financial logic (fund conservation and temporal sequence) of the generated records.
-*   **Baseline:** A demo showing the 50 records being successfully loaded and used to train a Scikit-learn anomaly detection model.
+- Defensive use only: synthetic data is for model QA, not evidence of real activity.
+- No real customer PII is required for the demo.
+- API keys must be supplied through environment variables or server-side secrets, never committed.
+- Human compliance validation stays central before any export is used for model development.

@@ -1,16 +1,16 @@
 # SynthAML
 
-SynthAML is a commercial-style GenAI workbench for AML compliance data teams. It converts a short regulatory typology warning into synthetic cross-border transaction records that can be used to test whether existing financial-crime models recognize a new pattern.
+SynthAML is a commercial-style GenAI workbench for AML compliance data teams. It uses GenAI to infer candidate laundering typologies from suspicious record batches, then turns the validated pattern into synthetic cross-border transaction records for model QA.
 
-The app is intentionally narrow: it focuses on one workflow, defensive synthetic data generation for a newly reported AML typology. It does not produce advice for evading controls.
+The app is intentionally narrow: it focuses on one defensive workflow, record-driven laundering pattern discovery to synthetic model-test data. It does not produce advice for evading controls.
 
 ## Context, User, and Problem
 
 The target user is an AML algorithm engineer or compliance data scientist at a cross-border payments company or bank.
 
-When a regulator publishes a warning about a new laundering pattern, the team often has no labeled historical transactions for that pattern. That creates a cold-start problem: existing models can be tuned on known fraud, but they may miss the new typology until real losses or regulatory findings appear.
+AML teams often have scattered suspicious records, closed case notes, or analyst-labeled samples before a pattern is formalized as a reusable typology. That creates a cold-start problem: existing models can be tuned on known fraud, but they may miss an emerging chain-style behavior until the typology is clearly defined.
 
-SynthAML helps the user move from a plain-language warning to a small labeled synthetic dataset that can be inspected, exported, and used for model testing.
+SynthAML helps the user move from messy laundering records to a human-validated candidate typology and a small labeled synthetic dataset that can be inspected, exported, and used for model testing.
 
 ## Solution and Design
 
@@ -25,18 +25,18 @@ SynthAML includes:
 
 The application workflow is:
 
-1. Paste a typology warning into the app.
-2. Extract structured constraints: industry, regions, narratives, suspicious methods, amount range, split count, and time window.
-3. Review the commercial-style scenario brief, quality gates, and run settings.
+1. Self-intake suspicious records, closed case notes, or analyst-labeled transaction samples.
+2. Use the LLM to detect a candidate typology: industry, regions, narratives, suspicious methods, amount range, split count, and time window.
+3. Let a human reviewer validate or reject the detected pattern.
 4. Generate labeled synthetic transactions with legitimate background traffic and suspicious multi-step chains.
 5. Validate that suspicious chains preserve basic fund-flow consistency.
 6. Compare the guided generator against a simple amount-threshold baseline and export the QA package.
 
-The GenAI design choice is the typology extraction step. If `OPENAI_API_KEY` is set, SynthAML can use an OpenAI model to convert warning text into structured generation constraints. If no key is available, it falls back to a deterministic heuristic extractor so the grader can still run the app and evaluation.
+The GenAI design choice is the pattern-discovery step. If an LLM provider key is set, SynthAML can use an OpenAI-compatible model to infer a structured typology from unstructured case text. If no key is available, it falls back to a deterministic heuristic extractor so the grader can still run the app and evaluation.
 
 ## Why GenAI Is Useful
 
-The business input is unstructured: a regulator or compliance team describes behavior in prose, not in a schema. A GenAI extractor can translate that prose into a structured scenario: relevant industries, counterparties, transaction narratives, timing patterns, and behavioral signals.
+The business input is unstructured: case records and analyst notes describe behavior in prose, not in a schema. A GenAI extractor can detect recurring structure across those records: relevant industries, counterparties, transaction narratives, timing patterns, and behavioral signals.
 
 A simpler rule-only tool can generate obvious anomalies, such as large transactions above a threshold. That is useful as a baseline, but it does not capture the business logic of a laundering chain: funding, rapid splitting, cross-border movement, and vague invoice narratives.
 
@@ -50,17 +50,17 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Optional LLM extraction with DeepSeek V4 Pro:
-
-```bash
-export DEEPSEEK_API_KEY="your_key_here"
-streamlit run app.py
-```
-
-The app sidebar defaults to `deepseek` and `deepseek-v4-pro`. OpenAI-compatible extraction is also supported:
+Optional LLM extraction with an OpenAI-compatible provider:
 
 ```bash
 export OPENAI_API_KEY="your_key_here"
+streamlit run app.py
+```
+
+DeepSeek V4 Pro is also supported for local runs:
+
+```bash
+export DEEPSEEK_API_KEY="your_key_here"
 ```
 
 Do not commit `.env`, API keys, customer data, or private reports.
@@ -94,7 +94,7 @@ python -m pytest -q
 
 ## Example Input
 
-The repository includes a sample warning at `examples/typologies/solar_trade_warning.txt`.
+The repository includes a sample typology source at `examples/typologies/solar_trade_warning.txt`, and the browser demo reframes the same scenario as a small suspicious-record batch for live presentation.
 
 It describes shell companies using solar panel import/export invoices, rapid splitting, vague logistics narratives, and cross-border transfers to Hong Kong, Singapore, and the United Arab Emirates.
 
@@ -117,7 +117,7 @@ Sample evaluation from the included typology:
 
 This is a small synthetic evaluation, not proof of production AML performance. It shows that a model trained on guided chain-style data transfers better to a hidden chain-style test set than a model trained only on amount-threshold examples.
 
-The app itself presents the artifact as a B2B compliance workbench with a scenario intake panel, extracted typology brief, quality gates, synthetic ledger, evaluation dashboard, and export package.
+The app itself presents the artifact as a B2B compliance workbench with record self-intake, detected pattern review, quality gates, synthetic ledger, evaluation dashboard, and export package.
 
 ### DeepSeek V4 Pro Real Case
 
@@ -161,7 +161,7 @@ What counted as good output:
 - Suspicious chains preserve fund conservation within a small rounding tolerance.
 - Suspicious records are not merely large transactions.
 - The guided generator improves recall on hidden chain-style examples compared with the rule baseline.
-- Outputs remain inspectable by a human compliance reviewer.
+- Outputs and detected typology hypotheses remain inspectable by a human compliance reviewer.
 
 What worked:
 
@@ -174,7 +174,7 @@ What failed or remains limited:
 - The generated data is still synthetic and simplified. It should not be used as production training data without expert review.
 - The fallback extractor is keyword-based and less flexible than the LLM path.
 - The current model evaluation is small and illustrative; a real team would test against richer historical typologies and analyst-labeled cases.
-- Human compliance experts should review extracted constraints and sample records before using exports in model development.
+- Human compliance experts should validate detected patterns and sample records before using exports in model development.
 
 ## Repository Structure
 

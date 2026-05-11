@@ -690,14 +690,14 @@
         <div class="case-meta">
           <div><span class="side-label">Owner</span>Model QA</div>
           <div><span class="side-label">Status</span>Review</div>
-          <div><span class="side-label">Source</span>Reg alert</div>
+          <div><span class="side-label">Source</span>Case records</div>
           <div><span class="side-label">Run</span>v3 guided</div>
         </div>
       </div>
 
       <nav aria-label="Workspace navigation">
-        <button class="active" data-screen="intake">Source intake</button>
-        <button data-screen="scenario">Scenario review</button>
+        <button class="active" data-screen="intake">Record self-intake</button>
+        <button data-screen="scenario">Pattern review</button>
         <button data-screen="generator">Generation plan</button>
         <button data-screen="ledger">Ledger analysis</button>
         <button data-screen="evaluation">Evaluation</button>
@@ -705,18 +705,18 @@
       </nav>
 
       <div class="ops-note">
-        Production posture: defensive synthetic data only. A human reviewer must approve scenario constraints before any output is used in model QA.
+        Production posture: defensive synthetic data only. A human reviewer validates the model-detected pattern before any output is used in model QA.
       </div>
     </aside>
 
     <main>
       <header>
         <div>
-          <h1>New AML typology intake</h1>
-          <p class="subtitle">Convert an imported regulatory intelligence packet into reviewed synthetic transaction data for model blind-spot testing.</p>
+          <h1>LLM-assisted laundering pattern discovery</h1>
+          <p class="subtitle">Use GenAI to scan a batch of suspicious laundering records, infer a candidate typology, and prepare reviewed synthetic data for model blind-spot testing.</p>
         </div>
         <div class="header-actions">
-          <span class="status-pill" id="case-status">Scenario ready for review</span>
+          <span class="status-pill" id="case-status">Candidate pattern ready for review</span>
           <button class="secondary" id="copy-case">Copy case summary</button>
           <button class="primary" data-jump="export">Prepare export</button>
         </div>
@@ -726,34 +726,38 @@
         <section class="screen active" id="intake">
           <div class="grid-2">
             <div class="panel">
-              <h2>Imported source packet</h2>
-              <p class="muted">In real use, this source would come from a regulatory watch feed, case queue, uploaded memo, or internal knowledge base. The text remains visible for traceability and reviewer correction.</p>
-              <textarea id="warning">Regulators warn that solar equipment exporters are using shell-company counterparties to move funds from the United States and United Kingdom to Hong Kong, Singapore, and the United Arab Emirates. Activity often involves false or vague invoice narratives, structured split payments, and clusters near Friday cutoff windows. Transactions are commonly between 4,000 and 45,000 dollars, with one funding transfer followed by three to seven rapid outbound transfers within 48 hours.</textarea>
+              <h2>Laundering record batch</h2>
+              <p class="muted">In real use, records would come from closed SAR cases, confirmed investigations, or analyst-labeled transaction samples. The LLM self-intakes the record batch and proposes the recurring laundering pattern.</p>
+              <textarea id="warning">CASE-0142: Solar export account received a funding transfer from a newly formed shell supplier, then sent six payments within 48 hours to counterparties in Hong Kong, Singapore, and the United Arab Emirates. Narratives included consulting invoice, equipment deposit, and logistics fee.
+
+CASE-0187: UK-based solar equipment exporter received a large inbound transfer, then split funds across five outbound payments near a Friday cutoff window. Receivers had thin company profiles and repeated trade-service invoice language.
+
+CASE-0219: US exporter used vague solar panel shipment and import services narratives while routing funds through shell-company counterparties. Amounts were mostly between 4,000 and 45,000, and chain totals reconciled closely with the initial funding transfer.</textarea>
               <div class="actions">
-                <button class="primary" id="extract">Run extraction</button>
-                <button class="secondary" id="reset-warning">Load sample packet</button>
-                <span class="muted" id="extract-status">Last extraction: provider-assisted sample run, reviewed.</span>
+                <button class="primary" id="extract">Detect pattern</button>
+                <button class="secondary" id="reset-warning">Load sample records</button>
+                <span class="muted" id="extract-status">Last discovery: provider-assisted sample run, reviewed.</span>
               </div>
-              <div class="progress" aria-label="Extraction confidence"><span id="progress-bar"></span></div>
+              <div class="progress" aria-label="Pattern discovery confidence"><span id="progress-bar"></span></div>
             </div>
 
             <div class="panel">
-              <h2>Extraction evidence</h2>
+              <h2>Pattern discovery evidence</h2>
               <div class="insight-list">
                 <div class="insight">
-                  <span class="label">Detected workflow</span>
-                  <span class="value">Typology-to-test-data QA package</span>
-                  <span class="muted">The alert includes behavioral constraints, transaction bounds, timing, and geography.</span>
+                  <span class="label">Detected recurring behavior</span>
+                  <span class="value">Funding transfer followed by rapid cross-border splitting</span>
+                  <span class="muted">The records share timing, counterparties, narratives, and fund-flow shape.</span>
                 </div>
                 <div class="insight">
                   <span class="label">Key entity pattern</span>
                   <span class="value">Solar exporters and shell counterparties</span>
-                  <span class="muted">Counterparties are used as synthetic receivers in split-payment chains.</span>
+                  <span class="muted">The LLM identifies repeated shell-company receiver behavior across cases.</span>
                 </div>
                 <div class="insight">
                   <span class="label">Reviewer attention</span>
-                  <span class="value">Origin and destination region roles</span>
-                  <span class="muted">Role correction guardrail keeps funds moving from US/UK to HK/SG/UAE.</span>
+                  <span class="value">Pattern is plausible, not automatically true</span>
+                  <span class="muted">The reviewer validates whether the detected typology is business-meaningful before generation.</span>
                 </div>
               </div>
             </div>
@@ -763,7 +767,7 @@
         <section class="screen" id="scenario">
           <div class="grid-2">
             <div class="panel">
-              <h2>Scenario constraints</h2>
+              <h2>Detected pattern hypothesis</h2>
               <div class="form-grid">
                 <label>Industry
                   <input value="solar equipment exports">
@@ -794,7 +798,7 @@
                 </label>
               </div>
               <div class="actions">
-                <button class="primary" data-jump="generator">Approve constraints</button>
+                <button class="primary" data-jump="generator">Approve detected pattern</button>
                 <button class="secondary">Request compliance review</button>
               </div>
             </div>
@@ -988,7 +992,7 @@
   <div class="toast" id="toast">Saved</div>
 
   <script>
-    const sampleWarning = document.getElementById("warning").value;
+    const sampleRecords = document.getElementById("warning").value;
     const txRows = [
       ["TX-000008", "2026-01-06 19:00", "United Kingdom", "United Kingdom", "$20,331.15", "solar panel shipment", "funding transfer before rapid split", "CHAIN-6E19CE13", "suspicious"],
       ["TX-000009", "2026-01-07 00:00", "United Kingdom", "Singapore", "$4,523.25", "consulting invoice", "shell-company counterparties", "CHAIN-6E19CE13", "suspicious"],
@@ -1049,20 +1053,20 @@
     document.getElementById("extract").addEventListener("click", () => {
       const status = document.getElementById("extract-status");
       const bar = document.getElementById("progress-bar");
-      status.textContent = "Extracting with reviewed typology schema...";
+      status.textContent = "Scanning records for recurring laundering behavior...";
       bar.style.width = "46%";
       window.setTimeout(() => {
-        status.textContent = "Extraction complete. Constraints ready for analyst review.";
+        status.textContent = "Pattern discovery complete. Typology hypothesis ready for analyst validation.";
         bar.style.width = "92%";
-        document.getElementById("case-status").textContent = "Constraints extracted";
-        showToast("Typology extracted");
+        document.getElementById("case-status").textContent = "Pattern detected";
+        showToast("Candidate typology detected");
         showScreen("scenario");
       }, 850);
     });
 
     document.getElementById("reset-warning").addEventListener("click", () => {
-      document.getElementById("warning").value = sampleWarning;
-      showToast("Sample source packet loaded");
+      document.getElementById("warning").value = sampleRecords;
+      showToast("Sample laundering records loaded");
     });
 
     document.getElementById("generate").addEventListener("click", () => {

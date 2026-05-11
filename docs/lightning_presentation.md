@@ -2,17 +2,18 @@
 
 ## Slide 1: Context, User, and Problem
 
-AML data scientists at cross-border payments firms need to test models against new laundering typologies soon after a regulatory warning appears.
+AML data scientists at cross-border payments firms need to detect emerging laundering patterns from suspicious records and test whether current models can recognize them.
 
-The problem is a cold start: there may be no historical labeled transactions for the new pattern, so existing models can miss it.
+The problem is a cold start: teams may have scattered case notes or suspicious samples before the recurring typology is formalized, so existing models can miss it.
 
 ## Slide 2: Solution and Design
 
-SynthAML is a Streamlit app that turns a typology warning into labeled synthetic transaction data.
+SynthAML is a workbench that uses GenAI to infer a candidate typology from suspicious records, then turns the validated pattern into labeled synthetic transaction data.
 
 Design choices:
 
-- Extract structured constraints from warning text.
+- Self-intake suspicious record batches or case notes.
+- Detect a structured candidate typology with GenAI.
 - Generate legitimate background transactions plus suspicious multi-step chains.
 - Preserve basic fund-flow consistency.
 - Include a deterministic fallback so the project is reproducible without an API key.
@@ -47,14 +48,14 @@ Show one of these:
 
 Talk track:
 
-"The app lets the user paste a warning, inspect the extracted typology, generate records, run conservation checks, compare against the baseline, and export CSVs. A human compliance reviewer should still approve the scenario before using the data for model work."
+"The app lets the user load a suspicious record batch, inspect the LLM-detected typology, generate records, run conservation checks, compare against the baseline, and export CSVs. A human compliance reviewer validates the detected pattern before using the data for model work."
 
 ## 2-3 Minute Script
 
-SynthAML is built for AML algorithm engineers at cross-border payments companies. Their workflow problem is that regulators can publish a new laundering typology before the company has any labeled examples in its transaction history. That creates a cold-start gap for model testing.
+SynthAML is built for AML algorithm engineers at cross-border payments companies. Their workflow problem is that suspicious records may reveal an emerging laundering pattern before the company has converted that pattern into a reusable model-test scenario. That creates a cold-start gap for model testing.
 
-The app takes a short warning report and extracts structured constraints such as regions, industry, narratives, amount ranges, timing, and suspicious methods. It then generates synthetic transactions with normal background traffic and suspicious chains where funds arrive, split quickly, and move cross-border with vague business narratives.
+The app takes suspicious case records and detects structured pattern elements such as regions, industry, narratives, amount ranges, timing, and suspicious methods. It then generates synthetic transactions with normal background traffic and suspicious chains where funds arrive, split quickly, and move cross-border with vague business narratives.
 
 I compared it with a simple baseline that labels suspicious transactions mainly by large amount. For evaluation, I trained one classifier on SynthAML data and one on baseline data, then tested both on a hidden guided dataset. The guided data had much stronger recall on the hidden typology-style examples, while the threshold baseline missed most of them.
 
-The main limitation is that this is still simplified synthetic data. It is useful for early testing and scenario discussion, but a compliance expert should review the extracted constraints and records before the output is used in real model development.
+The main limitation is that this is still simplified synthetic data. It is useful for early testing and scenario discussion, but a compliance expert should validate the detected pattern and records before the output is used in real model development.

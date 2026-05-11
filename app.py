@@ -184,12 +184,19 @@ st.markdown(
 )
 
 
-default_text = """Regulatory warning: shell companies are being used to move funds through
-solar panel import/export invoices. Payments often originate in the United States or
-United Kingdom, then split quickly to counterparties in Hong Kong, Singapore, and the
-United Arab Emirates. Narratives mention equipment deposits, logistics fees, or solar
-panel shipments. Transactions may cluster near Friday afternoon cutoff windows and
-range from $4,000 to $45,000."""
+default_text = """CASE-0142: Solar export account received a funding transfer from a
+newly formed shell supplier, then sent six payments within 48 hours to counterparties
+in Hong Kong, Singapore, and the United Arab Emirates. Narratives included consulting
+invoice, equipment deposit, and logistics fee.
+
+CASE-0187: UK-based solar equipment exporter received a large inbound transfer, then
+split funds across five outbound payments near a Friday cutoff window. Receivers had
+thin company profiles and repeated trade-service invoice language.
+
+CASE-0219: US exporter used vague solar panel shipment and import services narratives
+while routing funds through shell-company counterparties. Amounts were mostly between
+$4,000 and $45,000, and chain totals reconciled closely with the initial funding
+transfer."""
 
 deepseek_key = get_secret("DEEPSEEK_API_KEY")
 openai_key = get_secret("OPENAI_API_KEY")
@@ -197,19 +204,21 @@ has_llm_key = bool(deepseek_key or openai_key)
 
 with st.sidebar:
     st.markdown("## SynthAML")
-    st.caption("Scenario factory controls")
+    st.caption("Pattern discovery controls")
     records = st.slider("Records", 50, 1000, 250, step=50)
     suspicious_ratio = st.slider("Suspicious share", 0.05, 0.35, 0.18, step=0.01)
     seed = st.number_input("Random seed", min_value=1, value=42)
     use_llm = st.toggle("Use LLM extraction when API key is available", value=has_llm_key)
-    provider = st.selectbox("LLM provider", ["deepseek", "openai"])
+    provider_options = ["openai", "deepseek"]
+    provider_index = 1 if deepseek_key and not openai_key else 0
+    provider = st.selectbox("LLM provider", provider_options, index=provider_index)
     default_model = "deepseek-v4-pro" if provider == "deepseek" else "gpt-4o-mini"
     model = st.text_input("Model", value=default_model)
     provider_key = deepseek_key if provider == "deepseek" else openai_key
     st.caption("LLM key detected on server" if provider_key else "No server-side key detected")
     st.divider()
     st.caption("Reviewer mode")
-    st.selectbox("Review queue", ["New typology intake", "Model QA package", "Export review"])
+    st.selectbox("Review queue", ["Record self-intake", "Detected pattern review", "Model QA package", "Export review"])
     st.selectbox("Risk appetite", ["Balanced", "High recall", "High precision"])
 
 st.markdown(
@@ -219,7 +228,7 @@ st.markdown(
         <div class="brand-mark">SA</div>
         <div>
           <div class="brand-title">SynthAML</div>
-          <div class="brand-subtitle">Typology-to-test-data workbench for financial crime model teams</div>
+          <div class="brand-subtitle">Record-to-model-QA workbench for financial crime teams</div>
         </div>
       </div>
       <div class="status-pill">Defensive synthetic data only | Human review required</div>
@@ -231,9 +240,9 @@ st.markdown(
 intake_col, scenario_col = st.columns([1.08, 0.92], gap="large")
 
 with intake_col:
-    st.markdown('<div class="section-label">Typology Intake</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-label">Record Self-Intake</div>', unsafe_allow_html=True)
     typology_text = st.text_area(
-        "Warning report excerpt",
+        "Suspicious laundering records",
         default_text,
         height=230,
         label_visibility="collapsed",
@@ -265,7 +274,7 @@ suspicious_chains = int(data.loc[data["chain_id"].astype(bool), "chain_id"].nuni
 passing_checks = int(checks["passes"].sum()) if not checks.empty else 0
 
 with scenario_col:
-    st.markdown('<div class="section-label">Scenario Brief</div>', unsafe_allow_html=True)
+    st.markdown('<div class="section-label">Detected Pattern Brief</div>', unsafe_allow_html=True)
     st.markdown(
         f"""
         <div class="panel">
@@ -278,7 +287,7 @@ with scenario_col:
             <div class="metric-tile"><div class="metric-value">{passing_checks}/{len(checks)}</div><div class="metric-label">Checks passed</div></div>
           </div>
           <div class="gate-list">
-            <div class="gate">Structured typology constraints extracted from prose.</div>
+            <div class="gate">Candidate typology inferred from suspicious record evidence.</div>
             <div class="gate">Suspicious chains preserve funding and split logic.</div>
             <div class="gate">CSV and evaluation package ready for model QA.</div>
           </div>

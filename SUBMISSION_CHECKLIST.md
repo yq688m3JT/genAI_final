@@ -3,7 +3,7 @@
 - [x] Runnable app: `streamlit run app.py`
 - [x] Reproducible evaluation: `python run_evaluation.py`
 - [x] Tests: `python -m pytest -q`
-- [x] Sample input: `examples/typologies/solar_trade_warning.txt`
+- [x] Sample input: suspicious solar-export laundering records in `docs/demo.html` and `app.py`
 - [x] Sample outputs: `examples/sample_outputs/`
 - [x] README covers context, solution, evaluation, artifact snapshot, setup, and usage
 - [x] Final presentation deck: `docs/synthaml-final-presentation.pptx`
