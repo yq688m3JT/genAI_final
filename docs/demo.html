@@ -727,12 +727,12 @@
           <div class="grid-2">
             <div class="panel">
               <h2>Source warning</h2>
-              <p class="muted">Paste or review the alert text. In the full app, this step can call DeepSeek V4 Pro or fall back to deterministic extraction.</p>
+              <p class="muted">Paste or review the alert text. In the full app, this step can call a configured LLM provider or fall back to deterministic extraction.</p>
               <textarea id="warning">Regulators warn that solar equipment exporters are using shell-company counterparties to move funds from the United States and United Kingdom to Hong Kong, Singapore, and the United Arab Emirates. Activity often involves false or vague invoice narratives, structured split payments, and clusters near Friday cutoff windows. Transactions are commonly between 4,000 and 45,000 dollars, with one funding transfer followed by three to seven rapid outbound transfers within 48 hours.</textarea>
               <div class="actions">
                 <button class="primary" id="extract">Extract typology</button>
                 <button class="secondary" id="reset-warning">Reset sample</button>
-                <span class="muted" id="extract-status">Last extraction: DeepSeek real-case run, reviewed.</span>
+                <span class="muted" id="extract-status">Last extraction: provider-assisted sample run, reviewed.</span>
               </div>
               <div class="progress" aria-label="Extraction confidence"><span id="progress-bar"></span></div>
             </div>

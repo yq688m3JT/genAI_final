@@ -28,6 +28,6 @@ This is optional. The HTMLPreview link above works directly from the public GitH
 
 ## Why the Demo Is Static
 
-Putting a DeepSeek API key in browser JavaScript would expose it to anyone who opens the page. The browser demo therefore uses the committed sample run and evaluation artifacts.
+Putting an LLM API key in browser JavaScript would expose it to anyone who opens the page. The browser demo therefore uses the committed sample run and evaluation artifacts.
 
 The full Streamlit app is still included for local runs where an API key can stay in an environment variable or server-side secret.
