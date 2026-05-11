@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import os
 
 import pandas as pd
 import plotly.express as px
@@ -13,6 +14,16 @@ from synthaml.evaluate import evaluate_generators, validate_fund_conservation
 
 
 st.set_page_config(page_title="SynthAML", page_icon="S", layout="wide")
+
+
+def get_secret(name: str) -> str | None:
+    """Read a key from Streamlit Cloud secrets or local environment variables."""
+
+    try:
+        value = st.secrets.get(name)
+    except Exception:
+        value = None
+    return value or os.getenv(name)
 
 st.markdown(
     """
@@ -180,16 +191,22 @@ United Arab Emirates. Narratives mention equipment deposits, logistics fees, or 
 panel shipments. Transactions may cluster near Friday afternoon cutoff windows and
 range from $4,000 to $45,000."""
 
+deepseek_key = get_secret("DEEPSEEK_API_KEY")
+openai_key = get_secret("OPENAI_API_KEY")
+has_llm_key = bool(deepseek_key or openai_key)
+
 with st.sidebar:
     st.markdown("## SynthAML")
     st.caption("Scenario factory controls")
     records = st.slider("Records", 50, 1000, 250, step=50)
     suspicious_ratio = st.slider("Suspicious share", 0.05, 0.35, 0.18, step=0.01)
     seed = st.number_input("Random seed", min_value=1, value=42)
-    use_llm = st.toggle("Use LLM extraction when API key is available", value=False)
+    use_llm = st.toggle("Use LLM extraction when API key is available", value=has_llm_key)
     provider = st.selectbox("LLM provider", ["deepseek", "openai"])
     default_model = "deepseek-v4-pro" if provider == "deepseek" else "gpt-4o-mini"
     model = st.text_input("Model", value=default_model)
+    provider_key = deepseek_key if provider == "deepseek" else openai_key
+    st.caption("LLM key detected on server" if provider_key else "No server-side key detected")
     st.divider()
     st.caption("Reviewer mode")
     st.selectbox("Review queue", ["New typology intake", "Model QA package", "Export review"])
@@ -222,7 +239,13 @@ with intake_col:
         label_visibility="collapsed",
     )
 
-config = extract_typology(typology_text, use_llm=use_llm, model=model, provider=provider)
+config = extract_typology(
+    typology_text,
+    use_llm=use_llm,
+    model=model,
+    provider=provider,
+    api_key=provider_key,
+)
 data = generate_guided_transactions(
     config,
     n_records=records,

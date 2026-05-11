@@ -72,6 +72,10 @@ Run the app:
 streamlit run app.py
 ```
 
+Deploy a public demo website:
+
+See `DEPLOYMENT.md`. The recommended path is Streamlit Community Cloud with `DEEPSEEK_API_KEY` stored as a server-side secret.
+
 Run the reproducible evaluation:
 
 ```bash
