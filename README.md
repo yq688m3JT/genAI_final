@@ -94,7 +94,7 @@ python -m pytest -q
 
 ## Example Input
 
-The repository includes a sample typology source at `examples/typologies/solar_trade_warning.txt`, and the browser demo reframes the same scenario as a small suspicious-record batch for live presentation.
+The repository includes a sample typology source at `examples/typologies/solar_trade_warning.txt`, and the browser demo reframes the same scenario as a synced suspicious-record queue for live presentation.
 
 It describes shell companies using solar panel import/export invoices, rapid splitting, vague logistics narratives, and cross-border transfers to Hong Kong, Singapore, and the United Arab Emirates.
 

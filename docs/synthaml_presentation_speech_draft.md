@@ -48,7 +48,7 @@ That makes it behave like a real internal tool. The analyst can review the LLM-d
 
 For the final minute, I will click the browser demo link.
 
-I will show four things quickly: laundering record self-intake and pattern discovery, detected pattern review, the synthetic ledger plus baseline evaluation, and the export package. The goal is to show that the artifact exists as a usable workflow, not only as slides.
+I will show four things quickly: the synced laundering-record queue and pattern discovery, detected pattern review, the synthetic ledger plus baseline evaluation, and the export package. The goal is to show that the artifact exists as a usable workflow, not only as slides.
 
 ## Closing
 

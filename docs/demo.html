@@ -34,7 +34,7 @@
       letter-spacing: 0;
     }
 
-    button, input, select, textarea {
+    button, input, select {
       font: inherit;
     }
 
@@ -251,16 +251,67 @@
       line-height: 1.45;
     }
 
-    textarea {
-      width: 100%;
-      min-height: 300px;
-      resize: vertical;
-      border: 1px solid var(--line);
-      border-radius: 6px;
+    .source-strip {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .source-tile {
+      border: 1px solid var(--soft-line);
       background: #fbfcfe;
+      border-radius: 7px;
+      padding: 11px;
+      display: grid;
+      gap: 4px;
+    }
+
+    .source-tile strong {
+      font-size: 18px;
       color: var(--ink);
-      line-height: 1.45;
-      padding: 13px;
+    }
+
+    .record-feed {
+      display: grid;
+      gap: 10px;
+      max-height: 328px;
+      overflow: auto;
+      padding-right: 2px;
+    }
+
+    .record-card {
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--accent);
+      background: #fbfcfe;
+      border-radius: 7px;
+      padding: 12px;
+      display: grid;
+      gap: 7px;
+    }
+
+    .record-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      align-items: center;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .record-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border-radius: 999px;
+      padding: 4px 8px;
+      font-size: 11px;
+      font-weight: 800;
     }
 
     label {
@@ -727,16 +778,45 @@
           <div class="grid-2">
             <div class="panel">
               <h2>Laundering record batch</h2>
-              <p class="muted">In real use, records would come from closed SAR cases, confirmed investigations, or analyst-labeled transaction samples. The LLM self-intakes the record batch and proposes the recurring laundering pattern.</p>
-              <textarea id="warning">CASE-0142: Solar export account received a funding transfer from a newly formed shell supplier, then sent six payments within 48 hours to counterparties in Hong Kong, Singapore, and the United Arab Emirates. Narratives included consulting invoice, equipment deposit, and logistics fee.
-
-CASE-0187: UK-based solar equipment exporter received a large inbound transfer, then split funds across five outbound payments near a Friday cutoff window. Receivers had thin company profiles and repeated trade-service invoice language.
-
-CASE-0219: US exporter used vague solar panel shipment and import services narratives while routing funds through shell-company counterparties. Amounts were mostly between 4,000 and 45,000, and chain totals reconciled closely with the initial funding transfer.</textarea>
+              <p class="muted">In real use, this panel connects to closed SAR cases, confirmed investigations, and analyst-labeled transaction samples. The operator reviews the synced evidence; the LLM scans the records and proposes the recurring laundering pattern.</p>
+              <div class="source-strip">
+                <div class="source-tile">
+                  <span class="label">Source</span>
+                  <strong>Case queue</strong>
+                  <span class="muted">Connected</span>
+                </div>
+                <div class="source-tile">
+                  <span class="label">Synced records</span>
+                  <strong id="sync-count">3</strong>
+                  <span class="muted">Last 24 hours</span>
+                </div>
+                <div class="source-tile">
+                  <span class="label">Record type</span>
+                  <strong>SAR / QA</strong>
+                  <span class="muted">Reviewed samples</span>
+                </div>
+              </div>
+              <div class="record-feed" aria-label="Synced laundering records">
+                <article class="record-card">
+                  <div class="record-head"><span>CASE-0142</span><span class="badge draft">Closed SAR</span></div>
+                  <p class="muted">Solar export account received funding from a newly formed shell supplier, then sent six payments within 48 hours to Hong Kong, Singapore, and the United Arab Emirates.</p>
+                  <div class="record-tags"><span class="tag">rapid split</span><span class="tag">shell supplier</span><span class="tag">trade invoice</span></div>
+                </article>
+                <article class="record-card">
+                  <div class="record-head"><span>CASE-0187</span><span class="badge draft">Investigation</span></div>
+                  <p class="muted">UK solar exporter received a large inbound transfer, then split funds across five outbound payments near a Friday cutoff window to thin-profile receivers.</p>
+                  <div class="record-tags"><span class="tag">Friday cutoff</span><span class="tag">thin receivers</span><span class="tag">invoice language</span></div>
+                </article>
+                <article class="record-card">
+                  <div class="record-head"><span>CASE-0219</span><span class="badge draft">QA sample</span></div>
+                  <p class="muted">US exporter used vague solar shipment and import-services narratives while routing funds through shell-company counterparties; chain totals reconciled to initial funding.</p>
+                  <div class="record-tags"><span class="tag">4k-45k range</span><span class="tag">fund conservation</span><span class="tag">shell counterparties</span></div>
+                </article>
+              </div>
               <div class="actions">
                 <button class="primary" id="extract">Detect pattern</button>
-                <button class="secondary" id="reset-warning">Load sample records</button>
-                <span class="muted" id="extract-status">Last discovery: provider-assisted sample run, reviewed.</span>
+                <button class="secondary" id="sync-records">Sync latest records</button>
+                <span class="muted" id="extract-status">Last sync: 3 reviewed records imported from case queue.</span>
               </div>
               <div class="progress" aria-label="Pattern discovery confidence"><span id="progress-bar"></span></div>
             </div>
@@ -992,7 +1072,6 @@ CASE-0219: US exporter used vague solar panel shipment and import services narra
   <div class="toast" id="toast">Saved</div>
 
   <script>
-    const sampleRecords = document.getElementById("warning").value;
     const txRows = [
       ["TX-000008", "2026-01-06 19:00", "United Kingdom", "United Kingdom", "$20,331.15", "solar panel shipment", "funding transfer before rapid split", "CHAIN-6E19CE13", "suspicious"],
       ["TX-000009", "2026-01-07 00:00", "United Kingdom", "Singapore", "$4,523.25", "consulting invoice", "shell-company counterparties", "CHAIN-6E19CE13", "suspicious"],
@@ -1064,9 +1143,11 @@ CASE-0219: US exporter used vague solar panel shipment and import services narra
       }, 850);
     });
 
-    document.getElementById("reset-warning").addEventListener("click", () => {
-      document.getElementById("warning").value = sampleRecords;
-      showToast("Sample laundering records loaded");
+    document.getElementById("sync-records").addEventListener("click", () => {
+      document.getElementById("sync-count").textContent = "3";
+      document.getElementById("extract-status").textContent = "Latest sync complete: 3 reviewed records ready for pattern discovery.";
+      document.getElementById("case-status").textContent = "Records synced";
+      showToast("Case queue synced");
     });
 
     document.getElementById("generate").addEventListener("click", () => {

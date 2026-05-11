@@ -48,7 +48,7 @@ Show one of these:
 
 Talk track:
 
-"The app lets the user load a suspicious record batch, inspect the LLM-detected typology, generate records, run conservation checks, compare against the baseline, and export CSVs. A human compliance reviewer validates the detected pattern before using the data for model work."
+"The app shows a connected suspicious-record queue, lets the user inspect the LLM-detected typology, generate records, run conservation checks, compare against the baseline, and export CSVs. A human compliance reviewer validates the detected pattern before using the data for model work."
 
 ## 2-3 Minute Script
 
