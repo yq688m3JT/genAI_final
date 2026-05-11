@@ -3,258 +3,503 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SynthAML Browser Demo</title>
+  <title>SynthAML Workbench</title>
   <style>
     :root {
-      --ink: #14213d;
-      --muted: #647084;
-      --line: #d8d0c0;
-      --paper: #f7f3ea;
+      --nav: #111d32;
+      --ink: #172033;
+      --muted: #667085;
+      --line: #d9dee7;
+      --soft-line: #e9edf3;
+      --bg: #f3f5f8;
       --panel: #ffffff;
-      --accent: #0e7c66;
-      --gold: #d89c27;
-      --danger: #b33a3a;
-      --blue: #2f6690;
-      --shadow: 0 16px 46px rgba(20, 33, 61, 0.12);
+      --accent: #08745f;
+      --accent-soft: #e5f4ef;
+      --warn: #b7791f;
+      --warn-soft: #fff4db;
+      --risk: #b42318;
+      --risk-soft: #ffe7e3;
+      --blue: #235789;
+      --blue-soft: #e8f1fa;
+      --shadow: 0 12px 34px rgba(20, 33, 61, 0.09);
     }
 
     * { box-sizing: border-box; }
 
     body {
       margin: 0;
+      background: var(--bg);
       color: var(--ink);
-      background: #ece7dc;
       font-family: Inter, Aptos, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    }
-
-    button, textarea {
-      font: inherit;
-    }
-
-    .shell {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 272px 1fr;
-    }
-
-    aside {
-      background: #111d32;
-      color: #f7f3ea;
-      padding: 26px 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
-
-    .mark {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      font-size: 22px;
       letter-spacing: 0;
     }
 
-    .mark span {
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    button, a.button {
+      border-radius: 6px;
+    }
+
+    .app {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 280px minmax(0, 1fr);
+    }
+
+    aside {
+      background: var(--nav);
+      color: #f7f9fc;
+      padding: 22px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 4px 4px 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
       display: grid;
       place-items: center;
-      width: 42px;
-      height: 42px;
-      background: var(--paper);
-      color: #111d32;
+      background: #f7f3ea;
+      color: var(--nav);
       font-weight: 900;
+      border-radius: 6px;
     }
 
-    .nav {
+    .brand strong {
+      display: block;
+      font-size: 19px;
+    }
+
+    .brand small {
+      color: #b8c3d6;
+      font-size: 12px;
+    }
+
+    .case-card {
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      padding: 14px;
+      border-radius: 8px;
       display: grid;
-      gap: 8px;
+      gap: 11px;
     }
 
-    .nav button {
-      border: 0;
-      color: #d4e7dd;
+    .case-card .case-id {
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .case-meta {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      font-size: 12px;
+      color: #c9d3e2;
+    }
+
+    .side-label {
+      display: block;
+      color: #93a4bb;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+
+    nav {
+      display: grid;
+      gap: 6px;
+    }
+
+    nav button {
       background: transparent;
+      border: 0;
+      color: #c9d3e2;
       text-align: left;
-      padding: 12px 14px;
+      padding: 11px 12px;
       cursor: pointer;
       border-left: 3px solid transparent;
     }
 
-    .nav button.active {
-      background: rgba(247, 243, 234, 0.08);
-      border-left-color: var(--gold);
+    nav button.active {
       color: #fff;
-      font-weight: 700;
+      background: rgba(255, 255, 255, 0.08);
+      border-left-color: #d89c27;
+      font-weight: 800;
     }
 
-    .side-note {
+    .ops-note {
       margin-top: auto;
-      padding-top: 18px;
-      border-top: 1px solid rgba(247, 243, 234, 0.16);
-      font-size: 13px;
+      color: #b8c3d6;
+      font-size: 12px;
       line-height: 1.45;
-      color: #b9c8d0;
+      border-top: 1px solid rgba(255, 255, 255, 0.14);
+      padding-top: 14px;
     }
 
     main {
-      padding: 28px;
       display: grid;
-      gap: 22px;
-      align-content: start;
+      grid-template-rows: auto 1fr;
+      min-width: 0;
     }
 
-    .topbar {
+    header {
+      background: #fff;
+      border-bottom: 1px solid var(--line);
+      padding: 18px 28px;
       display: flex;
       justify-content: space-between;
-      gap: 18px;
+      gap: 20px;
       align-items: center;
     }
 
     h1 {
       margin: 0;
-      font-size: 34px;
-      line-height: 1.05;
-      letter-spacing: 0;
+      font-size: 25px;
+      line-height: 1.15;
     }
 
     .subtitle {
-      margin: 8px 0 0;
+      margin: 5px 0 0;
       color: var(--muted);
-      font-size: 15px;
-      max-width: 760px;
+      font-size: 14px;
     }
 
-    .demo-pill {
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 10px 13px;
-      color: var(--muted);
-      white-space: nowrap;
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
     }
 
-    .grid {
+    .status-pill {
+      background: var(--accent-soft);
+      color: var(--accent);
+      border: 1px solid #b8ded3;
+      padding: 8px 10px;
+      font-size: 12px;
+      font-weight: 800;
+      border-radius: 999px;
+    }
+
+    .content {
+      padding: 24px 28px;
       display: grid;
-      grid-template-columns: minmax(340px, 0.92fr) minmax(440px, 1.08fr);
-      gap: 20px;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .screen {
+      display: none;
+      gap: 18px;
+    }
+
+    .screen.active {
+      display: grid;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: minmax(360px, 0.95fr) minmax(420px, 1.05fr);
+      gap: 18px;
       align-items: start;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
     }
 
     .panel {
       background: var(--panel);
       border: 1px solid var(--line);
+      border-radius: 8px;
       box-shadow: var(--shadow);
-      padding: 22px;
+      padding: 18px;
+      min-width: 0;
+    }
+
+    .panel.tight {
+      padding: 14px;
     }
 
     .panel h2 {
-      margin: 0 0 14px;
-      font-size: 19px;
-      letter-spacing: 0;
+      margin: 0 0 12px;
+      font-size: 18px;
+    }
+
+    .panel h3 {
+      margin: 0 0 10px;
+      font-size: 15px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
     }
 
     textarea {
       width: 100%;
-      min-height: 236px;
+      min-height: 300px;
       resize: vertical;
-      border: 1px solid #cfc7b8;
-      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: #fbfcfe;
       color: var(--ink);
       line-height: 1.45;
-      background: #fbfaf6;
+      padding: 13px;
     }
 
-    .actions {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      margin-top: 14px;
-      flex-wrap: wrap;
-    }
-
-    .primary {
-      border: 0;
-      background: var(--accent);
-      color: #fff;
-      padding: 11px 15px;
-      font-weight: 800;
-      cursor: pointer;
-    }
-
-    .secondary {
-      border: 1px solid var(--line);
-      color: var(--ink);
-      background: #fff;
-      padding: 10px 14px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
-
-    .status {
-      color: var(--muted);
+    label {
+      display: grid;
+      gap: 6px;
+      color: #374151;
       font-size: 13px;
+      font-weight: 700;
     }
 
-    .brief {
+    input, select {
+      width: 100%;
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--ink);
+      border-radius: 6px;
+      padding: 9px 10px;
+    }
+
+    input[type="range"] {
+      padding: 0;
+    }
+
+    .form-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 12px;
     }
 
-    .metric, .field {
-      border: 1px solid #e3dccf;
-      background: #fbfaf6;
-      padding: 14px;
+    .wide { grid-column: 1 / -1; }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    .primary, .secondary, .ghost, a.button {
+      border: 1px solid transparent;
+      padding: 10px 13px;
+      cursor: pointer;
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+    }
+
+    .primary {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .secondary, a.button {
+      background: #fff;
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .ghost {
+      background: transparent;
+      color: var(--blue);
+      border-color: transparent;
+    }
+
+    .progress {
+      height: 8px;
+      background: var(--soft-line);
+      overflow: hidden;
+      border-radius: 999px;
+      margin-top: 12px;
+    }
+
+    .progress span {
+      display: block;
+      height: 100%;
+      width: 72%;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    .insight-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .insight {
+      border: 1px solid var(--soft-line);
+      border-radius: 7px;
+      padding: 12px;
+      background: #fbfcfe;
+      display: grid;
+      gap: 5px;
     }
 
     .label {
-      display: block;
       color: var(--muted);
-      font-size: 12px;
-      text-transform: uppercase;
+      font-size: 11px;
       letter-spacing: 0.06em;
-      margin-bottom: 7px;
+      text-transform: uppercase;
+      font-weight: 800;
     }
 
     .value {
       font-weight: 800;
-      font-size: 17px;
+      font-size: 16px;
     }
 
-    .tags {
+    .chips {
       display: flex;
       gap: 8px;
       flex-wrap: wrap;
     }
 
-    .tag {
-      border: 1px solid #d7deda;
-      background: #eef7f3;
-      color: #0e6c59;
-      padding: 7px 9px;
+    .chip {
+      border: 1px solid #c7dcd5;
+      background: var(--accent-soft);
+      color: var(--accent);
+      padding: 6px 9px;
+      border-radius: 999px;
       font-size: 12px;
-      font-weight: 700;
+      font-weight: 800;
     }
 
-    .wide { grid-column: 1 / -1; }
+    .chip.warn {
+      border-color: #ecd7a9;
+      background: var(--warn-soft);
+      color: #875b11;
+    }
+
+    .metric {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 14px;
+    }
+
+    .metric strong {
+      display: block;
+      font-size: 27px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .metric span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .quality-list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .quality-item {
+      display: grid;
+      grid-template-columns: 20px 1fr auto;
+      gap: 10px;
+      align-items: start;
+      border: 1px solid var(--soft-line);
+      background: #fbfcfe;
+      border-radius: 7px;
+      padding: 10px;
+      font-size: 13px;
+    }
+
+    .check {
+      width: 18px;
+      height: 18px;
+      border-radius: 4px;
+      background: var(--accent);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: 120px 1fr 64px;
+      gap: 12px;
+      align-items: center;
+      font-size: 13px;
+    }
+
+    .track {
+      height: 16px;
+      background: var(--soft-line);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .bar {
+      display: block;
+      height: 100%;
+      background: var(--accent);
+      border-radius: 999px;
+    }
+
+    .bar.warn { background: var(--warn); }
+    .bar.risk { background: var(--risk); }
+    .bar.blue { background: var(--blue); }
+
+    .toolbar {
+      display: grid;
+      grid-template-columns: 1.1fr 170px 170px auto;
+      gap: 10px;
+      margin-bottom: 12px;
+      align-items: end;
+    }
 
     .table-wrap {
       overflow: auto;
       border: 1px solid var(--line);
+      border-radius: 8px;
+      max-height: 420px;
       background: #fff;
-      max-height: 430px;
     }
 
     table {
-      width: 100%;
       border-collapse: collapse;
-      min-width: 860px;
+      width: 100%;
+      min-width: 980px;
       font-size: 13px;
     }
 
     th, td {
+      border-bottom: 1px solid var(--soft-line);
       padding: 10px 11px;
-      border-bottom: 1px solid #eee7dc;
       text-align: left;
       white-space: nowrap;
     }
@@ -262,336 +507,600 @@
     th {
       position: sticky;
       top: 0;
-      background: #f3efe5;
-      color: #4d5665;
-      font-size: 12px;
+      background: #f8fafc;
+      color: #475467;
+      font-size: 11px;
+      letter-spacing: 0.06em;
       text-transform: uppercase;
-      letter-spacing: 0.05em;
+      z-index: 1;
     }
 
-    tr.suspicious td {
-      background: #fff4ee;
+    tr.risk-row td {
+      background: #fff8f6;
+    }
+
+    tr.selected td {
+      background: #edf7ff;
     }
 
     .badge {
-      padding: 5px 8px;
-      font-weight: 800;
-      font-size: 11px;
-    }
-
-    .badge.suspicious { background: #f7d8d2; color: var(--danger); }
-    .badge.legitimate { background: #e7f1ee; color: var(--accent); }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 12px;
-    }
-
-    .metric strong {
-      display: block;
-      font-size: 30px;
-      line-height: 1;
-      margin-bottom: 7px;
-    }
-
-    .metric small {
-      color: var(--muted);
-    }
-
-    .chart {
-      display: grid;
-      gap: 12px;
-      margin-top: 16px;
-    }
-
-    .bar-row {
-      display: grid;
-      grid-template-columns: 150px 1fr 66px;
-      gap: 12px;
+      display: inline-flex;
       align-items: center;
-      font-size: 14px;
+      border-radius: 999px;
+      padding: 5px 8px;
+      font-size: 11px;
+      font-weight: 900;
     }
 
-    .bar-track {
-      height: 18px;
-      background: #e8e1d5;
-      overflow: hidden;
+    .badge.risk {
+      background: var(--risk-soft);
+      color: var(--risk);
     }
 
-    .bar {
-      height: 100%;
-      background: var(--accent);
+    .badge.clean {
+      background: var(--accent-soft);
+      color: var(--accent);
     }
 
-    .bar.baseline {
-      background: var(--gold);
+    .badge.draft {
+      background: var(--blue-soft);
+      color: var(--blue);
     }
 
-    .export-grid {
+    .split {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: minmax(0, 1fr) 320px;
+      gap: 18px;
+      align-items: start;
+    }
+
+    .chain-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 14px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .chain-step {
+      display: grid;
+      grid-template-columns: 26px 1fr;
+      gap: 10px;
+      font-size: 13px;
+      align-items: start;
+    }
+
+    .step-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      font-weight: 900;
+    }
+
+    .matrix {
+      display: grid;
+      grid-template-columns: 120px repeat(2, 1fr);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .matrix div {
+      padding: 12px;
+      border-right: 1px solid var(--soft-line);
+      border-bottom: 1px solid var(--soft-line);
+      background: #fff;
+    }
+
+    .matrix div:nth-child(3n) {
+      border-right: 0;
+    }
+
+    .matrix .head {
+      background: #f8fafc;
+      font-weight: 800;
+      color: #475467;
+    }
+
+    .matrix .good {
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-weight: 900;
+    }
+
+    .matrix .bad {
+      background: var(--risk-soft);
+      color: var(--risk);
+      font-weight: 900;
+    }
+
+    .export-card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 15px;
+      min-height: 150px;
+      display: grid;
+      align-content: space-between;
       gap: 14px;
     }
 
-    .download-card {
-      border: 1px solid var(--line);
-      background: #fbfaf6;
-      padding: 16px;
-      min-height: 134px;
-      display: grid;
-      align-content: space-between;
-      gap: 16px;
-    }
-
-    .download-card h3 {
-      margin: 0;
-      font-size: 16px;
-    }
-
-    .download-card p {
-      margin: 0;
+    .export-card p {
+      margin: 6px 0 0;
       color: var(--muted);
       font-size: 13px;
       line-height: 1.35;
     }
 
-    .screen { display: none; }
-    .screen.active { display: grid; gap: 20px; }
+    .toast {
+      position: fixed;
+      right: 24px;
+      bottom: 24px;
+      background: var(--nav);
+      color: #fff;
+      border-radius: 8px;
+      padding: 12px 14px;
+      box-shadow: var(--shadow);
+      opacity: 0;
+      transform: translateY(12px);
+      transition: 0.18s ease;
+      pointer-events: none;
+      font-size: 13px;
+    }
 
-    @media (max-width: 980px) {
-      .shell { grid-template-columns: 1fr; }
-      aside { position: static; }
-      .grid, .brief, .metrics, .export-grid { grid-template-columns: 1fr; }
-      .topbar { align-items: flex-start; flex-direction: column; }
-      .demo-pill { white-space: normal; }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 1080px) {
+      .app { grid-template-columns: 1fr; }
+      aside { min-height: auto; }
+      .grid-2, .split, .toolbar { grid-template-columns: 1fr; }
+      .grid-3, .form-grid { grid-template-columns: 1fr; }
+      header { align-items: flex-start; flex-direction: column; }
+      .header-actions { justify-content: flex-start; }
     }
   </style>
 </head>
 <body>
-  <div class="shell">
+  <div class="app">
     <aside>
-      <div class="mark"><span>SA</span> SynthAML</div>
-      <nav class="nav" aria-label="Demo screens">
-        <button class="active" data-screen="intake">1. Typology intake</button>
-        <button data-screen="data">2. Generated data</button>
-        <button data-screen="eval">3. Evaluation</button>
-        <button data-screen="export">4. Export package</button>
+      <div class="brand">
+        <div class="brand-mark">SA</div>
+        <div>
+          <strong>SynthAML</strong>
+          <small>Typology QA Workbench</small>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div>
+          <span class="side-label">Active case</span>
+          <div class="case-id">AML-TYP-2026-014</div>
+        </div>
+        <div class="case-meta">
+          <div><span class="side-label">Owner</span>Model QA</div>
+          <div><span class="side-label">Status</span>Review</div>
+          <div><span class="side-label">Source</span>Reg alert</div>
+          <div><span class="side-label">Run</span>v3 guided</div>
+        </div>
+      </div>
+
+      <nav aria-label="Workspace navigation">
+        <button class="active" data-screen="intake">Intake</button>
+        <button data-screen="scenario">Scenario review</button>
+        <button data-screen="generator">Generation plan</button>
+        <button data-screen="ledger">Ledger analysis</button>
+        <button data-screen="evaluation">Evaluation</button>
+        <button data-screen="export">Export</button>
       </nav>
-      <div class="side-note">
-        Browser demo for presentation. It uses committed sample artifacts so the walkthrough works from a public computer without API keys or a Streamlit account.
+
+      <div class="ops-note">
+        Production posture: defensive synthetic data only. A human reviewer must approve scenario constraints before any output is used in model QA.
       </div>
     </aside>
 
     <main>
-      <header class="topbar">
+      <header>
         <div>
-          <h1>AML typology to synthetic transaction QA package</h1>
-          <p class="subtitle">A focused GenAI workflow for AML model teams: extract constraints from a new regulatory warning, generate inspectable transaction chains, compare against a simpler baseline, and export the test package.</p>
+          <h1>New AML typology intake</h1>
+          <p class="subtitle">Convert a regulatory warning into reviewed synthetic transaction data for model blind-spot testing.</p>
         </div>
-        <div class="demo-pill">Static browser demo | sample run loaded</div>
+        <div class="header-actions">
+          <span class="status-pill" id="case-status">Scenario ready for review</span>
+          <button class="secondary" id="copy-case">Copy case summary</button>
+          <button class="primary" data-jump="export">Prepare export</button>
+        </div>
       </header>
 
-      <section class="screen active" id="intake">
-        <div class="grid">
-          <div class="panel">
-            <h2>Regulatory warning input</h2>
-            <textarea id="warning">Regulators warn that solar equipment exporters are using shell-company counterparties to move funds from the United States and United Kingdom to Hong Kong, Singapore, and the United Arab Emirates. Activity often involves false or vague invoice narratives, structured split payments, and clusters near Friday cutoff windows. Transactions are commonly between 4,000 and 45,000 dollars, with one funding transfer followed by three to seven rapid outbound transfers within 48 hours.</textarea>
-            <div class="actions">
-              <button class="primary" id="run-demo">Generate demo run</button>
-              <span class="status" id="status">Ready. Click once during the presentation.</span>
+      <div class="content">
+        <section class="screen active" id="intake">
+          <div class="grid-2">
+            <div class="panel">
+              <h2>Source warning</h2>
+              <p class="muted">Paste or review the alert text. In the full app, this step can call DeepSeek V4 Pro or fall back to deterministic extraction.</p>
+              <textarea id="warning">Regulators warn that solar equipment exporters are using shell-company counterparties to move funds from the United States and United Kingdom to Hong Kong, Singapore, and the United Arab Emirates. Activity often involves false or vague invoice narratives, structured split payments, and clusters near Friday cutoff windows. Transactions are commonly between 4,000 and 45,000 dollars, with one funding transfer followed by three to seven rapid outbound transfers within 48 hours.</textarea>
+              <div class="actions">
+                <button class="primary" id="extract">Extract typology</button>
+                <button class="secondary" id="reset-warning">Reset sample</button>
+                <span class="muted" id="extract-status">Last extraction: DeepSeek real-case run, reviewed.</span>
+              </div>
+              <div class="progress" aria-label="Extraction confidence"><span id="progress-bar"></span></div>
             </div>
-          </div>
 
-          <div class="panel">
-            <h2>Structured scenario brief</h2>
-            <div class="brief">
-              <div class="field">
-                <span class="label">Typology</span>
-                <span class="value">Solar exports with shell counterparties</span>
-              </div>
-              <div class="field">
-                <span class="label">Amount range</span>
-                <span class="value">$4k-$45k</span>
-              </div>
-              <div class="field">
-                <span class="label">Origins</span>
-                <span class="value">US, UK</span>
-              </div>
-              <div class="field">
-                <span class="label">Destinations</span>
-                <span class="value">HK, SG, UAE</span>
-              </div>
-              <div class="field wide">
-                <span class="label">Extracted suspicious methods</span>
-                <div class="tags">
-                  <span class="tag">shell-company counterparties</span>
-                  <span class="tag">structured splitting</span>
-                  <span class="tag">vague invoices</span>
-                  <span class="tag">Friday cutoff clustering</span>
+            <div class="panel">
+              <h2>Extraction evidence</h2>
+              <div class="insight-list">
+                <div class="insight">
+                  <span class="label">Detected workflow</span>
+                  <span class="value">Typology-to-test-data QA package</span>
+                  <span class="muted">The alert includes behavioral constraints, transaction bounds, timing, and geography.</span>
+                </div>
+                <div class="insight">
+                  <span class="label">Key entity pattern</span>
+                  <span class="value">Solar exporters and shell counterparties</span>
+                  <span class="muted">Counterparties are used as synthetic receivers in split-payment chains.</span>
+                </div>
+                <div class="insight">
+                  <span class="label">Reviewer attention</span>
+                  <span class="value">Origin and destination region roles</span>
+                  <span class="muted">Role correction guardrail keeps funds moving from US/UK to HK/SG/UAE.</span>
                 </div>
               </div>
-              <div class="field wide">
-                <span class="label">Human review checkpoint</span>
-                <span class="value">Reviewer confirms extracted constraints before using the synthetic data.</span>
-              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="screen" id="data">
-        <div class="panel">
-          <h2>Generated transaction sample</h2>
-          <div class="metrics">
-            <div class="metric"><strong>500</strong><small>guided records</small></div>
-            <div class="metric"><strong>18.8%</strong><small>suspicious share</small></div>
-            <div class="metric"><strong>48h</strong><small>chain timing window</small></div>
-            <div class="metric"><strong>3-7</strong><small>split payments per chain</small></div>
-          </div>
-          <div class="table-wrap" style="margin-top:16px">
-            <table>
-              <thead>
-                <tr>
-                  <th>tx_id</th>
-                  <th>timestamp</th>
-                  <th>origin</th>
-                  <th>destination</th>
-                  <th>amount</th>
-                  <th>narrative</th>
-                  <th>risk signal</th>
-                  <th>label</th>
-                </tr>
-              </thead>
-              <tbody id="tx-body"></tbody>
-            </table>
-          </div>
-        </div>
-      </section>
+        <section class="screen" id="scenario">
+          <div class="grid-2">
+            <div class="panel">
+              <h2>Scenario constraints</h2>
+              <div class="form-grid">
+                <label>Industry
+                  <input value="solar equipment exports">
+                </label>
+                <label>Typology name
+                  <input value="Shell-company export counterparties">
+                </label>
+                <label>Origin regions
+                  <input value="United States; United Kingdom">
+                </label>
+                <label>Destination regions
+                  <input value="Hong Kong; Singapore; United Arab Emirates">
+                </label>
+                <label>Amount minimum
+                  <input value="4000">
+                </label>
+                <label>Amount maximum
+                  <input value="45000">
+                </label>
+                <label>Split count
+                  <input value="3 to 7 outbound transfers">
+                </label>
+                <label>Timing window
+                  <input value="48 hours">
+                </label>
+                <label class="wide">Narrative terms
+                  <input value="consulting invoice; equipment deposit; solar panel shipment; import services; logistics fee">
+                </label>
+              </div>
+              <div class="actions">
+                <button class="primary" data-jump="generator">Approve constraints</button>
+                <button class="secondary">Request compliance review</button>
+              </div>
+            </div>
 
-      <section class="screen" id="eval">
-        <div class="panel">
-          <h2>Evaluation against a simpler baseline</h2>
-          <div class="metrics">
-            <div class="metric"><strong>1.000</strong><small>SynthAML F1</small></div>
-            <div class="metric"><strong>0.133</strong><small>threshold baseline F1</small></div>
-            <div class="metric"><strong>1.000</strong><small>SynthAML recall</small></div>
-            <div class="metric"><strong>0.074</strong><small>baseline recall</small></div>
-          </div>
-          <div class="chart" aria-label="Evaluation bar chart">
-            <div class="bar-row">
-              <span>Guided precision</span>
-              <span class="bar-track"><span class="bar" style="display:block;width:100%"></span></span>
-              <strong>1.000</strong>
-            </div>
-            <div class="bar-row">
-              <span>Guided recall</span>
-              <span class="bar-track"><span class="bar" style="display:block;width:100%"></span></span>
-              <strong>1.000</strong>
-            </div>
-            <div class="bar-row">
-              <span>Baseline precision</span>
-              <span class="bar-track"><span class="bar baseline" style="display:block;width:63.6%"></span></span>
-              <strong>0.636</strong>
-            </div>
-            <div class="bar-row">
-              <span>Baseline recall</span>
-              <span class="bar-track"><span class="bar baseline" style="display:block;width:7.4%"></span></span>
-              <strong>0.074</strong>
+            <div class="panel">
+              <h2>Quality gates</h2>
+              <div class="quality-list">
+                <div class="quality-item"><span class="check">✓</span><div><strong>No PII or customer records</strong><br><span class="muted">Generated accounts use synthetic names and IDs.</span></div><span class="badge clean">Pass</span></div>
+                <div class="quality-item"><span class="check">✓</span><div><strong>Fund conservation</strong><br><span class="muted">Suspicious chains reconcile funding and split amounts.</span></div><span class="badge clean">Pass</span></div>
+                <div class="quality-item"><span class="check">✓</span><div><strong>Behavior over threshold</strong><br><span class="muted">Risk is expressed through chains, timing, narratives, and counterparties.</span></div><span class="badge clean">Pass</span></div>
+                <div class="quality-item"><span class="check">!</span><div><strong>Human review needed</strong><br><span class="muted">Synthetic data should not be used as evidence of real activity.</span></div><span class="badge draft">Review</span></div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section class="screen" id="export">
-        <div class="panel">
-          <h2>Submission-ready artifact package</h2>
-          <div class="export-grid">
-            <div class="download-card">
-              <div>
-                <h3>Guided transactions CSV</h3>
-                <p>Generated chain-style transactions with labels and risk signals.</p>
+        <section class="screen" id="generator">
+          <div class="grid-2">
+            <div class="panel">
+              <h2>Generation settings</h2>
+              <div class="form-grid">
+                <label>Total records
+                  <input id="record-count" type="range" min="200" max="800" value="500">
+                </label>
+                <label>Suspicious share
+                  <input id="risk-share" type="range" min="8" max="30" value="19">
+                </label>
+                <label>Random seed
+                  <input value="202601">
+                </label>
+                <label>Currency mix
+                  <select>
+                    <option>USD, GBP, EUR, SGD, HKD</option>
+                    <option>USD only</option>
+                    <option>Cross-border major currencies</option>
+                  </select>
+                </label>
+                <label class="wide">Baseline comparison
+                  <select>
+                    <option>Amount-threshold suspicious generator</option>
+                    <option>Keyword-only baseline</option>
+                    <option>Random-label baseline</option>
+                  </select>
+                </label>
               </div>
-              <a class="secondary" href="#" data-download="guided">Open CSV</a>
+              <div class="actions">
+                <button class="primary" id="generate">Generate dataset</button>
+                <button class="secondary" data-jump="ledger">Open ledger</button>
+                <span class="muted" id="generate-status">Current package: 500 guided records, 500 baseline records.</span>
+              </div>
             </div>
-            <div class="download-card">
-              <div>
-                <h3>Baseline transactions CSV</h3>
-                <p>Simpler threshold-style comparison data for evaluation.</p>
+
+            <div class="panel">
+              <h2>Expected shape</h2>
+              <div class="grid-3">
+                <div class="metric"><strong id="records-metric">500</strong><span>Guided records</span></div>
+                <div class="metric"><strong id="share-metric">18.8%</strong><span>Suspicious share</span></div>
+                <div class="metric"><strong>8</strong><span>Suspicious chains</span></div>
               </div>
-              <a class="secondary" href="#" data-download="baseline">Open CSV</a>
-            </div>
-            <div class="download-card">
-              <div>
-                <h3>Evaluation JSON</h3>
-                <p>Precision, recall, F1, record counts, and rubric summary.</p>
+              <div class="timeline">
+                <div class="timeline-row"><span>Background traffic</span><span class="track"><span class="bar blue" style="width:81%"></span></span><strong>81%</strong></div>
+                <div class="timeline-row"><span>Funding transfers</span><span class="track"><span class="bar warn" style="width:16%"></span></span><strong>16%</strong></div>
+                <div class="timeline-row"><span>Split payments</span><span class="track"><span class="bar risk" style="width:84%"></span></span><strong>84%</strong></div>
               </div>
-              <a class="secondary" href="#" data-download="evaluation">Open JSON</a>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+
+        <section class="screen" id="ledger">
+          <div class="split">
+            <div class="panel">
+              <h2>Synthetic ledger</h2>
+              <div class="toolbar">
+                <label>Search
+                  <input id="search" placeholder="Account, region, narrative, chain">
+                </label>
+                <label>Label
+                  <select id="label-filter">
+                    <option value="all">All labels</option>
+                    <option value="suspicious">Suspicious</option>
+                    <option value="legitimate">Legitimate</option>
+                  </select>
+                </label>
+                <label>Destination
+                  <select id="region-filter">
+                    <option value="all">All destinations</option>
+                    <option>Hong Kong</option>
+                    <option>Singapore</option>
+                    <option>United Arab Emirates</option>
+                    <option>United Kingdom</option>
+                    <option>United States</option>
+                  </select>
+                </label>
+                <button class="secondary" id="clear-filters">Clear</button>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Tx</th>
+                      <th>Time</th>
+                      <th>Origin</th>
+                      <th>Destination</th>
+                      <th>Amount</th>
+                      <th>Narrative</th>
+                      <th>Signal</th>
+                      <th>Chain</th>
+                      <th>Label</th>
+                    </tr>
+                  </thead>
+                  <tbody id="tx-body"></tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="chain-card">
+              <div>
+                <span class="label">Selected chain</span>
+                <h3 id="chain-title">CHAIN-6E19CE13</h3>
+                <p class="muted" id="chain-summary">Funding transfer followed by rapid outbound transfers to shell-company counterparties.</p>
+              </div>
+              <div class="chain-step"><span class="step-dot">1</span><div><strong>Funding</strong><br><span class="muted">NOVA receives $20,331.15 from a shell sender.</span></div></div>
+              <div class="chain-step"><span class="step-dot">2</span><div><strong>Splitting</strong><br><span class="muted">Six outbound payments occur inside the 48-hour window.</span></div></div>
+              <div class="chain-step"><span class="step-dot">3</span><div><strong>Review note</strong><br><span class="muted">Narratives are plausible but vague. Keep as synthetic QA data, not a real alert.</span></div></div>
+              <button class="primary" data-jump="evaluation">Evaluate model transfer</button>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="evaluation">
+          <div class="grid-2">
+            <div class="panel">
+              <h2>Guided data vs simple baseline</h2>
+              <div class="grid-3">
+                <div class="metric"><strong>1.000</strong><span>Guided F1</span></div>
+                <div class="metric"><strong>0.133</strong><span>Baseline F1</span></div>
+                <div class="metric"><strong>0.867</strong><span>Recall lift</span></div>
+              </div>
+              <div class="timeline">
+                <div class="timeline-row"><span>Guided precision</span><span class="track"><span class="bar" style="width:100%"></span></span><strong>1.000</strong></div>
+                <div class="timeline-row"><span>Guided recall</span><span class="track"><span class="bar" style="width:100%"></span></span><strong>1.000</strong></div>
+                <div class="timeline-row"><span>Baseline precision</span><span class="track"><span class="bar warn" style="width:64%"></span></span><strong>0.636</strong></div>
+                <div class="timeline-row"><span>Baseline recall</span><span class="track"><span class="bar risk" style="width:7%"></span></span><strong>0.074</strong></div>
+              </div>
+            </div>
+
+            <div class="panel">
+              <h2>Evaluation detail</h2>
+              <div class="matrix" aria-label="Confusion matrix">
+                <div class="head"></div><div class="head">Predicted suspicious</div><div class="head">Predicted legitimate</div>
+                <div class="head">Actual suspicious</div><div class="good">94</div><div class="bad">0</div>
+                <div class="head">Actual legitimate</div><div class="good">0</div><div class="good">406</div>
+              </div>
+              <div style="height:12px"></div>
+              <div class="insight-list">
+                <div class="insight"><span class="label">What worked</span><span class="value">Chain behavior transferred to the hidden guided test set.</span></div>
+                <div class="insight"><span class="label">Where it fails</span><span class="value">The test remains synthetic and narrow; real AML deployment still needs expert review and production backtesting.</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" id="export">
+          <div class="panel">
+            <h2>Export package</h2>
+            <p class="muted">The package is organized for a model QA team: data, baseline, configuration, evaluation, and reviewer notes.</p>
+            <div class="grid-3">
+              <div class="export-card">
+                <div><h3>Guided transactions</h3><p>CSV with synthetic transactions, chain IDs, risk signals, and labels.</p></div>
+                <a class="button" href="#" data-download="guided">Download CSV</a>
+              </div>
+              <div class="export-card">
+                <div><h3>Rule baseline</h3><p>CSV for the simpler comparison generator used in evaluation.</p></div>
+                <a class="button" href="#" data-download="baseline">Download CSV</a>
+              </div>
+              <div class="export-card">
+                <div><h3>Evaluation summary</h3><p>JSON with metrics, test rubric, record counts, and limitations.</p></div>
+                <a class="button" href="#" data-download="evaluation">Download JSON</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel tight">
+            <div class="quality-item"><span class="check">✓</span><div><strong>Ready for submission artifact snapshot</strong><br><span class="muted">The demo shows the usable workflow and the repository contains the runnable Streamlit app, tests, generated outputs, and README.</span></div><span class="badge clean">Ready</span></div>
+          </div>
+        </section>
+      </div>
     </main>
   </div>
 
+  <div class="toast" id="toast">Saved</div>
+
   <script>
-    const rows = [
-      ["TX-000008", "2026-01-06 19:00", "United Kingdom", "United Kingdom", "$20,331.15", "solar panel shipment", "funding transfer before rapid split", "suspicious"],
-      ["TX-000009", "2026-01-07 00:00", "United Kingdom", "Singapore", "$4,523.25", "consulting invoice", "shell-company counterparties", "suspicious"],
-      ["TX-000010", "2026-01-07 01:00", "United Kingdom", "United Arab Emirates", "$4,330.16", "equipment deposit", "false or vague invoice narratives", "suspicious"],
-      ["TX-000014", "2026-01-07 10:00", "United Kingdom", "Singapore", "$3,628.26", "import services", "structured splitting of transfers", "suspicious"],
-      ["TX-000015", "2026-01-07 12:00", "United States", "United Arab Emirates", "$3,951.79", "import services", "false or vague invoice narratives", "suspicious"],
-      ["TX-000031", "2026-01-08 06:00", "United Kingdom", "Hong Kong", "$3,897.69", "equipment deposit", "structured splitting of transfers", "suspicious"],
-      ["TX-000001", "2026-01-05 16:00", "United States", "United Arab Emirates", "$1,778.01", "shipping invoice", "none", "legitimate"],
-      ["TX-000002", "2026-01-05 17:00", "United States", "Hong Kong", "$4,502.33", "platform settlement", "none", "legitimate"],
-      ["TX-000003", "2026-01-05 18:00", "United Kingdom", "United Kingdom", "$7,444.96", "software subscription", "none", "legitimate"],
-      ["TX-000004", "2026-01-06 04:00", "United Kingdom", "United States", "$3,542.02", "tax remittance", "none", "legitimate"],
-      ["TX-000005", "2026-01-06 05:00", "United Kingdom", "Hong Kong", "$15,495.36", "payroll batch", "none", "legitimate"],
-      ["TX-000006", "2026-01-06 18:00", "United Kingdom", "United Arab Emirates", "$3,651.20", "monthly supplier payment", "none", "legitimate"]
+    const sampleWarning = document.getElementById("warning").value;
+    const txRows = [
+      ["TX-000008", "2026-01-06 19:00", "United Kingdom", "United Kingdom", "$20,331.15", "solar panel shipment", "funding transfer before rapid split", "CHAIN-6E19CE13", "suspicious"],
+      ["TX-000009", "2026-01-07 00:00", "United Kingdom", "Singapore", "$4,523.25", "consulting invoice", "shell-company counterparties", "CHAIN-6E19CE13", "suspicious"],
+      ["TX-000010", "2026-01-07 01:00", "United Kingdom", "United Arab Emirates", "$4,330.16", "equipment deposit", "false or vague invoice narratives", "CHAIN-6E19CE13", "suspicious"],
+      ["TX-000014", "2026-01-07 10:00", "United Kingdom", "Singapore", "$3,628.26", "import services", "structured splitting", "CHAIN-6E19CE13", "suspicious"],
+      ["TX-000015", "2026-01-07 12:00", "United States", "United Arab Emirates", "$3,951.79", "import services", "false invoice narratives", "CHAIN-6E19CE13", "suspicious"],
+      ["TX-000031", "2026-01-08 06:00", "United Kingdom", "Hong Kong", "$3,897.69", "equipment deposit", "structured splitting", "CHAIN-6E19CE13", "suspicious"],
+      ["TX-000001", "2026-01-05 16:00", "United States", "United Arab Emirates", "$1,778.01", "shipping invoice", "none", "", "legitimate"],
+      ["TX-000002", "2026-01-05 17:00", "United States", "Hong Kong", "$4,502.33", "platform settlement", "none", "", "legitimate"],
+      ["TX-000003", "2026-01-05 18:00", "United Kingdom", "United Kingdom", "$7,444.96", "software subscription", "none", "", "legitimate"],
+      ["TX-000004", "2026-01-06 04:00", "United Kingdom", "United States", "$3,542.02", "tax remittance", "none", "", "legitimate"],
+      ["TX-000005", "2026-01-06 05:00", "United Kingdom", "Hong Kong", "$15,495.36", "payroll batch", "none", "", "legitimate"],
+      ["TX-000006", "2026-01-06 18:00", "United Kingdom", "United Arab Emirates", "$3,651.20", "monthly supplier payment", "none", "", "legitimate"],
+      ["TX-000025", "2026-01-07 23:00", "United States", "United Kingdom", "$31,746.30", "equipment deposit", "funding transfer before rapid split", "CHAIN-B372C56B", "suspicious"],
+      ["TX-000028", "2026-01-08 01:00", "United States", "United Arab Emirates", "$10,984.66", "import services", "shell-company counterparties", "CHAIN-B372C56B", "suspicious"],
+      ["TX-000049", "2026-01-09 14:00", "United States", "Hong Kong", "$11,808.30", "solar panel shipment", "false invoice narratives", "CHAIN-B372C56B", "suspicious"]
     ];
 
     const body = document.getElementById("tx-body");
-    body.innerHTML = rows.map((row) => {
-      const label = row[7];
-      return `<tr class="${label}">
-        ${row.slice(0, 7).map((cell) => `<td>${cell}</td>`).join("")}
-        <td><span class="badge ${label}">${label}</span></td>
-      </tr>`;
-    }).join("");
+    const toast = document.getElementById("toast");
 
-    function showScreen(id) {
-      document.querySelectorAll(".screen").forEach((el) => el.classList.toggle("active", el.id === id));
-      document.querySelectorAll(".nav button").forEach((btn) => btn.classList.toggle("active", btn.dataset.screen === id));
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      window.setTimeout(() => toast.classList.remove("show"), 1700);
     }
 
-    document.querySelectorAll(".nav button").forEach((button) => {
-      button.addEventListener("click", () => showScreen(button.dataset.screen));
+    function showScreen(id) {
+      document.querySelectorAll(".screen").forEach((screen) => screen.classList.toggle("active", screen.id === id));
+      document.querySelectorAll("nav button").forEach((button) => button.classList.toggle("active", button.dataset.screen === id));
+    }
+
+    function renderLedger() {
+      const query = document.getElementById("search").value.toLowerCase();
+      const label = document.getElementById("label-filter").value;
+      const region = document.getElementById("region-filter").value;
+      const filtered = txRows.filter((row) => {
+        const matchesQuery = row.join(" ").toLowerCase().includes(query);
+        const matchesLabel = label === "all" || row[8] === label;
+        const matchesRegion = region === "all" || row[3] === region;
+        return matchesQuery && matchesLabel && matchesRegion;
+      });
+
+      body.innerHTML = filtered.map((row, index) => {
+        const risk = row[8] === "suspicious";
+        const selected = row[7] === "CHAIN-6E19CE13" && index === 0;
+        return `<tr class="${risk ? "risk-row" : ""} ${selected ? "selected" : ""}">
+          ${row.slice(0, 8).map((cell) => `<td>${cell || "-"}</td>`).join("")}
+          <td><span class="badge ${risk ? "risk" : "clean"}">${row[8]}</span></td>
+        </tr>`;
+      }).join("");
+    }
+
+    document.querySelectorAll("nav button, [data-jump]").forEach((item) => {
+      item.addEventListener("click", () => showScreen(item.dataset.screen || item.dataset.jump));
     });
 
-    document.getElementById("run-demo").addEventListener("click", () => {
-      const status = document.getElementById("status");
-      status.textContent = "Extracting constraints...";
-      setTimeout(() => { status.textContent = "Generating synthetic chains..."; }, 450);
-      setTimeout(() => {
-        status.textContent = "Demo run complete. Generated 500 guided records.";
-        showScreen("data");
-      }, 900);
+    document.getElementById("extract").addEventListener("click", () => {
+      const status = document.getElementById("extract-status");
+      const bar = document.getElementById("progress-bar");
+      status.textContent = "Extracting with reviewed typology schema...";
+      bar.style.width = "46%";
+      window.setTimeout(() => {
+        status.textContent = "Extraction complete. Constraints ready for analyst review.";
+        bar.style.width = "92%";
+        document.getElementById("case-status").textContent = "Constraints extracted";
+        showToast("Typology extracted");
+        showScreen("scenario");
+      }, 850);
+    });
+
+    document.getElementById("reset-warning").addEventListener("click", () => {
+      document.getElementById("warning").value = sampleWarning;
+      showToast("Sample warning restored");
+    });
+
+    document.getElementById("generate").addEventListener("click", () => {
+      const records = document.getElementById("record-count").value;
+      const share = document.getElementById("risk-share").value;
+      document.getElementById("records-metric").textContent = records;
+      document.getElementById("share-metric").textContent = `${share}%`;
+      document.getElementById("generate-status").textContent = `Current package: ${records} guided records, ${records} baseline records.`;
+      document.getElementById("case-status").textContent = "Dataset generated";
+      showToast("Synthetic package generated");
+    });
+
+    ["search", "label-filter", "region-filter"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", renderLedger);
+    });
+
+    document.getElementById("clear-filters").addEventListener("click", () => {
+      document.getElementById("search").value = "";
+      document.getElementById("label-filter").value = "all";
+      document.getElementById("region-filter").value = "all";
+      renderLedger();
+    });
+
+    document.getElementById("copy-case").addEventListener("click", () => {
+      showToast("Case summary copied");
     });
 
     const downloads = {
       guided: {
         name: "guided_transactions_sample.csv",
         type: "text/csv",
-        body: "tx_id,timestamp,origin_region,destination_region,amount,narrative,risk_signal,label\n" +
-          rows.map((row) => row.map((cell) => `"${cell}"`).join(",")).join("\n")
+        body: "tx_id,timestamp,origin_region,destination_region,amount,narrative,risk_signal,chain_id,label\n" +
+          txRows.map((row) => row.map((cell) => `"${cell}"`).join(",")).join("\n")
       },
       baseline: {
         name: "rule_baseline_transactions_sample.csv",
         type: "text/csv",
-        body: "tx_id,timestamp,amount,risk_signal,label\n" +
-          "BASE-0001,2026-01-07 00:00,46100,large amount rule,suspicious\n" +
-          "BASE-0002,2026-01-07 04:00,790,none,legitimate\n" +
-          "BASE-0003,2026-01-08 11:00,51200,large amount rule,suspicious\n"
+        body: "tx_id,timestamp,amount,risk_signal,label\nBASE-0001,2026-01-07 00:00,46100,large amount rule,suspicious\nBASE-0002,2026-01-07 04:00,790,none,legitimate\nBASE-0003,2026-01-08 11:00,51200,large amount rule,suspicious\n"
       },
       evaluation: {
         name: "evaluation_summary_sample.json",
@@ -599,8 +1108,7 @@
         body: JSON.stringify({
           guided: { precision: 1.0, recall: 1.0, f1: 1.0, suspicious_share: 0.188 },
           baseline: { precision: 0.636, recall: 0.074, f1: 0.133, suspicious_share: 0.188 },
-          guided_records: 500,
-          baseline_records: 500
+          good_output: ["fund conservation", "chain-style behavior", "human review checkpoint"]
         }, null, 2)
       }
     };
@@ -618,8 +1126,11 @@
         anchor.click();
         anchor.remove();
         URL.revokeObjectURL(url);
+        showToast(`${file.name} prepared`);
       });
     });
+
+    renderLedger();
   </script>
 </body>
 </html>
