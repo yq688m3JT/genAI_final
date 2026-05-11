@@ -4,43 +4,44 @@ Provider: DeepSeek
 
 Model: `deepseek-v4-pro`
 
-Input: `examples/typologies/solar_trade_warning.txt`
+Input: `examples/typologies/solar_case_records.txt`
 
 API key handling: supplied at runtime; not written to disk or committed.
 
 ## Extracted Typology
 
-- Name: Solar Equipment Exports Typology: Shell-Company Counterparties
-- Industry: solar equipment exports
-- Origin regions: United States, United Kingdom
+- Name: Solar Export Shell Funding and Split
+- Industry: Solar Energy
+- Origin regions: United Kingdom, United States
 - Destination regions: Hong Kong, Singapore, United Arab Emirates
 - Amount range: $4,000 to $45,000
-- Split count: 3 to 7
+- Split count: 5 to 6
 - Time window: 48 hours
-- Methods: shell-company counterparties, structured splitting, false or vague invoice narratives, Friday cutoff clustering
+- Methods: shell company funding, structured splitting, rapid outbound transfers, thin company profiles, vague trade narratives
+- Narrative terms: consulting invoice, equipment deposit, logistics fee, solar panel shipment, import services
 
 ## Generated Records
 
-- Guided records: 300
-- Suspicious rows: 58
-- Suspicious chains: 8
-- Fund conservation checks: 8/8 passed
+- Guided CSV records: 300
+- Suspicious rows: 57
+- Suspicious chains: 9
+- Fund conservation checks: 9/9 passed
 - Minimum generated amount: $92.45
-- Maximum generated amount: $44,058.87
+- Maximum generated amount: $40,885.26
 
-The minimum amount is below the typology range because legitimate background traffic is intentionally noisy. Suspicious chain funding and split activity remains governed by the typology range.
+The minimum amount is below the typology range because legitimate background traffic is intentionally noisy. Suspicious chain funding and split activity remains governed by the detected typology.
 
 ## Evaluation
+
+The evaluation routine generates a 500-record guided training set and a 500-record rule-baseline training set, then scores both against a hidden guided test set.
 
 | Training data | Precision | Recall | F1 |
 | --- | ---: | ---: | ---: |
 | Guided SynthAML data | 1.000 | 1.000 | 1.000 |
-| Rule baseline data | 1.000 | 0.064 | 0.120 |
+| Rule baseline data | 1.000 | 0.077 | 0.143 |
 
 ## What This Real Run Showed
 
-The first DeepSeek run correctly identified the AML methods, narratives, amount range, and timing window, but it misassigned origin and destination regions. That is a realistic LLM failure mode for document extraction.
+DeepSeek successfully detected the laundering pattern from the case-record batch rather than from a manually written rule: solar export accounts receive shell-supplier funding, rapidly split funds to Hong Kong, Singapore, and the United Arab Emirates, and use vague trade-service narratives.
 
-I added a deterministic post-extraction guardrail for explicit region role phrases such as "payments originate in" and "to counterparties in." The final run preserved the region roles correctly while retaining the LLM-extracted typology details.
-
-The model-transfer result still supports the project claim: guided chain-style examples are more useful for this workflow than a simple large-transfer baseline.
+The output supports the project claim: the GenAI step can convert messy suspicious-record evidence into a structured, reviewable typology, and the guided chain-style examples are more useful for this workflow than a simple large-transfer baseline.

@@ -129,20 +129,23 @@ The real run artifacts are saved under `examples/sample_outputs/deepseek_case/`.
 
 DeepSeek extracted:
 
-- Origins: United States, United Kingdom
+- Pattern name: Solar Export Shell Funding and Split
+- Origins: United Kingdom, United States
 - Destinations: Hong Kong, Singapore, United Arab Emirates
-- Industry: solar equipment exports
+- Industry: Solar Energy
 - Amount range: $4,000 to $45,000
-- Methods: shell-company counterparties, structured splitting, vague invoice narratives, Friday cutoff clustering
+- Split count: 5 to 6 outbound transfers
+- Time window: 48 hours
+- Methods: shell company funding, structured splitting, rapid outbound transfers, thin company profiles, vague trade narratives
 
 DeepSeek case evaluation:
 
 | Training data | Precision | Recall | F1 |
 | --- | ---: | ---: | ---: |
 | Guided SynthAML data | 1.000 | 1.000 | 1.000 |
-| Rule baseline data | 1.000 | 0.064 | 0.120 |
+| Rule baseline data | 1.000 | 0.077 | 0.143 |
 
-The first DeepSeek run misassigned origin and destination regions, which is a realistic LLM failure. I added a deterministic role-correction guardrail for explicit phrases such as "originate in", "sent ... to", and "to counterparties in"; the final run preserves the region roles correctly when those cues are present.
+This real API run used the synced case-record batch in `examples/typologies/solar_case_records.txt`. DeepSeek detected the core laundering pattern from the records: shell supplier funding, rapid split payments, Hong Kong/Singapore/UAE destinations, vague trade narratives, and close reconciliation to the initial funding transfer.
 
 ## Evaluation and Results
 

@@ -1,9 +1,9 @@
 {
-  "name": "Solar Equipment Exports Typology: Shell-Company Counterparties",
-  "industry": "solar equipment exports",
+  "name": "Solar Export Shell Funding and Split",
+  "industry": "Solar Energy",
   "origin_regions": [
-    "United States",
-    "United Kingdom"
+    "United Kingdom",
+    "United States"
   ],
   "destination_regions": [
     "Hong Kong",
@@ -11,22 +11,23 @@
     "United Arab Emirates"
   ],
   "suspicious_methods": [
-    "use of shell-company counterparties",
-    "structured splitting of transfers",
-    "false or vague invoice narratives",
-    "activity clustered near Friday cutoff windows"
+    "shell company funding",
+    "structured splitting",
+    "rapid outbound transfers",
+    "thin company profiles",
+    "vague trade narratives"
   ],
   "narrative_terms": [
     "consulting invoice",
     "equipment deposit",
+    "logistics fee",
     "solar panel shipment",
-    "import services",
-    "logistics fee"
+    "import services"
   ],
   "amount_min": 4000.0,
   "amount_max": 45000.0,
-  "split_count_min": 3,
-  "split_count_max": 7,
+  "split_count_min": 5,
+  "split_count_max": 6,
   "time_window_hours": 48,
-  "risk_summary": "The warning describes solar equipment exports activity where funds are moved through use of shell-company counterparties, structured splitting of transfers, false or vague invoice narratives. The generator should create noisy legitimate traffic plus labeled suspicious chains that preserve timing and fund-flow consistency."
+  "risk_summary": "Solar export accounts receive funding from shell suppliers, then rapidly split funds to multiple high-risk jurisdictions using vague trade-service narratives, with amounts closely matching the initial transfer."
 }

@@ -28,5 +28,5 @@
   "split_count_min": 3,
   "split_count_max": 7,
   "time_window_hours": 48,
-  "risk_summary": "The warning describes solar equipment exports activity where funds are moved through use of shell-company counterparties, structured splitting of transfers, false or vague invoice narratives. The generator should create noisy legitimate traffic plus labeled suspicious chains that preserve timing and fund-flow consistency."
+  "risk_summary": "The record batch describes solar equipment exports activity where funds are moved through use of shell-company counterparties, structured splitting of transfers, false or vague invoice narratives. The generator should create noisy legitimate traffic plus labeled suspicious chains that preserve timing and fund-flow consistency."
 }

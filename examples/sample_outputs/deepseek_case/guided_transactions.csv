@@ -1,301 +1,301 @@
 tx_id,timestamp,sender_account,receiver_account,origin_region,destination_region,amount,currency,narrative,channel,chain_id,risk_signal,label
-TX-000001,2026-01-05 15:00:00,DELTA-79479,ALPHA-74620,United States,United States,1957.74,HKD,platform settlement,ach,,none,legitimate
-TX-000002,2026-01-05 15:00:00,BRIDGE-68892,CROWN-68271,United States,Singapore,4133.14,HKD,software subscription,wire,,none,legitimate
-TX-000003,2026-01-05 17:00:00,ALPHA-58451,BRIDGE-79938,United States,Singapore,3157.06,HKD,software subscription,wire,,none,legitimate
-TX-000004,2026-01-05 17:00:00,CROWN-27079,ALPHA-22924,United Kingdom,United Kingdom,1581.24,HKD,shipping invoice,ach,,none,legitimate
-TX-000005,2026-01-05 18:00:00,CROWN-65541,NOVA-94197,United States,United Kingdom,637.44,GBP,tax remittance,card,,none,legitimate
-TX-000006,2026-01-05 18:00:00,CROWN-17543,EAST-38317,United Kingdom,Hong Kong,2764.71,HKD,payroll batch,wallet,,none,legitimate
-TX-000007,2026-01-05 19:00:00,SHELL-81559,EAST-35638,United States,United States,33019.13,EUR,consulting invoice,wallet,CHAIN-6E289B30,funding transfer before rapid split,suspicious
-TX-000008,2026-01-05 20:00:00,BRIDGE-39574,CROWN-98259,United Kingdom,United States,1083.23,USD,tax remittance,wire,,none,legitimate
-TX-000009,2026-01-05 20:00:00,CROWN-65541,EAST-69642,United States,United States,774.41,EUR,software subscription,card,,none,legitimate
-TX-000010,2026-01-05 21:00:00,ALPHA-58451,ALPHA-22924,United States,United Kingdom,7250.43,HKD,shipping invoice,ach,,none,legitimate
-TX-000011,2026-01-05 23:00:00,EAST-35638,CP-96857,United States,Singapore,5309.14,USD,logistics fee,wallet,CHAIN-6E289B30,use of shell-company counterparties,suspicious
-TX-000012,2026-01-06 00:00:00,EAST-24981,BRIDGE-68892,United Kingdom,United Arab Emirates,812.04,HKD,shipping invoice,wallet,,none,legitimate
-TX-000013,2026-01-06 00:00:00,DELTA-79479,NOVA-87685,United States,Singapore,3785.86,EUR,tax remittance,ach,,none,legitimate
-TX-000014,2026-01-06 00:00:00,NOVA-11669,DELTA-13062,United Kingdom,Singapore,6292.11,GBP,software subscription,wire,,none,legitimate
-TX-000015,2026-01-06 01:00:00,EAST-46867,EAST-68648,United Kingdom,United States,3059.03,GBP,shipping invoice,wallet,,none,legitimate
-TX-000016,2026-01-06 02:00:00,EAST-35638,EAST-53359,United States,United States,4478.15,USD,monthly supplier payment,wire,,none,legitimate
-TX-000017,2026-01-06 02:00:00,EAST-38317,NOVA-57551,United States,United Arab Emirates,6821.03,EUR,platform settlement,ach,,none,legitimate
-TX-000018,2026-01-06 03:00:00,NOVA-11669,ALPHA-17329,United Kingdom,United States,8661.74,SGD,payroll batch,wire,,none,legitimate
-TX-000019,2026-01-06 03:00:00,CROWN-81061,EAST-46776,United States,United States,6383.36,USD,monthly supplier payment,wire,,none,legitimate
-TX-000020,2026-01-06 04:00:00,CROWN-81061,DELTA-12566,United Kingdom,Singapore,1219.98,SGD,tax remittance,card,,none,legitimate
-TX-000021,2026-01-06 04:00:00,CROWN-68271,BRIDGE-79938,United States,United Kingdom,4619.94,HKD,payroll batch,card,,none,legitimate
-TX-000022,2026-01-06 06:00:00,EAST-35638,CP-28327,United States,United Arab Emirates,5107.55,SGD,logistics fee,wire,CHAIN-6E289B30,structured splitting of transfers,suspicious
-TX-000023,2026-01-06 08:00:00,EAST-35638,CP-96499,United States,United Arab Emirates,3963.74,EUR,equipment deposit,wire,CHAIN-6E289B30,activity clustered near Friday cutoff windows,suspicious
-TX-000024,2026-01-06 14:00:00,EAST-35638,CP-97893,United States,Hong Kong,5249.25,EUR,solar panel shipment,wire,CHAIN-6E289B30,structured splitting of transfers,suspicious
-TX-000025,2026-01-06 15:00:00,CROWN-27079,EAST-38317,United Kingdom,United Kingdom,1697.92,HKD,tax remittance,ach,,none,legitimate
-TX-000026,2026-01-06 17:00:00,EAST-58379,NOVA-66530,United States,United Arab Emirates,2357.07,HKD,platform settlement,wallet,,none,legitimate
-TX-000027,2026-01-06 17:00:00,ALPHA-87598,DELTA-79479,United Kingdom,United Kingdom,13934.88,EUR,payroll batch,card,,none,legitimate
-TX-000028,2026-01-06 17:00:00,ALPHA-75305,ALPHA-58451,United Kingdom,Singapore,4154.28,SGD,platform settlement,ach,,none,legitimate
-TX-000029,2026-01-06 18:00:00,CROWN-20951,CROWN-68271,United States,Hong Kong,439.81,EUR,payroll batch,wire,,none,legitimate
-TX-000030,2026-01-06 18:00:00,EAST-35638,CP-94663,United Kingdom,Hong Kong,3908.32,SGD,consulting invoice,wallet,CHAIN-6E289B30,false or vague invoice narratives,suspicious
-TX-000031,2026-01-07 00:00:00,DELTA-12566,ALPHA-22924,United Kingdom,Hong Kong,6493.25,HKD,shipping invoice,card,,none,legitimate
-TX-000032,2026-01-07 03:00:00,NOVA-51207,EAST-46118,United States,United Arab Emirates,517.43,USD,software subscription,wire,,none,legitimate
-TX-000033,2026-01-07 04:00:00,ALPHA-60205,ALPHA-75305,United Kingdom,Hong Kong,5864.85,EUR,tax remittance,ach,,none,legitimate
-TX-000034,2026-01-07 08:00:00,EAST-35638,CP-84970,United Kingdom,Hong Kong,3904.64,USD,equipment deposit,wire,CHAIN-6E289B30,use of shell-company counterparties,suspicious
-TX-000035,2026-01-07 12:00:00,EAST-35638,CP-14626,United Kingdom,Singapore,5576.49,HKD,logistics fee,wallet,CHAIN-6E289B30,use of shell-company counterparties,suspicious
-TX-000036,2026-01-07 16:00:00,CROWN-68271,CROWN-20951,United States,United States,1980.88,USD,tax remittance,ach,,none,legitimate
-TX-000037,2026-01-07 16:00:00,EAST-21237,EAST-35638,United States,United States,1755.43,EUR,tax remittance,wire,,none,legitimate
-TX-000038,2026-01-07 18:00:00,EAST-28671,EAST-92269,United States,United States,1833.34,EUR,platform settlement,wallet,,none,legitimate
-TX-000039,2026-01-07 18:00:00,ALPHA-17329,EAST-21237,United States,United Kingdom,3231.26,USD,payroll batch,wallet,,none,legitimate
-TX-000040,2026-01-07 20:00:00,BRIDGE-33858,EAST-21237,United States,United Arab Emirates,988.43,HKD,payroll batch,card,,none,legitimate
-TX-000041,2026-01-07 21:00:00,CROWN-98259,NOVA-32535,United States,United Kingdom,1765.15,EUR,monthly supplier payment,card,,none,legitimate
-TX-000042,2026-01-07 23:00:00,EAST-68648,CROWN-65541,United Kingdom,United Arab Emirates,2094.23,EUR,software subscription,ach,,none,legitimate
-TX-000043,2026-01-08 00:00:00,EAST-58324,EAST-24981,United States,Singapore,1092.74,HKD,monthly supplier payment,ach,,none,legitimate
-TX-000044,2026-01-08 04:00:00,BRIDGE-53025,NOVA-35165,United States,Singapore,5023.8,GBP,tax remittance,wallet,,none,legitimate
-TX-000045,2026-01-08 04:00:00,EAST-28671,EAST-46776,United States,Hong Kong,288.49,GBP,payroll batch,ach,,none,legitimate
-TX-000046,2026-01-08 05:00:00,DELTA-15103,NOVA-73318,United States,United Kingdom,9932.0,HKD,tax remittance,card,,none,legitimate
-TX-000047,2026-01-08 15:00:00,CROWN-27079,BRIDGE-14628,United States,Hong Kong,1478.89,USD,tax remittance,card,,none,legitimate
-TX-000048,2026-01-08 16:00:00,DELTA-12566,BRIDGE-33858,United Kingdom,United Kingdom,3112.22,EUR,shipping invoice,wallet,,none,legitimate
-TX-000049,2026-01-08 16:00:00,ALPHA-23880,EAST-46776,United States,United Kingdom,2921.42,GBP,monthly supplier payment,card,,none,legitimate
-TX-000050,2026-01-08 17:00:00,CROWN-27079,CROWN-81061,United States,United Arab Emirates,6543.31,HKD,shipping invoice,ach,,none,legitimate
-TX-000051,2026-01-08 19:00:00,EAST-46776,ALPHA-58451,United States,Singapore,5547.43,SGD,payroll batch,ach,,none,legitimate
-TX-000052,2026-01-08 21:00:00,NOVA-87685,EAST-21237,United Kingdom,United States,3122.36,USD,tax remittance,wallet,,none,legitimate
-TX-000053,2026-01-08 21:00:00,EAST-58379,EAST-69642,United States,United Kingdom,2762.52,EUR,monthly supplier payment,wallet,,none,legitimate
-TX-000054,2026-01-08 22:00:00,EAST-46867,DELTA-79479,United Kingdom,United Kingdom,2016.26,EUR,software subscription,ach,,none,legitimate
-TX-000055,2026-01-09 01:00:00,EAST-21237,EAST-58379,United States,Hong Kong,11384.47,HKD,tax remittance,wire,,none,legitimate
-TX-000056,2026-01-09 02:00:00,ALPHA-22924,EAST-28671,United Kingdom,United Arab Emirates,6192.0,HKD,software subscription,wire,,none,legitimate
-TX-000057,2026-01-09 03:00:00,BRIDGE-68892,CROWN-65541,United States,United States,2135.1,HKD,platform settlement,card,,none,legitimate
-TX-000058,2026-01-09 04:00:00,EAST-58379,NOVA-87685,United States,United Kingdom,2855.54,SGD,monthly supplier payment,wire,,none,legitimate
-TX-000059,2026-01-09 16:00:00,CROWN-98259,ALPHA-38972,United States,United Arab Emirates,1390.53,EUR,shipping invoice,wire,,none,legitimate
-TX-000060,2026-01-09 21:00:00,NOVA-64555,CROWN-27079,United States,United Arab Emirates,3302.43,EUR,shipping invoice,card,,none,legitimate
-TX-000061,2026-01-09 23:00:00,BRIDGE-53025,CROWN-17543,United States,United Kingdom,2640.63,EUR,platform settlement,wire,,none,legitimate
-TX-000062,2026-01-10 01:00:00,CROWN-27079,BRIDGE-33858,United States,Singapore,16640.66,GBP,tax remittance,ach,,none,legitimate
-TX-000063,2026-01-10 03:00:00,EAST-46776,EAST-21237,United Kingdom,United States,3382.46,EUR,monthly supplier payment,wire,,none,legitimate
-TX-000064,2026-01-10 04:00:00,NOVA-66530,EAST-46867,United States,United Kingdom,1552.99,EUR,platform settlement,wallet,,none,legitimate
-TX-000065,2026-01-10 05:00:00,EAST-28671,EAST-58324,United Kingdom,United States,7201.23,HKD,tax remittance,card,,none,legitimate
-TX-000066,2026-01-10 15:00:00,DELTA-13062,BRIDGE-14628,United Kingdom,Hong Kong,2834.74,SGD,monthly supplier payment,wire,,none,legitimate
-TX-000067,2026-01-10 22:00:00,BRIDGE-33858,NOVA-66530,United Kingdom,United States,92.45,USD,software subscription,wallet,,none,legitimate
-TX-000068,2026-01-11 00:00:00,BRIDGE-79938,CROWN-17543,United States,United Kingdom,11773.21,GBP,monthly supplier payment,ach,,none,legitimate
-TX-000069,2026-01-11 01:00:00,BRIDGE-39574,CROWN-81061,United Kingdom,Singapore,9865.87,EUR,software subscription,ach,,none,legitimate
-TX-000070,2026-01-11 17:00:00,EAST-46118,CROWN-69602,United States,United Kingdom,13769.32,EUR,platform settlement,card,,none,legitimate
-TX-000071,2026-01-11 17:00:00,SHELL-80354,ALPHA-91219,United Kingdom,United States,38210.41,HKD,equipment deposit,wire,CHAIN-85B4966B,funding transfer before rapid split,suspicious
-TX-000072,2026-01-11 18:00:00,ALPHA-22924,EAST-92269,United Kingdom,United States,1763.42,SGD,software subscription,wire,,none,legitimate
-TX-000073,2026-01-11 18:00:00,NOVA-94197,ALPHA-87598,United States,Singapore,4568.77,SGD,software subscription,ach,,none,legitimate
-TX-000074,2026-01-11 18:00:00,DELTA-12566,EAST-68648,United States,United Kingdom,2829.37,EUR,monthly supplier payment,wire,,none,legitimate
-TX-000075,2026-01-11 21:00:00,ALPHA-91219,CP-31368,United Kingdom,Singapore,5484.54,EUR,import services,ach,CHAIN-85B4966B,false or vague invoice narratives,suspicious
-TX-000076,2026-01-11 23:00:00,EAST-35638,NOVA-94197,United Kingdom,Singapore,3617.03,HKD,payroll batch,ach,,none,legitimate
-TX-000077,2026-01-12 02:00:00,ALPHA-91219,CP-30006,United States,United Arab Emirates,4836.11,GBP,consulting invoice,wire,CHAIN-85B4966B,activity clustered near Friday cutoff windows,suspicious
-TX-000078,2026-01-12 02:00:00,DELTA-79479,CROWN-20951,United States,Singapore,4581.22,GBP,monthly supplier payment,wallet,,none,legitimate
-TX-000079,2026-01-12 05:00:00,CROWN-81061,EAST-28671,United Kingdom,Singapore,7496.01,SGD,software subscription,card,,none,legitimate
-TX-000080,2026-01-12 05:00:00,CROWN-17543,EAST-46776,United Kingdom,Singapore,2262.21,SGD,monthly supplier payment,wallet,,none,legitimate
-TX-000081,2026-01-12 09:00:00,ALPHA-91219,CP-29356,United Kingdom,United Arab Emirates,5500.77,SGD,import services,wire,CHAIN-85B4966B,structured splitting of transfers,suspicious
-TX-000082,2026-01-12 13:00:00,ALPHA-91219,CP-22119,United Kingdom,Singapore,6543.37,USD,import services,ach,CHAIN-85B4966B,activity clustered near Friday cutoff windows,suspicious
-TX-000083,2026-01-12 15:00:00,ALPHA-91219,CP-29217,United States,United Arab Emirates,4603.64,GBP,import services,ach,CHAIN-85B4966B,structured splitting of transfers,suspicious
-TX-000084,2026-01-12 15:00:00,BRIDGE-39574,EAST-21237,United Kingdom,United Arab Emirates,536.73,SGD,monthly supplier payment,ach,,none,legitimate
-TX-000085,2026-01-12 17:00:00,EAST-92269,ALPHA-23880,United Kingdom,Hong Kong,1053.84,GBP,software subscription,card,,none,legitimate
-TX-000086,2026-01-12 17:00:00,EAST-68648,BRIDGE-14628,United States,Hong Kong,2147.98,HKD,tax remittance,wire,,none,legitimate
-TX-000087,2026-01-12 18:00:00,ALPHA-91219,CP-94074,United States,Hong Kong,6071.14,HKD,consulting invoice,wire,CHAIN-85B4966B,use of shell-company counterparties,suspicious
-TX-000088,2026-01-12 18:00:00,EAST-38317,CROWN-81061,United States,Singapore,1711.06,HKD,monthly supplier payment,wire,,none,legitimate
-TX-000089,2026-01-12 19:00:00,NOVA-94197,EAST-68648,United States,United States,815.79,USD,tax remittance,wire,,none,legitimate
-TX-000090,2026-01-12 20:00:00,CROWN-20951,NOVA-35165,United States,Hong Kong,1967.38,SGD,software subscription,wire,,none,legitimate
-TX-000091,2026-01-13 04:00:00,EAST-46867,EAST-69642,United Kingdom,United Kingdom,1374.05,USD,payroll batch,card,,none,legitimate
-TX-000092,2026-01-13 05:00:00,ALPHA-91219,CP-82115,United States,Singapore,5170.84,USD,logistics fee,ach,CHAIN-85B4966B,use of shell-company counterparties,suspicious
-TX-000093,2026-01-13 15:00:00,DELTA-13062,EAST-46776,United Kingdom,United States,1343.48,SGD,tax remittance,wire,,none,legitimate
-TX-000094,2026-01-13 21:00:00,CROWN-29599,DELTA-15103,United Kingdom,United States,643.12,SGD,monthly supplier payment,wire,,none,legitimate
-TX-000095,2026-01-13 23:00:00,EAST-46867,NOVA-32535,United Kingdom,Hong Kong,1494.24,USD,platform settlement,ach,,none,legitimate
-TX-000096,2026-01-13 23:00:00,DELTA-15103,EAST-46776,United States,United Kingdom,1494.85,EUR,tax remittance,wallet,,none,legitimate
-TX-000097,2026-01-14 00:00:00,EAST-28671,NOVA-32535,United States,United Arab Emirates,2489.15,EUR,software subscription,wire,,none,legitimate
-TX-000098,2026-01-14 05:00:00,CROWN-27079,DELTA-79479,United States,United Arab Emirates,8642.88,GBP,platform settlement,wire,,none,legitimate
-TX-000099,2026-01-14 16:00:00,NOVA-87685,ALPHA-91219,United States,Hong Kong,2065.3,SGD,platform settlement,card,,none,legitimate
-TX-000100,2026-01-14 18:00:00,EAST-35638,ALPHA-58451,United Kingdom,Hong Kong,1953.08,USD,software subscription,ach,,none,legitimate
-TX-000101,2026-01-14 19:00:00,NOVA-73318,NOVA-51207,United States,United Kingdom,13012.56,USD,monthly supplier payment,wire,,none,legitimate
-TX-000102,2026-01-14 20:00:00,ALPHA-75305,ALPHA-91219,United States,Hong Kong,2166.27,GBP,software subscription,wallet,,none,legitimate
-TX-000103,2026-01-14 20:00:00,BRIDGE-14628,ALPHA-91219,United Kingdom,United Arab Emirates,3703.33,HKD,platform settlement,card,,none,legitimate
-TX-000104,2026-01-15 01:00:00,EAST-21237,NOVA-35165,United States,Hong Kong,3895.83,HKD,platform settlement,card,,none,legitimate
-TX-000105,2026-01-15 01:00:00,BRIDGE-39574,NOVA-94197,United Kingdom,Hong Kong,16045.17,GBP,payroll batch,wire,,none,legitimate
-TX-000106,2026-01-15 04:00:00,ALPHA-87598,EAST-92269,United Kingdom,United States,2716.27,GBP,software subscription,wallet,,none,legitimate
-TX-000107,2026-01-15 05:00:00,DELTA-33282,CROWN-17543,United Kingdom,United States,4483.29,USD,shipping invoice,wallet,,none,legitimate
-TX-000108,2026-01-15 15:00:00,BRIDGE-14628,EAST-24981,United Kingdom,United Arab Emirates,570.82,USD,shipping invoice,wallet,,none,legitimate
-TX-000109,2026-01-15 16:00:00,DELTA-15103,ALPHA-17329,United States,Hong Kong,980.52,EUR,payroll batch,ach,,none,legitimate
-TX-000110,2026-01-15 16:00:00,NOVA-32535,NOVA-87685,United Kingdom,United States,1221.75,SGD,payroll batch,ach,,none,legitimate
-TX-000111,2026-01-15 18:00:00,ALPHA-22924,ALPHA-38972,United Kingdom,United Kingdom,889.14,USD,payroll batch,card,,none,legitimate
-TX-000112,2026-01-15 18:00:00,ALPHA-38972,NOVA-57551,United Kingdom,Singapore,1811.06,GBP,payroll batch,card,,none,legitimate
-TX-000113,2026-01-15 19:00:00,EAST-38612,CROWN-69602,United States,Singapore,16988.08,HKD,software subscription,card,,none,legitimate
-TX-000114,2026-01-15 20:00:00,NOVA-11669,CROWN-27079,United Kingdom,Hong Kong,1798.37,EUR,shipping invoice,card,,none,legitimate
-TX-000115,2026-01-15 22:00:00,BRIDGE-53025,ALPHA-22924,United Kingdom,United Arab Emirates,1951.17,GBP,monthly supplier payment,wallet,,none,legitimate
-TX-000116,2026-01-15 23:00:00,DELTA-15103,ALPHA-23880,United Kingdom,Hong Kong,1493.18,SGD,platform settlement,wallet,,none,legitimate
-TX-000117,2026-01-16 00:00:00,BRIDGE-68892,CROWN-81061,United Kingdom,United States,959.78,HKD,software subscription,wire,,none,legitimate
-TX-000118,2026-01-16 00:00:00,EAST-58379,NOVA-64555,United Kingdom,Singapore,12863.88,USD,payroll batch,wire,,none,legitimate
-TX-000119,2026-01-16 01:00:00,EAST-28671,NOVA-87685,United States,United States,1844.07,USD,shipping invoice,wire,,none,legitimate
-TX-000120,2026-01-16 04:00:00,BRIDGE-14628,ALPHA-38972,United States,United Arab Emirates,2154.03,SGD,tax remittance,wallet,,none,legitimate
-TX-000121,2026-01-16 15:00:00,CROWN-20951,DELTA-12566,United States,United Kingdom,369.8,SGD,tax remittance,card,,none,legitimate
-TX-000122,2026-01-16 15:00:00,EAST-38317,EAST-53359,United Kingdom,Singapore,4953.1,HKD,payroll batch,card,,none,legitimate
-TX-000123,2026-01-16 17:00:00,CROWN-29599,EAST-38317,United States,United Arab Emirates,2221.95,GBP,software subscription,card,,none,legitimate
-TX-000124,2026-01-16 19:00:00,ALPHA-74620,DELTA-79479,United Kingdom,Singapore,1850.27,EUR,payroll batch,card,,none,legitimate
-TX-000125,2026-01-16 20:00:00,NOVA-94197,EAST-58379,United Kingdom,United Arab Emirates,6938.57,SGD,shipping invoice,wallet,,none,legitimate
-TX-000126,2026-01-16 20:00:00,EAST-35638,CROWN-98259,United States,United States,696.28,USD,platform settlement,ach,,none,legitimate
-TX-000127,2026-01-16 20:00:00,SHELL-76723,NOVA-87685,United States,United States,36827.65,USD,consulting invoice,wire,CHAIN-2E2B0CB6,funding transfer before rapid split,suspicious
-TX-000128,2026-01-16 22:00:00,NOVA-87685,CP-27575,United Kingdom,Hong Kong,4938.83,EUR,equipment deposit,wire,CHAIN-2E2B0CB6,activity clustered near Friday cutoff windows,suspicious
-TX-000129,2026-01-16 23:00:00,NOVA-51207,NOVA-11669,United Kingdom,United Kingdom,1878.4,HKD,platform settlement,wallet,,none,legitimate
-TX-000130,2026-01-17 04:00:00,DELTA-15103,EAST-53359,United Kingdom,Hong Kong,12807.8,HKD,software subscription,card,,none,legitimate
-TX-000131,2026-01-17 15:00:00,NOVA-87685,CP-84683,United States,Hong Kong,6903.48,HKD,logistics fee,wire,CHAIN-2E2B0CB6,false or vague invoice narratives,suspicious
-TX-000132,2026-01-17 17:00:00,NOVA-87685,CP-91217,United States,United Arab Emirates,6203.27,HKD,import services,ach,CHAIN-2E2B0CB6,false or vague invoice narratives,suspicious
-TX-000133,2026-01-17 19:00:00,NOVA-66530,DELTA-12566,United States,United States,4302.84,HKD,shipping invoice,card,,none,legitimate
-TX-000134,2026-01-17 19:00:00,NOVA-87685,CP-59822,United Kingdom,Hong Kong,5305.17,SGD,import services,wallet,CHAIN-2E2B0CB6,structured splitting of transfers,suspicious
-TX-000135,2026-01-17 19:00:00,ALPHA-23880,NOVA-57551,United Kingdom,United Arab Emirates,4965.57,SGD,tax remittance,card,,none,legitimate
-TX-000136,2026-01-17 20:00:00,EAST-35638,NOVA-32535,United Kingdom,United States,1314.74,HKD,monthly supplier payment,wallet,,none,legitimate
-TX-000137,2026-01-18 00:00:00,EAST-38612,EAST-46867,United States,Singapore,3446.66,USD,monthly supplier payment,card,,none,legitimate
-TX-000138,2026-01-18 00:00:00,CROWN-81061,ALPHA-17329,United Kingdom,United Arab Emirates,2861.63,EUR,shipping invoice,wire,,none,legitimate
-TX-000139,2026-01-18 01:00:00,SHELL-91207,EAST-28671,United Kingdom,United States,40701.74,EUR,consulting invoice,wallet,CHAIN-EAD7CACC,funding transfer before rapid split,suspicious
-TX-000140,2026-01-18 02:00:00,CROWN-69602,EAST-46776,United Kingdom,Singapore,2261.18,HKD,monthly supplier payment,ach,,none,legitimate
-TX-000141,2026-01-18 03:00:00,ALPHA-75305,CROWN-29599,United Kingdom,Hong Kong,6497.26,SGD,monthly supplier payment,wallet,,none,legitimate
-TX-000142,2026-01-18 07:00:00,NOVA-87685,CP-95356,United States,United Arab Emirates,6779.55,HKD,solar panel shipment,wallet,CHAIN-2E2B0CB6,structured splitting of transfers,suspicious
-TX-000143,2026-01-18 14:00:00,NOVA-87685,CP-80135,United States,Hong Kong,6697.35,GBP,import services,wallet,CHAIN-2E2B0CB6,use of shell-company counterparties,suspicious
-TX-000144,2026-01-18 15:00:00,DELTA-15103,CROWN-98259,United Kingdom,Singapore,1983.41,HKD,software subscription,wallet,,none,legitimate
-TX-000145,2026-01-18 19:00:00,CROWN-27079,EAST-38612,United States,United States,1174.07,SGD,shipping invoice,ach,,none,legitimate
-TX-000146,2026-01-18 22:00:00,NOVA-64555,NOVA-11669,United Kingdom,Hong Kong,2993.11,EUR,tax remittance,wallet,,none,legitimate
-TX-000147,2026-01-18 23:00:00,EAST-53359,DELTA-13062,United Kingdom,United Kingdom,8421.26,USD,software subscription,card,,none,legitimate
-TX-000148,2026-01-19 00:00:00,DELTA-79479,NOVA-64555,United Kingdom,United Arab Emirates,10322.87,USD,shipping invoice,card,,none,legitimate
-TX-000149,2026-01-19 00:00:00,NOVA-73318,EAST-38317,United Kingdom,United Kingdom,1877.09,USD,payroll batch,card,,none,legitimate
-TX-000150,2026-01-19 01:00:00,CROWN-27079,ALPHA-58451,United States,Hong Kong,2040.37,SGD,software subscription,wallet,,none,legitimate
-TX-000151,2026-01-19 02:00:00,CROWN-17543,EAST-92269,United States,United Kingdom,11582.67,USD,shipping invoice,wire,,none,legitimate
-TX-000152,2026-01-19 03:00:00,CROWN-29599,DELTA-12566,United States,United States,8292.05,EUR,shipping invoice,wire,,none,legitimate
-TX-000153,2026-01-19 04:00:00,ALPHA-58451,CROWN-29599,United Kingdom,United Arab Emirates,2583.71,USD,software subscription,wire,,none,legitimate
-TX-000154,2026-01-19 04:00:00,EAST-69642,CROWN-65541,United States,Hong Kong,2919.73,SGD,platform settlement,ach,,none,legitimate
-TX-000155,2026-01-19 15:00:00,EAST-28671,CP-10415,United Kingdom,Singapore,8573.42,SGD,logistics fee,wallet,CHAIN-EAD7CACC,structured splitting of transfers,suspicious
-TX-000156,2026-01-19 17:00:00,DELTA-12566,ALPHA-60205,United Kingdom,United Kingdom,734.78,GBP,tax remittance,card,,none,legitimate
-TX-000157,2026-01-19 17:00:00,EAST-69642,CROWN-68271,United States,Hong Kong,2580.1,HKD,payroll batch,wallet,,none,legitimate
-TX-000158,2026-01-19 17:00:00,EAST-28671,CP-66962,United Kingdom,Hong Kong,10392.52,USD,equipment deposit,wallet,CHAIN-EAD7CACC,use of shell-company counterparties,suspicious
-TX-000159,2026-01-19 19:00:00,DELTA-12566,EAST-58379,United States,Hong Kong,14945.37,SGD,platform settlement,card,,none,legitimate
-TX-000160,2026-01-19 19:00:00,EAST-24981,EAST-69642,United States,Singapore,2047.52,HKD,payroll batch,ach,,none,legitimate
-TX-000161,2026-01-19 21:00:00,EAST-24981,NOVA-57551,United States,Singapore,3711.16,EUR,platform settlement,card,,none,legitimate
-TX-000162,2026-01-19 21:00:00,BRIDGE-79938,EAST-24981,United Kingdom,United Arab Emirates,2099.38,GBP,monthly supplier payment,wallet,,none,legitimate
-TX-000163,2026-01-19 22:00:00,CROWN-29599,EAST-38317,United Kingdom,Singapore,3330.99,EUR,platform settlement,wallet,,none,legitimate
-TX-000164,2026-01-19 23:00:00,EAST-28671,CP-14940,United Kingdom,United Arab Emirates,11076.53,EUR,consulting invoice,wallet,CHAIN-EAD7CACC,activity clustered near Friday cutoff windows,suspicious
-TX-000165,2026-01-19 23:00:00,ALPHA-74620,NOVA-11669,United Kingdom,United States,6761.02,SGD,software subscription,wire,,none,legitimate
-TX-000166,2026-01-20 00:00:00,EAST-28671,CP-57368,United Kingdom,Hong Kong,10659.27,HKD,equipment deposit,ach,CHAIN-EAD7CACC,structured splitting of transfers,suspicious
-TX-000167,2026-01-20 02:00:00,DELTA-33282,CROWN-20951,United States,Singapore,3901.46,USD,tax remittance,wire,,none,legitimate
-TX-000168,2026-01-20 02:00:00,ALPHA-74620,NOVA-57551,United Kingdom,Singapore,5123.45,GBP,tax remittance,wallet,,none,legitimate
-TX-000169,2026-01-20 03:00:00,BRIDGE-33858,NOVA-32535,United Kingdom,Hong Kong,6320.2,USD,software subscription,ach,,none,legitimate
-TX-000170,2026-01-20 03:00:00,EAST-46776,EAST-68648,United States,United Arab Emirates,1282.82,SGD,shipping invoice,card,,none,legitimate
-TX-000171,2026-01-20 03:00:00,EAST-38612,EAST-46776,United Kingdom,United States,10935.35,EUR,tax remittance,card,,none,legitimate
-TX-000172,2026-01-20 03:00:00,CROWN-98259,ALPHA-74620,United States,United Kingdom,1865.73,GBP,shipping invoice,ach,,none,legitimate
-TX-000173,2026-01-20 03:00:00,SHELL-17454,CROWN-17543,United States,United Kingdom,44058.87,USD,import services,wallet,CHAIN-F946BD51,funding transfer before rapid split,suspicious
-TX-000174,2026-01-20 05:00:00,CROWN-17543,CP-28594,United Kingdom,Hong Kong,5732.37,USD,equipment deposit,ach,CHAIN-F946BD51,activity clustered near Friday cutoff windows,suspicious
-TX-000175,2026-01-20 10:00:00,CROWN-17543,CP-65279,United States,Hong Kong,5370.01,SGD,solar panel shipment,ach,CHAIN-F946BD51,activity clustered near Friday cutoff windows,suspicious
-TX-000176,2026-01-20 10:00:00,CROWN-17543,CP-82920,United States,United Arab Emirates,5673.8,HKD,logistics fee,wire,CHAIN-F946BD51,false or vague invoice narratives,suspicious
-TX-000177,2026-01-20 14:00:00,CROWN-17543,CP-90872,United Kingdom,Hong Kong,6379.09,EUR,logistics fee,wallet,CHAIN-F946BD51,activity clustered near Friday cutoff windows,suspicious
-TX-000178,2026-01-20 16:00:00,BRIDGE-53025,NOVA-57551,United States,Hong Kong,3658.54,GBP,platform settlement,wire,,none,legitimate
-TX-000179,2026-01-20 16:00:00,EAST-46776,BRIDGE-33858,United States,United States,7446.25,GBP,payroll batch,card,,none,legitimate
-TX-000180,2026-01-20 17:00:00,CROWN-69602,CROWN-17543,United Kingdom,United Kingdom,7199.98,HKD,shipping invoice,ach,,none,legitimate
-TX-000181,2026-01-20 19:00:00,CROWN-17543,CP-83511,United Kingdom,Singapore,7632.42,GBP,consulting invoice,wallet,CHAIN-F946BD51,activity clustered near Friday cutoff windows,suspicious
-TX-000182,2026-01-20 23:00:00,NOVA-64555,ALPHA-23880,United Kingdom,United Kingdom,2095.86,SGD,tax remittance,wire,,none,legitimate
-TX-000183,2026-01-21 01:00:00,CROWN-17543,CP-83315,United Kingdom,Hong Kong,7588.76,EUR,consulting invoice,wallet,CHAIN-F946BD51,use of shell-company counterparties,suspicious
-TX-000184,2026-01-21 01:00:00,SHELL-20721,NOVA-94197,United States,United Kingdom,38691.74,GBP,consulting invoice,wire,CHAIN-BEEF3F05,funding transfer before rapid split,suspicious
-TX-000185,2026-01-21 03:00:00,NOVA-51207,ALPHA-75305,United Kingdom,Hong Kong,230.92,EUR,shipping invoice,wire,,none,legitimate
-TX-000186,2026-01-21 04:00:00,NOVA-94197,CP-43983,United States,Hong Kong,6348.46,HKD,import services,wire,CHAIN-BEEF3F05,activity clustered near Friday cutoff windows,suspicious
-TX-000187,2026-01-21 04:00:00,ALPHA-17329,EAST-38317,United States,Singapore,2622.86,GBP,software subscription,card,,none,legitimate
-TX-000188,2026-01-21 05:00:00,EAST-58324,BRIDGE-53025,United States,Singapore,9691.68,HKD,tax remittance,wallet,,none,legitimate
-TX-000189,2026-01-21 06:00:00,CROWN-17543,CP-49171,United States,Singapore,5682.42,USD,consulting invoice,ach,CHAIN-F946BD51,structured splitting of transfers,suspicious
-TX-000190,2026-01-21 07:00:00,NOVA-94197,CP-46129,United States,Singapore,6186.27,HKD,equipment deposit,ach,CHAIN-BEEF3F05,use of shell-company counterparties,suspicious
-TX-000191,2026-01-21 09:00:00,NOVA-94197,CP-91325,United Kingdom,Hong Kong,6594.44,GBP,logistics fee,wallet,CHAIN-BEEF3F05,use of shell-company counterparties,suspicious
-TX-000192,2026-01-21 12:00:00,NOVA-94197,CP-60796,United States,Singapore,6799.89,SGD,logistics fee,wallet,CHAIN-BEEF3F05,false or vague invoice narratives,suspicious
-TX-000193,2026-01-21 15:00:00,EAST-58379,EAST-46867,United States,Hong Kong,30913.49,EUR,tax remittance,wire,,none,legitimate
-TX-000194,2026-01-21 17:00:00,NOVA-11669,EAST-46118,United States,Singapore,810.51,USD,monthly supplier payment,card,,none,legitimate
-TX-000195,2026-01-21 19:00:00,EAST-58324,NOVA-32535,United States,Hong Kong,22925.93,SGD,payroll batch,ach,,none,legitimate
-TX-000196,2026-01-21 20:00:00,NOVA-94197,CP-99291,United Kingdom,Singapore,6831.12,GBP,solar panel shipment,wallet,CHAIN-BEEF3F05,false or vague invoice narratives,suspicious
-TX-000197,2026-01-21 23:00:00,EAST-38612,CROWN-20951,United Kingdom,United States,2399.74,SGD,platform settlement,card,,none,legitimate
-TX-000198,2026-01-21 23:00:00,NOVA-11669,ALPHA-58451,United Kingdom,United States,1768.86,EUR,software subscription,card,,none,legitimate
-TX-000199,2026-01-21 23:00:00,EAST-46867,ALPHA-60205,United States,United States,6278.76,GBP,monthly supplier payment,ach,,none,legitimate
-TX-000200,2026-01-22 01:00:00,EAST-46867,EAST-46118,United States,Singapore,819.84,HKD,platform settlement,ach,,none,legitimate
-TX-000201,2026-01-22 03:00:00,ALPHA-22924,BRIDGE-39574,United Kingdom,United Kingdom,3208.97,EUR,software subscription,wallet,,none,legitimate
-TX-000202,2026-01-22 04:00:00,ALPHA-38972,BRIDGE-68892,United States,United Arab Emirates,5339.86,USD,platform settlement,card,,none,legitimate
-TX-000203,2026-01-22 05:00:00,ALPHA-58451,BRIDGE-33858,United Kingdom,Singapore,2871.88,GBP,payroll batch,wire,,none,legitimate
-TX-000204,2026-01-22 05:00:00,EAST-68648,BRIDGE-33858,United Kingdom,United Arab Emirates,3472.46,USD,platform settlement,card,,none,legitimate
-TX-000205,2026-01-22 15:00:00,DELTA-33282,EAST-38612,United States,United States,1886.11,USD,software subscription,ach,,none,legitimate
-TX-000206,2026-01-22 16:00:00,BRIDGE-79938,NOVA-51207,United Kingdom,United States,4026.78,USD,monthly supplier payment,ach,,none,legitimate
-TX-000207,2026-01-22 17:00:00,EAST-46867,NOVA-73318,United States,Hong Kong,3313.28,SGD,tax remittance,wire,,none,legitimate
-TX-000208,2026-01-22 20:00:00,EAST-38612,DELTA-79479,United States,United States,8590.35,HKD,shipping invoice,ach,,none,legitimate
-TX-000209,2026-01-22 22:00:00,NOVA-94197,CP-21676,United Kingdom,Hong Kong,5931.56,GBP,equipment deposit,ach,CHAIN-BEEF3F05,false or vague invoice narratives,suspicious
-TX-000210,2026-01-22 22:00:00,CROWN-98259,EAST-24981,United Kingdom,Singapore,1249.45,SGD,shipping invoice,card,,none,legitimate
-TX-000211,2026-01-22 23:00:00,ALPHA-22924,EAST-69642,United States,United Arab Emirates,2058.89,SGD,software subscription,wire,,none,legitimate
-TX-000212,2026-01-23 01:00:00,SHELL-26727,NOVA-57551,United Kingdom,United States,32667.36,HKD,solar panel shipment,wallet,CHAIN-68D4765A,funding transfer before rapid split,suspicious
-TX-000213,2026-01-23 02:00:00,NOVA-64555,DELTA-12566,United Kingdom,Hong Kong,2427.67,HKD,platform settlement,ach,,none,legitimate
-TX-000214,2026-01-23 03:00:00,NOVA-57551,CP-89913,United States,Singapore,4597.87,SGD,equipment deposit,ach,CHAIN-68D4765A,use of shell-company counterparties,suspicious
-TX-000215,2026-01-23 04:00:00,NOVA-73318,CROWN-98259,United Kingdom,Hong Kong,774.28,SGD,tax remittance,wallet,,none,legitimate
-TX-000216,2026-01-23 05:00:00,EAST-24981,EAST-58324,United Kingdom,United Kingdom,5153.51,GBP,monthly supplier payment,card,,none,legitimate
-TX-000217,2026-01-23 05:00:00,NOVA-64555,EAST-58324,United States,United States,10566.71,HKD,monthly supplier payment,ach,,none,legitimate
-TX-000218,2026-01-23 06:00:00,NOVA-57551,CP-18085,United States,Hong Kong,4297.18,EUR,consulting invoice,wallet,CHAIN-68D4765A,false or vague invoice narratives,suspicious
-TX-000219,2026-01-23 10:00:00,NOVA-57551,CP-56548,United States,Hong Kong,4854.9,GBP,solar panel shipment,wallet,CHAIN-68D4765A,activity clustered near Friday cutoff windows,suspicious
-TX-000220,2026-01-23 15:00:00,DELTA-13062,CROWN-65541,United States,Singapore,2077.1,USD,tax remittance,card,,none,legitimate
-TX-000221,2026-01-23 15:00:00,NOVA-35165,BRIDGE-14628,United States,United Kingdom,997.86,HKD,platform settlement,card,,none,legitimate
-TX-000222,2026-01-23 18:00:00,EAST-46867,EAST-69642,United Kingdom,Singapore,3124.3,GBP,platform settlement,wire,,none,legitimate
-TX-000223,2026-01-23 18:00:00,ALPHA-38972,NOVA-87685,United Kingdom,United Arab Emirates,4979.71,USD,shipping invoice,ach,,none,legitimate
-TX-000224,2026-01-23 19:00:00,NOVA-51207,CROWN-17543,United States,Singapore,1183.78,SGD,tax remittance,card,,none,legitimate
-TX-000225,2026-01-23 19:00:00,ALPHA-75305,NOVA-73318,United States,United Kingdom,7637.28,HKD,monthly supplier payment,wire,,none,legitimate
-TX-000226,2026-01-23 19:00:00,DELTA-12566,NOVA-51207,United Kingdom,Hong Kong,1911.72,SGD,monthly supplier payment,wallet,,none,legitimate
-TX-000227,2026-01-23 20:00:00,EAST-35638,CROWN-69602,United Kingdom,United Kingdom,7579.2,EUR,platform settlement,wire,,none,legitimate
-TX-000228,2026-01-23 20:00:00,EAST-38612,EAST-68648,United Kingdom,Singapore,5376.97,GBP,shipping invoice,ach,,none,legitimate
-TX-000229,2026-01-23 21:00:00,ALPHA-75305,DELTA-79479,United Kingdom,Hong Kong,519.8,USD,shipping invoice,ach,,none,legitimate
-TX-000230,2026-01-23 21:00:00,DELTA-15103,EAST-38612,United Kingdom,Hong Kong,625.74,USD,tax remittance,ach,,none,legitimate
-TX-000231,2026-01-23 22:00:00,ALPHA-75305,NOVA-66530,United Kingdom,United Kingdom,2414.99,USD,payroll batch,ach,,none,legitimate
-TX-000232,2026-01-23 22:00:00,NOVA-11669,ALPHA-74620,United Kingdom,Hong Kong,8565.96,EUR,shipping invoice,wire,,none,legitimate
-TX-000233,2026-01-23 22:00:00,NOVA-57551,EAST-46776,United Kingdom,Singapore,1420.09,SGD,shipping invoice,wire,,none,legitimate
-TX-000234,2026-01-23 22:00:00,SHELL-66016,EAST-58324,United Kingdom,United States,41281.74,GBP,consulting invoice,wallet,CHAIN-0A69A53B,funding transfer before rapid split,suspicious
-TX-000235,2026-01-23 23:00:00,BRIDGE-33858,ALPHA-87598,United Kingdom,United Arab Emirates,730.09,USD,software subscription,card,,none,legitimate
-TX-000236,2026-01-24 02:00:00,CROWN-98259,ALPHA-38972,United States,United Kingdom,33750.0,USD,monthly supplier payment,card,,none,legitimate
-TX-000237,2026-01-24 03:00:00,EAST-38317,NOVA-32535,United States,United Kingdom,6968.7,GBP,monthly supplier payment,wallet,,none,legitimate
-TX-000238,2026-01-24 03:00:00,EAST-58324,CP-69821,United States,Singapore,5780.37,SGD,solar panel shipment,wire,CHAIN-0A69A53B,use of shell-company counterparties,suspicious
-TX-000239,2026-01-24 04:00:00,EAST-28671,ALPHA-17329,United States,Singapore,6875.94,SGD,platform settlement,ach,,none,legitimate
-TX-000240,2026-01-24 05:00:00,BRIDGE-39574,CROWN-98259,United Kingdom,United States,3055.45,GBP,monthly supplier payment,card,,none,legitimate
-TX-000241,2026-01-24 08:00:00,NOVA-57551,CP-55992,United States,Singapore,4594.65,USD,solar panel shipment,wire,CHAIN-68D4765A,use of shell-company counterparties,suspicious
-TX-000242,2026-01-24 12:00:00,NOVA-57551,CP-29417,United Kingdom,United Arab Emirates,4875.6,GBP,import services,wallet,CHAIN-68D4765A,false or vague invoice narratives,suspicious
-TX-000243,2026-01-24 12:00:00,NOVA-57551,CP-39008,United Kingdom,United Arab Emirates,4698.78,USD,import services,wallet,CHAIN-68D4765A,use of shell-company counterparties,suspicious
-TX-000244,2026-01-24 16:00:00,EAST-28671,CROWN-20951,United States,United Arab Emirates,17771.36,USD,platform settlement,wallet,,none,legitimate
-TX-000245,2026-01-24 18:00:00,NOVA-57551,CP-78635,United Kingdom,Singapore,4748.38,EUR,equipment deposit,ach,CHAIN-68D4765A,structured splitting of transfers,suspicious
-TX-000246,2026-01-24 22:00:00,ALPHA-60205,EAST-58324,United Kingdom,Hong Kong,3399.94,EUR,tax remittance,wire,,none,legitimate
-TX-000247,2026-01-25 00:00:00,ALPHA-23880,CROWN-29599,United States,United Arab Emirates,5245.97,GBP,shipping invoice,card,,none,legitimate
-TX-000248,2026-01-25 01:00:00,EAST-38612,EAST-21237,United Kingdom,United Arab Emirates,2021.72,GBP,platform settlement,card,,none,legitimate
-TX-000249,2026-01-25 01:00:00,ALPHA-22924,DELTA-79479,United States,United States,1304.55,HKD,payroll batch,ach,,none,legitimate
-TX-000250,2026-01-25 01:00:00,EAST-58324,CP-61188,United Kingdom,United Arab Emirates,7505.62,GBP,equipment deposit,wire,CHAIN-0A69A53B,use of shell-company counterparties,suspicious
-TX-000251,2026-01-25 04:00:00,BRIDGE-33858,ALPHA-22924,United Kingdom,United Kingdom,682.06,SGD,platform settlement,wallet,,none,legitimate
-TX-000252,2026-01-25 09:00:00,EAST-58324,CP-94612,United States,Singapore,6746.61,GBP,solar panel shipment,ach,CHAIN-0A69A53B,false or vague invoice narratives,suspicious
-TX-000253,2026-01-25 12:00:00,EAST-58324,CP-77433,United Kingdom,United Arab Emirates,6850.97,USD,consulting invoice,wallet,CHAIN-0A69A53B,activity clustered near Friday cutoff windows,suspicious
-TX-000254,2026-01-25 14:00:00,EAST-58324,CP-92745,United Kingdom,United Arab Emirates,6504.76,EUR,import services,wire,CHAIN-0A69A53B,activity clustered near Friday cutoff windows,suspicious
-TX-000255,2026-01-25 15:00:00,ALPHA-60205,ALPHA-58451,United Kingdom,United Arab Emirates,8322.39,SGD,software subscription,ach,,none,legitimate
-TX-000256,2026-01-25 18:00:00,EAST-58324,CP-29080,United Kingdom,Hong Kong,7893.41,HKD,consulting invoice,ach,CHAIN-0A69A53B,structured splitting of transfers,suspicious
-TX-000257,2026-01-25 23:00:00,BRIDGE-53025,EAST-68648,United States,Singapore,18612.78,USD,shipping invoice,card,,none,legitimate
-TX-000258,2026-01-26 01:00:00,BRIDGE-14628,CROWN-20951,United Kingdom,United Kingdom,3625.84,EUR,shipping invoice,wire,,none,legitimate
-TX-000259,2026-01-26 02:00:00,BRIDGE-33858,EAST-69642,United States,Singapore,882.12,HKD,software subscription,card,,none,legitimate
-TX-000260,2026-01-26 03:00:00,BRIDGE-79938,NOVA-51207,United Kingdom,United Arab Emirates,2288.22,USD,payroll batch,card,,none,legitimate
-TX-000261,2026-01-26 03:00:00,EAST-46776,CROWN-98259,United States,Singapore,4395.54,GBP,monthly supplier payment,ach,,none,legitimate
-TX-000262,2026-01-26 05:00:00,EAST-68648,BRIDGE-14628,United States,Hong Kong,1841.8,USD,platform settlement,wallet,,none,legitimate
-TX-000263,2026-01-26 16:00:00,EAST-58324,NOVA-57551,United Kingdom,Singapore,2429.87,USD,shipping invoice,card,,none,legitimate
-TX-000264,2026-01-26 16:00:00,EAST-24981,ALPHA-74620,United Kingdom,United States,8612.24,USD,payroll batch,ach,,none,legitimate
-TX-000265,2026-01-26 17:00:00,CROWN-65541,EAST-46118,United States,United Arab Emirates,5142.88,HKD,software subscription,wallet,,none,legitimate
-TX-000266,2026-01-26 17:00:00,NOVA-57551,ALPHA-58451,United States,Hong Kong,1875.62,HKD,platform settlement,ach,,none,legitimate
-TX-000267,2026-01-26 21:00:00,EAST-69642,EAST-38612,United States,Hong Kong,1324.35,SGD,tax remittance,wire,,none,legitimate
-TX-000268,2026-01-26 22:00:00,EAST-38317,NOVA-94197,United States,United States,855.01,SGD,shipping invoice,wire,,none,legitimate
-TX-000269,2026-01-26 23:00:00,EAST-46118,CROWN-29599,United Kingdom,United Arab Emirates,1263.61,EUR,payroll batch,wallet,,none,legitimate
-TX-000270,2026-01-26 23:00:00,EAST-38612,DELTA-12566,United States,Singapore,918.22,EUR,monthly supplier payment,card,,none,legitimate
-TX-000271,2026-01-27 00:00:00,EAST-69642,ALPHA-17329,United Kingdom,Singapore,542.31,GBP,software subscription,ach,,none,legitimate
-TX-000272,2026-01-27 00:00:00,DELTA-33282,NOVA-57551,United Kingdom,United States,692.96,GBP,tax remittance,card,,none,legitimate
-TX-000273,2026-01-27 02:00:00,CROWN-69602,BRIDGE-39574,United States,United States,1882.95,SGD,software subscription,wallet,,none,legitimate
-TX-000274,2026-01-27 03:00:00,BRIDGE-53025,NOVA-35165,United Kingdom,United Arab Emirates,1029.11,GBP,payroll batch,wire,,none,legitimate
-TX-000275,2026-01-27 04:00:00,BRIDGE-33858,NOVA-87685,United States,United Kingdom,3842.26,EUR,monthly supplier payment,wallet,,none,legitimate
-TX-000276,2026-01-27 04:00:00,NOVA-35165,ALPHA-75305,United States,United Arab Emirates,5418.68,HKD,platform settlement,card,,none,legitimate
-TX-000277,2026-01-27 05:00:00,BRIDGE-14628,EAST-46776,United States,United States,4224.39,SGD,software subscription,ach,,none,legitimate
-TX-000278,2026-01-27 20:00:00,CROWN-65541,DELTA-33282,United Kingdom,Hong Kong,11730.85,GBP,software subscription,wire,,none,legitimate
-TX-000279,2026-01-27 20:00:00,CROWN-17543,EAST-69642,United States,Singapore,2196.97,GBP,shipping invoice,wire,,none,legitimate
-TX-000280,2026-01-27 21:00:00,ALPHA-60205,NOVA-66530,United States,United States,2030.16,GBP,shipping invoice,ach,,none,legitimate
-TX-000281,2026-01-28 02:00:00,ALPHA-87598,BRIDGE-14628,United States,United Kingdom,903.78,SGD,tax remittance,ach,,none,legitimate
-TX-000282,2026-01-28 02:00:00,EAST-69642,ALPHA-38972,United Kingdom,Singapore,15157.4,GBP,monthly supplier payment,wallet,,none,legitimate
-TX-000283,2026-01-28 03:00:00,DELTA-12566,BRIDGE-39574,United States,United States,3867.59,USD,monthly supplier payment,card,,none,legitimate
-TX-000284,2026-01-28 04:00:00,ALPHA-17329,EAST-38317,United Kingdom,United Kingdom,3899.73,GBP,platform settlement,ach,,none,legitimate
-TX-000285,2026-01-28 05:00:00,NOVA-73318,CROWN-27079,United Kingdom,United Kingdom,3509.18,EUR,monthly supplier payment,wire,,none,legitimate
-TX-000286,2026-01-28 19:00:00,CROWN-20951,ALPHA-75305,United States,United Arab Emirates,1750.24,SGD,monthly supplier payment,wallet,,none,legitimate
-TX-000287,2026-01-28 20:00:00,EAST-92269,DELTA-13062,United Kingdom,Hong Kong,1696.68,GBP,monthly supplier payment,wallet,,none,legitimate
-TX-000288,2026-01-28 21:00:00,ALPHA-75305,BRIDGE-68892,United States,Hong Kong,1871.46,EUR,software subscription,wallet,,none,legitimate
-TX-000289,2026-01-29 00:00:00,DELTA-79479,BRIDGE-33858,United States,Hong Kong,9030.24,HKD,platform settlement,wire,,none,legitimate
-TX-000290,2026-01-29 03:00:00,CROWN-69602,DELTA-15103,United Kingdom,United States,5705.88,SGD,shipping invoice,wallet,,none,legitimate
-TX-000291,2026-01-29 04:00:00,EAST-68648,ALPHA-38972,United Kingdom,Singapore,4904.63,GBP,payroll batch,ach,,none,legitimate
-TX-000292,2026-01-29 15:00:00,EAST-38612,CROWN-81061,United Kingdom,United Arab Emirates,4988.13,HKD,shipping invoice,card,,none,legitimate
-TX-000293,2026-01-29 17:00:00,CROWN-17543,CROWN-68271,United Kingdom,United Kingdom,3859.44,GBP,platform settlement,ach,,none,legitimate
-TX-000294,2026-01-29 17:00:00,BRIDGE-53025,NOVA-73318,United States,United Kingdom,5152.46,HKD,shipping invoice,card,,none,legitimate
-TX-000295,2026-01-29 17:00:00,ALPHA-23880,EAST-38612,United States,Hong Kong,6157.07,SGD,tax remittance,wire,,none,legitimate
-TX-000296,2026-01-29 21:00:00,EAST-68648,EAST-53359,United Kingdom,United Arab Emirates,1231.54,GBP,platform settlement,wallet,,none,legitimate
-TX-000297,2026-01-29 23:00:00,EAST-92269,CROWN-17543,United Kingdom,United Kingdom,3755.2,SGD,monthly supplier payment,wire,,none,legitimate
-TX-000298,2026-01-30 03:00:00,CROWN-68271,CROWN-65541,United Kingdom,Hong Kong,2841.04,SGD,monthly supplier payment,ach,,none,legitimate
-TX-000299,2026-01-30 03:00:00,EAST-58379,EAST-35638,United States,Hong Kong,2353.94,USD,shipping invoice,card,,none,legitimate
-TX-000300,2026-01-30 03:00:00,ALPHA-91219,EAST-92269,United Kingdom,United States,898.1,USD,monthly supplier payment,wallet,,none,legitimate
+TX-000001,2026-01-05 15:00:00,DELTA-79479,ALPHA-74620,United Kingdom,United Kingdom,730.09,HKD,platform settlement,ach,,none,legitimate
+TX-000002,2026-01-05 15:00:00,BRIDGE-68892,CROWN-68271,United Kingdom,Singapore,1983.41,HKD,software subscription,wire,,none,legitimate
+TX-000003,2026-01-05 17:00:00,ALPHA-58451,BRIDGE-79938,United Kingdom,Singapore,2065.3,HKD,software subscription,wire,,none,legitimate
+TX-000004,2026-01-05 17:00:00,CROWN-27079,ALPHA-22924,United States,United States,774.41,HKD,shipping invoice,ach,,none,legitimate
+TX-000005,2026-01-05 18:00:00,CROWN-65541,NOVA-94197,United Kingdom,United States,5023.8,GBP,tax remittance,card,,none,legitimate
+TX-000006,2026-01-05 18:00:00,CROWN-17543,EAST-38317,United States,Hong Kong,1231.54,HKD,payroll batch,wallet,,none,legitimate
+TX-000007,2026-01-05 20:00:00,CROWN-65541,EAST-69642,United Kingdom,United Kingdom,1249.45,EUR,software subscription,card,,none,legitimate
+TX-000008,2026-01-05 20:00:00,BRIDGE-39574,CROWN-98259,United States,United Kingdom,1390.53,USD,tax remittance,wire,,none,legitimate
+TX-000009,2026-01-05 21:00:00,ALPHA-58451,ALPHA-22924,United Kingdom,United States,7446.25,HKD,shipping invoice,ach,,none,legitimate
+TX-000010,2026-01-05 23:00:00,NOVA-87685,EAST-46776,United States,United Arab Emirates,5142.88,HKD,shipping invoice,wire,,none,legitimate
+TX-000011,2026-01-06 00:00:00,DELTA-79479,NOVA-87685,United Kingdom,Singapore,3446.66,EUR,tax remittance,ach,,none,legitimate
+TX-000012,2026-01-06 00:00:00,EAST-24981,BRIDGE-68892,United States,United Arab Emirates,16640.66,HKD,shipping invoice,wallet,,none,legitimate
+TX-000013,2026-01-06 01:00:00,EAST-46867,EAST-68648,United States,United Kingdom,2099.38,GBP,shipping invoice,wallet,,none,legitimate
+TX-000014,2026-01-06 02:00:00,EAST-38317,NOVA-57551,United Kingdom,United Arab Emirates,11773.21,EUR,platform settlement,ach,,none,legitimate
+TX-000015,2026-01-06 02:00:00,EAST-35638,EAST-53359,United Kingdom,United Kingdom,2921.42,USD,monthly supplier payment,wire,,none,legitimate
+TX-000016,2026-01-06 03:00:00,CROWN-81061,EAST-46776,United Kingdom,United Kingdom,1811.06,USD,monthly supplier payment,wire,,none,legitimate
+TX-000017,2026-01-06 03:00:00,NOVA-11669,ALPHA-17329,United States,United Kingdom,9932.0,SGD,payroll batch,wire,,none,legitimate
+TX-000018,2026-01-06 04:00:00,CROWN-81061,DELTA-12566,United States,Singapore,15157.4,SGD,tax remittance,card,,none,legitimate
+TX-000019,2026-01-06 04:00:00,CROWN-68271,BRIDGE-79938,United Kingdom,United States,5153.51,HKD,payroll batch,card,,none,legitimate
+TX-000020,2026-01-06 17:00:00,EAST-58379,NOVA-66530,United Kingdom,United Arab Emirates,1493.18,HKD,platform settlement,wallet,,none,legitimate
+TX-000021,2026-01-06 17:00:00,ALPHA-75305,ALPHA-58451,United States,Singapore,3112.22,SGD,platform settlement,ach,,none,legitimate
+TX-000022,2026-01-06 17:00:00,ALPHA-87598,DELTA-79479,United States,United States,1221.75,EUR,payroll batch,card,,none,legitimate
+TX-000023,2026-01-06 22:00:00,EAST-46776,CROWN-29599,United States,Hong Kong,1871.46,SGD,monthly supplier payment,ach,,none,legitimate
+TX-000024,2026-01-07 00:00:00,DELTA-12566,ALPHA-22924,United States,Hong Kong,1980.88,HKD,shipping invoice,card,,none,legitimate
+TX-000025,2026-01-07 03:00:00,NOVA-51207,EAST-46118,United Kingdom,United Arab Emirates,3901.46,USD,software subscription,wire,,none,legitimate
+TX-000026,2026-01-07 03:00:00,CROWN-17543,NOVA-32535,United Kingdom,Hong Kong,6292.11,USD,monthly supplier payment,ach,,none,legitimate
+TX-000027,2026-01-07 04:00:00,ALPHA-60205,ALPHA-75305,United States,Hong Kong,8642.88,EUR,tax remittance,ach,,none,legitimate
+TX-000028,2026-01-07 16:00:00,CROWN-68271,CROWN-20951,United Kingdom,United Kingdom,2147.98,USD,tax remittance,ach,,none,legitimate
+TX-000029,2026-01-07 16:00:00,EAST-21237,EAST-35638,United Kingdom,United Kingdom,1374.05,EUR,tax remittance,wire,,none,legitimate
+TX-000030,2026-01-07 18:00:00,ALPHA-17329,EAST-21237,United Kingdom,United States,9691.68,USD,payroll batch,wallet,,none,legitimate
+TX-000031,2026-01-07 18:00:00,EAST-28671,EAST-92269,United Kingdom,United Kingdom,3059.03,EUR,platform settlement,wallet,,none,legitimate
+TX-000032,2026-01-07 18:00:00,EAST-35638,EAST-21237,United States,United Arab Emirates,11582.67,HKD,tax remittance,card,,none,legitimate
+TX-000033,2026-01-07 20:00:00,BRIDGE-33858,EAST-21237,United Kingdom,United Arab Emirates,2047.52,HKD,payroll batch,card,,none,legitimate
+TX-000034,2026-01-07 23:00:00,EAST-68648,CROWN-65541,United States,United Arab Emirates,980.52,EUR,software subscription,ach,,none,legitimate
+TX-000035,2026-01-08 00:00:00,EAST-58324,EAST-24981,United Kingdom,Singapore,1282.82,HKD,monthly supplier payment,ach,,none,legitimate
+TX-000036,2026-01-08 04:00:00,EAST-28671,EAST-46776,United Kingdom,Hong Kong,2154.03,GBP,payroll batch,ach,,none,legitimate
+TX-000037,2026-01-08 04:00:00,BRIDGE-53025,NOVA-35165,United Kingdom,Singapore,5339.86,GBP,tax remittance,wallet,,none,legitimate
+TX-000038,2026-01-08 05:00:00,DELTA-15103,NOVA-73318,United Kingdom,United States,1314.74,HKD,tax remittance,card,,none,legitimate
+TX-000039,2026-01-08 15:00:00,CROWN-27079,BRIDGE-14628,United Kingdom,Hong Kong,2135.1,USD,tax remittance,card,,none,legitimate
+TX-000040,2026-01-08 16:00:00,ALPHA-23880,EAST-46776,United Kingdom,United States,1696.68,GBP,monthly supplier payment,card,,none,legitimate
+TX-000041,2026-01-08 16:00:00,DELTA-12566,BRIDGE-33858,United States,United States,2871.88,EUR,shipping invoice,wallet,,none,legitimate
+TX-000042,2026-01-08 17:00:00,CROWN-27079,CROWN-81061,United Kingdom,United Arab Emirates,1029.11,HKD,shipping invoice,ach,,none,legitimate
+TX-000043,2026-01-08 19:00:00,EAST-46776,ALPHA-58451,United Kingdom,Singapore,5705.88,SGD,payroll batch,ach,,none,legitimate
+TX-000044,2026-01-08 21:00:00,NOVA-87685,EAST-21237,United States,United Kingdom,30913.49,USD,tax remittance,wallet,,none,legitimate
+TX-000045,2026-01-08 21:00:00,EAST-58379,EAST-69642,United Kingdom,United States,8421.26,EUR,monthly supplier payment,wallet,,none,legitimate
+TX-000046,2026-01-08 22:00:00,EAST-46867,DELTA-79479,United States,United States,4180.17,EUR,software subscription,ach,,none,legitimate
+TX-000047,2026-01-09 01:00:00,EAST-21237,EAST-58379,United Kingdom,Hong Kong,3617.03,HKD,tax remittance,wire,,none,legitimate
+TX-000048,2026-01-09 02:00:00,ALPHA-22924,EAST-28671,United States,United Arab Emirates,230.92,HKD,software subscription,wire,,none,legitimate
+TX-000049,2026-01-09 02:00:00,ALPHA-17329,EAST-92269,United Kingdom,United Kingdom,369.8,USD,shipping invoice,wire,,none,legitimate
+TX-000050,2026-01-09 03:00:00,BRIDGE-68892,CROWN-65541,United Kingdom,United Kingdom,1833.34,HKD,platform settlement,card,,none,legitimate
+TX-000051,2026-01-09 04:00:00,EAST-58379,NOVA-87685,United Kingdom,United States,8322.39,SGD,monthly supplier payment,wire,,none,legitimate
+TX-000052,2026-01-09 16:00:00,CROWN-98259,ALPHA-38972,United Kingdom,United Arab Emirates,3313.28,EUR,shipping invoice,wire,,none,legitimate
+TX-000053,2026-01-09 21:00:00,NOVA-64555,CROWN-27079,United Kingdom,United Arab Emirates,5864.85,EUR,shipping invoice,card,,none,legitimate
+TX-000054,2026-01-09 23:00:00,BRIDGE-53025,CROWN-17543,United Kingdom,United States,2429.87,EUR,platform settlement,wire,,none,legitimate
+TX-000055,2026-01-10 01:00:00,CROWN-27079,BRIDGE-33858,United Kingdom,Singapore,4478.15,GBP,tax remittance,ach,,none,legitimate
+TX-000056,2026-01-10 01:00:00,SHELL-98040,NOVA-87685,United Kingdom,United States,39103.49,HKD,consulting invoice,wire,CHAIN-59AA134C,funding transfer before rapid split,suspicious
+TX-000057,2026-01-10 03:00:00,SHELL-59437,EAST-46867,United States,United Kingdom,39640.02,USD,equipment deposit,wallet,CHAIN-01025789,funding transfer before rapid split,suspicious
+TX-000058,2026-01-10 03:00:00,EAST-46776,EAST-21237,United States,United Kingdom,8612.24,EUR,monthly supplier payment,wire,,none,legitimate
+TX-000059,2026-01-10 04:00:00,NOVA-66530,EAST-46867,United Kingdom,United States,3755.2,EUR,platform settlement,wallet,,none,legitimate
+TX-000060,2026-01-10 05:00:00,EAST-28671,EAST-58324,United States,United Kingdom,1768.86,HKD,tax remittance,card,,none,legitimate
+TX-000061,2026-01-10 07:00:00,NOVA-87685,CP-20655,United Kingdom,United Arab Emirates,5511.41,SGD,consulting invoice,ach,CHAIN-59AA134C,rapid outbound transfers,suspicious
+TX-000062,2026-01-10 14:00:00,EAST-46867,CP-60796,United Kingdom,Singapore,6946.52,SGD,import services,wallet,CHAIN-01025789,vague trade narratives,suspicious
+TX-000063,2026-01-10 15:00:00,DELTA-13062,BRIDGE-14628,United States,Hong Kong,542.31,SGD,monthly supplier payment,wire,,none,legitimate
+TX-000064,2026-01-10 18:00:00,EAST-46867,CP-18153,United States,Singapore,9012.94,USD,solar panel shipment,ach,CHAIN-01025789,thin company profiles,suspicious
+TX-000065,2026-01-10 19:00:00,NOVA-87685,CP-81385,United States,United Arab Emirates,5252.07,USD,equipment deposit,ach,CHAIN-59AA134C,shell company funding,suspicious
+TX-000066,2026-01-10 19:00:00,NOVA-87685,NOVA-32535,United Kingdom,Singapore,4395.54,EUR,monthly supplier payment,card,,none,legitimate
+TX-000067,2026-01-10 21:00:00,EAST-46867,CP-21676,United States,Hong Kong,7922.87,GBP,equipment deposit,ach,CHAIN-01025789,rapid outbound transfers,suspicious
+TX-000068,2026-01-10 22:00:00,BRIDGE-33858,NOVA-66530,United States,United Kingdom,1343.48,USD,software subscription,wallet,,none,legitimate
+TX-000069,2026-01-10 22:00:00,EAST-46867,CP-99291,United States,Singapore,7381.83,GBP,logistics fee,wallet,CHAIN-01025789,rapid outbound transfers,suspicious
+TX-000070,2026-01-10 23:00:00,CROWN-65541,EAST-46867,United States,Hong Kong,2262.21,HKD,platform settlement,ach,,none,legitimate
+TX-000071,2026-01-11 00:00:00,BRIDGE-79938,CROWN-17543,United Kingdom,United States,3382.46,GBP,monthly supplier payment,ach,,none,legitimate
+TX-000072,2026-01-11 01:00:00,BRIDGE-39574,CROWN-81061,United States,Singapore,855.01,EUR,software subscription,ach,,none,legitimate
+TX-000073,2026-01-11 11:00:00,NOVA-87685,CP-89486,United Kingdom,United Arab Emirates,6308.24,EUR,logistics fee,wallet,CHAIN-59AA134C,rapid outbound transfers,suspicious
+TX-000074,2026-01-11 14:00:00,EAST-46867,CP-82859,United Kingdom,United Arab Emirates,8375.86,HKD,logistics fee,wallet,CHAIN-01025789,shell company funding,suspicious
+TX-000075,2026-01-11 16:00:00,NOVA-64555,DELTA-15103,United Kingdom,Hong Kong,6761.02,EUR,platform settlement,wire,,none,legitimate
+TX-000076,2026-01-11 17:00:00,EAST-46118,CROWN-69602,United Kingdom,United States,3399.94,EUR,platform settlement,card,,none,legitimate
+TX-000077,2026-01-11 18:00:00,NOVA-94197,ALPHA-87598,United Kingdom,Singapore,1886.11,SGD,software subscription,ach,,none,legitimate
+TX-000078,2026-01-11 18:00:00,ALPHA-22924,EAST-92269,United States,United Kingdom,8661.74,SGD,software subscription,wire,,none,legitimate
+TX-000079,2026-01-11 22:00:00,NOVA-87685,CP-28306,United Kingdom,United Arab Emirates,7284.73,GBP,logistics fee,wire,CHAIN-59AA134C,vague trade narratives,suspicious
+TX-000080,2026-01-11 23:00:00,EAST-35638,NOVA-94197,United States,Singapore,2855.54,HKD,payroll batch,ach,,none,legitimate
+TX-000081,2026-01-11 23:00:00,NOVA-87685,CP-47267,United States,Singapore,6992.81,HKD,import services,wallet,CHAIN-59AA134C,rapid outbound transfers,suspicious
+TX-000082,2026-01-12 01:00:00,NOVA-87685,CP-12913,United Kingdom,United Arab Emirates,7754.23,HKD,import services,wire,CHAIN-59AA134C,shell company funding,suspicious
+TX-000083,2026-01-12 02:00:00,DELTA-79479,CROWN-20951,United Kingdom,Singapore,3867.59,GBP,monthly supplier payment,wallet,,none,legitimate
+TX-000084,2026-01-12 05:00:00,CROWN-17543,EAST-46776,United States,Singapore,2166.27,SGD,monthly supplier payment,wallet,,none,legitimate
+TX-000085,2026-01-12 05:00:00,CROWN-81061,EAST-28671,United States,Singapore,3208.97,SGD,software subscription,card,,none,legitimate
+TX-000086,2026-01-12 15:00:00,BRIDGE-39574,EAST-21237,United States,United Arab Emirates,2583.71,SGD,monthly supplier payment,ach,,none,legitimate
+TX-000087,2026-01-12 17:00:00,CROWN-68271,NOVA-35165,United Kingdom,United Kingdom,6278.76,HKD,platform settlement,wallet,,none,legitimate
+TX-000088,2026-01-12 17:00:00,EAST-68648,BRIDGE-14628,United Kingdom,Hong Kong,1697.92,HKD,tax remittance,wire,,none,legitimate
+TX-000089,2026-01-12 17:00:00,EAST-92269,ALPHA-23880,United States,Hong Kong,898.1,GBP,software subscription,card,,none,legitimate
+TX-000090,2026-01-12 18:00:00,EAST-38317,CROWN-81061,United Kingdom,Singapore,3124.3,HKD,monthly supplier payment,wire,,none,legitimate
+TX-000091,2026-01-12 18:00:00,EAST-24981,ALPHA-75305,United States,Hong Kong,1552.99,HKD,monthly supplier payment,wallet,,none,legitimate
+TX-000092,2026-01-12 19:00:00,NOVA-94197,EAST-68648,United Kingdom,United Kingdom,1478.89,USD,tax remittance,wire,,none,legitimate
+TX-000093,2026-01-12 20:00:00,CROWN-20951,NOVA-35165,United Kingdom,Hong Kong,1083.23,SGD,software subscription,wire,,none,legitimate
+TX-000094,2026-01-13 04:00:00,EAST-46867,EAST-69642,United States,United States,16045.17,USD,payroll batch,card,,none,legitimate
+TX-000095,2026-01-13 15:00:00,DELTA-13062,EAST-46776,United States,United Kingdom,1750.24,SGD,tax remittance,wire,,none,legitimate
+TX-000096,2026-01-13 21:00:00,CROWN-29599,DELTA-15103,United States,United Kingdom,6875.94,SGD,monthly supplier payment,wire,,none,legitimate
+TX-000097,2026-01-13 22:00:00,NOVA-64555,NOVA-32535,United States,Singapore,2829.37,HKD,shipping invoice,wallet,,none,legitimate
+TX-000098,2026-01-13 23:00:00,EAST-46867,NOVA-32535,United States,Hong Kong,2196.97,USD,platform settlement,ach,,none,legitimate
+TX-000099,2026-01-13 23:00:00,DELTA-15103,EAST-46776,United Kingdom,United States,1219.98,EUR,tax remittance,wallet,,none,legitimate
+TX-000100,2026-01-14 00:00:00,EAST-28671,NOVA-32535,United Kingdom,United Arab Emirates,10566.71,EUR,software subscription,wire,,none,legitimate
+TX-000101,2026-01-14 05:00:00,CROWN-27079,DELTA-79479,United Kingdom,United Arab Emirates,2622.86,GBP,platform settlement,wire,,none,legitimate
+TX-000102,2026-01-14 05:00:00,BRIDGE-53025,CROWN-65541,United Kingdom,Hong Kong,3625.84,GBP,shipping invoice,wire,,none,legitimate
+TX-000103,2026-01-14 16:00:00,NOVA-87685,ALPHA-91219,United Kingdom,Hong Kong,2058.89,SGD,platform settlement,card,,none,legitimate
+TX-000104,2026-01-14 18:00:00,EAST-35638,ALPHA-58451,United States,Hong Kong,6821.03,USD,software subscription,ach,,none,legitimate
+TX-000105,2026-01-14 19:00:00,NOVA-73318,NOVA-51207,United Kingdom,United States,1581.24,USD,monthly supplier payment,wire,,none,legitimate
+TX-000106,2026-01-14 20:00:00,ALPHA-75305,ALPHA-91219,United Kingdom,Hong Kong,889.14,GBP,software subscription,wallet,,none,legitimate
+TX-000107,2026-01-14 20:00:00,BRIDGE-14628,ALPHA-91219,United States,United Arab Emirates,6192.0,HKD,platform settlement,card,,none,legitimate
+TX-000108,2026-01-15 01:00:00,EAST-21237,NOVA-35165,United Kingdom,Hong Kong,5418.68,HKD,platform settlement,card,,none,legitimate
+TX-000109,2026-01-15 01:00:00,BRIDGE-39574,NOVA-94197,United States,Hong Kong,2353.94,GBP,payroll batch,wire,,none,legitimate
+TX-000110,2026-01-15 04:00:00,ALPHA-87598,EAST-92269,United States,United Kingdom,7201.23,GBP,software subscription,wallet,,none,legitimate
+TX-000111,2026-01-15 05:00:00,DELTA-33282,CROWN-17543,United States,United Kingdom,14945.37,USD,shipping invoice,wallet,,none,legitimate
+TX-000112,2026-01-15 15:00:00,BRIDGE-14628,EAST-24981,United States,United Arab Emirates,1844.07,USD,shipping invoice,wallet,,none,legitimate
+TX-000113,2026-01-15 16:00:00,NOVA-32535,NOVA-87685,United States,United Kingdom,17771.36,SGD,payroll batch,ach,,none,legitimate
+TX-000114,2026-01-15 16:00:00,DELTA-15103,ALPHA-17329,United Kingdom,Hong Kong,1798.37,EUR,payroll batch,ach,,none,legitimate
+TX-000115,2026-01-15 18:00:00,ALPHA-38972,NOVA-57551,United States,Singapore,1092.74,GBP,payroll batch,card,,none,legitimate
+TX-000116,2026-01-15 18:00:00,ALPHA-22924,ALPHA-38972,United States,United States,1494.85,USD,payroll batch,card,,none,legitimate
+TX-000117,2026-01-15 19:00:00,EAST-38612,CROWN-69602,United Kingdom,Singapore,1763.42,HKD,software subscription,card,,none,legitimate
+TX-000118,2026-01-15 20:00:00,NOVA-11669,CROWN-27079,United States,Hong Kong,4988.13,EUR,shipping invoice,card,,none,legitimate
+TX-000119,2026-01-15 22:00:00,BRIDGE-53025,ALPHA-22924,United States,United Arab Emirates,3330.99,GBP,monthly supplier payment,wallet,,none,legitimate
+TX-000120,2026-01-15 23:00:00,DELTA-15103,ALPHA-23880,United States,Hong Kong,4026.78,SGD,platform settlement,wallet,,none,legitimate
+TX-000121,2026-01-16 00:00:00,EAST-58379,NOVA-64555,United States,Singapore,4133.14,USD,payroll batch,wire,,none,legitimate
+TX-000122,2026-01-16 00:00:00,BRIDGE-68892,CROWN-81061,United States,United Kingdom,3122.36,HKD,software subscription,wire,,none,legitimate
+TX-000123,2026-01-16 01:00:00,EAST-28671,NOVA-87685,United Kingdom,United Kingdom,1420.09,USD,shipping invoice,wire,,none,legitimate
+TX-000124,2026-01-16 03:00:00,SHELL-32568,NOVA-66530,United States,United States,32294.1,GBP,import services,wire,CHAIN-F91FA3A6,funding transfer before rapid split,suspicious
+TX-000125,2026-01-16 04:00:00,BRIDGE-14628,ALPHA-38972,United Kingdom,United Arab Emirates,4568.77,SGD,tax remittance,wallet,,none,legitimate
+TX-000126,2026-01-16 15:00:00,EAST-38317,EAST-53359,United States,Singapore,3785.86,HKD,payroll batch,card,,none,legitimate
+TX-000127,2026-01-16 16:00:00,SHELL-17454,CROWN-17543,United States,United States,39729.3,EUR,consulting invoice,wire,CHAIN-F946BD51,funding transfer before rapid split,suspicious
+TX-000128,2026-01-16 17:00:00,SHELL-26728,NOVA-64555,United Kingdom,United States,32705.04,GBP,consulting invoice,wire,CHAIN-B7D91DA5,funding transfer before rapid split,suspicious
+TX-000129,2026-01-16 17:00:00,CROWN-29599,EAST-38317,United Kingdom,United Arab Emirates,10935.35,GBP,software subscription,card,,none,legitimate
+TX-000130,2026-01-16 19:00:00,ALPHA-74620,DELTA-79479,United States,Singapore,682.06,EUR,payroll batch,card,,none,legitimate
+TX-000131,2026-01-16 20:00:00,NOVA-94197,EAST-58379,United States,United Arab Emirates,3703.33,SGD,shipping invoice,wallet,,none,legitimate
+TX-000132,2026-01-16 20:00:00,EAST-35638,CROWN-98259,United Kingdom,United Kingdom,3859.44,USD,platform settlement,ach,,none,legitimate
+TX-000133,2026-01-16 22:00:00,NOVA-64555,CP-83624,United States,United Arab Emirates,7182.63,USD,consulting invoice,wallet,CHAIN-B7D91DA5,shell company funding,suspicious
+TX-000134,2026-01-16 23:00:00,NOVA-51207,NOVA-11669,United States,United States,3842.26,HKD,platform settlement,wallet,,none,legitimate
+TX-000135,2026-01-16 23:00:00,CROWN-17543,CP-65279,United Kingdom,Hong Kong,7023.89,SGD,logistics fee,ach,CHAIN-F946BD51,thin company profiles,suspicious
+TX-000136,2026-01-17 01:00:00,NOVA-66530,CP-48628,United States,United Arab Emirates,5439.46,HKD,equipment deposit,ach,CHAIN-F91FA3A6,thin company profiles,suspicious
+TX-000137,2026-01-17 03:00:00,CROWN-17543,CP-90872,United States,Hong Kong,7593.56,EUR,import services,wallet,CHAIN-F946BD51,thin company profiles,suspicious
+TX-000138,2026-01-17 04:00:00,DELTA-15103,EAST-53359,United States,Hong Kong,3472.46,HKD,software subscription,card,,none,legitimate
+TX-000139,2026-01-17 04:00:00,NOVA-64555,CP-44804,United States,United Arab Emirates,6620.84,EUR,solar panel shipment,ach,CHAIN-B7D91DA5,rapid outbound transfers,suspicious
+TX-000140,2026-01-17 07:00:00,NOVA-66530,CP-47233,United Kingdom,Singapore,7556.65,EUR,consulting invoice,ach,CHAIN-F91FA3A6,rapid outbound transfers,suspicious
+TX-000141,2026-01-17 09:00:00,NOVA-64555,CP-53950,United Kingdom,United Arab Emirates,5863.33,HKD,consulting invoice,wire,CHAIN-B7D91DA5,structured splitting,suspicious
+TX-000142,2026-01-17 09:00:00,NOVA-66530,CP-80915,United States,United Arab Emirates,6137.88,USD,equipment deposit,wallet,CHAIN-F91FA3A6,shell company funding,suspicious
+TX-000143,2026-01-17 13:00:00,NOVA-64555,CP-22119,United States,Singapore,6052.84,USD,solar panel shipment,ach,CHAIN-B7D91DA5,thin company profiles,suspicious
+TX-000144,2026-01-17 14:00:00,CROWN-17543,CP-83315,United States,Hong Kong,6327.56,EUR,consulting invoice,wallet,CHAIN-F946BD51,vague trade narratives,suspicious
+TX-000145,2026-01-17 18:00:00,NOVA-64555,CP-94074,United Kingdom,Hong Kong,6985.4,HKD,consulting invoice,wire,CHAIN-B7D91DA5,shell company funding,suspicious
+TX-000146,2026-01-17 18:00:00,NOVA-66530,CP-88541,United States,United Arab Emirates,6297.86,USD,equipment deposit,ach,CHAIN-F91FA3A6,shell company funding,suspicious
+TX-000147,2026-01-17 19:00:00,CROWN-17543,CP-49171,United Kingdom,Singapore,6777.78,USD,consulting invoice,ach,CHAIN-F946BD51,structured splitting,suspicious
+TX-000148,2026-01-17 19:00:00,NOVA-66530,DELTA-12566,United Kingdom,United Kingdom,3895.83,HKD,shipping invoice,card,,none,legitimate
+TX-000149,2026-01-17 19:00:00,ALPHA-23880,NOVA-57551,United States,United Arab Emirates,536.73,SGD,tax remittance,card,,none,legitimate
+TX-000150,2026-01-17 20:00:00,EAST-35638,NOVA-32535,United States,United Kingdom,6320.2,HKD,monthly supplier payment,wallet,,none,legitimate
+TX-000151,2026-01-18 00:00:00,CROWN-81061,ALPHA-17329,United States,United Arab Emirates,692.96,EUR,shipping invoice,wire,,none,legitimate
+TX-000152,2026-01-18 00:00:00,EAST-38612,EAST-46867,United Kingdom,Singapore,8565.96,USD,monthly supplier payment,card,,none,legitimate
+TX-000153,2026-01-18 03:00:00,ALPHA-75305,CROWN-29599,United States,Hong Kong,819.84,SGD,monthly supplier payment,wallet,,none,legitimate
+TX-000154,2026-01-18 03:00:00,NOVA-66530,CP-25285,United Kingdom,Hong Kong,6862.25,EUR,consulting invoice,wire,CHAIN-F91FA3A6,shell company funding,suspicious
+TX-000155,2026-01-18 04:00:00,CROWN-17543,CP-79333,United Kingdom,United Arab Emirates,6241.21,HKD,import services,wire,CHAIN-F946BD51,rapid outbound transfers,suspicious
+TX-000156,2026-01-18 13:00:00,CROWN-17543,CP-81016,United Kingdom,Hong Kong,5765.3,HKD,solar panel shipment,wallet,CHAIN-F946BD51,rapid outbound transfers,suspicious
+TX-000157,2026-01-18 15:00:00,DELTA-15103,CROWN-98259,United States,Singapore,815.79,HKD,software subscription,wallet,,none,legitimate
+TX-000158,2026-01-18 16:00:00,EAST-24981,EAST-92269,United Kingdom,United Kingdom,439.81,EUR,payroll batch,wire,,none,legitimate
+TX-000159,2026-01-18 19:00:00,CROWN-27079,EAST-38612,United Kingdom,United Kingdom,12863.88,SGD,shipping invoice,ach,,none,legitimate
+TX-000160,2026-01-18 22:00:00,NOVA-64555,NOVA-11669,United States,Hong Kong,7496.01,EUR,tax remittance,wallet,,none,legitimate
+TX-000161,2026-01-18 23:00:00,EAST-53359,DELTA-13062,United States,United States,1865.73,USD,software subscription,card,,none,legitimate
+TX-000162,2026-01-19 00:00:00,NOVA-73318,EAST-38317,United States,United States,2841.04,USD,payroll batch,card,,none,legitimate
+TX-000163,2026-01-19 00:00:00,DELTA-79479,NOVA-64555,United States,United Arab Emirates,1878.4,USD,shipping invoice,card,,none,legitimate
+TX-000164,2026-01-19 01:00:00,CROWN-27079,ALPHA-58451,United Kingdom,Hong Kong,13934.88,SGD,software subscription,wallet,,none,legitimate
+TX-000165,2026-01-19 03:00:00,CROWN-29599,DELTA-12566,United Kingdom,United Kingdom,5152.46,EUR,shipping invoice,wire,,none,legitimate
+TX-000166,2026-01-19 04:00:00,ALPHA-58451,CROWN-29599,United States,United Arab Emirates,9865.87,USD,software subscription,wire,,none,legitimate
+TX-000167,2026-01-19 04:00:00,EAST-69642,CROWN-65541,United Kingdom,Hong Kong,4302.84,SGD,platform settlement,ach,,none,legitimate
+TX-000168,2026-01-19 16:00:00,SHELL-70650,CROWN-81061,United Kingdom,United States,26938.36,USD,equipment deposit,wallet,CHAIN-1C42769A,funding transfer before rapid split,suspicious
+TX-000169,2026-01-19 17:00:00,EAST-69642,CROWN-68271,United Kingdom,Hong Kong,1877.09,HKD,payroll batch,wallet,,none,legitimate
+TX-000170,2026-01-19 17:00:00,DELTA-12566,ALPHA-60205,United States,United States,1911.72,GBP,tax remittance,card,,none,legitimate
+TX-000171,2026-01-19 19:00:00,DELTA-12566,EAST-58379,United Kingdom,Hong Kong,1953.08,SGD,platform settlement,card,,none,legitimate
+TX-000172,2026-01-19 19:00:00,EAST-24981,EAST-69642,United Kingdom,Singapore,4965.57,HKD,payroll batch,ach,,none,legitimate
+TX-000173,2026-01-19 21:00:00,BRIDGE-79938,EAST-24981,United States,United Arab Emirates,16988.08,GBP,monthly supplier payment,wallet,,none,legitimate
+TX-000174,2026-01-19 21:00:00,EAST-24981,NOVA-57551,United Kingdom,Singapore,2919.73,EUR,platform settlement,card,,none,legitimate
+TX-000175,2026-01-19 22:00:00,CROWN-29599,EAST-38317,United States,Singapore,1183.78,EUR,platform settlement,wallet,,none,legitimate
+TX-000176,2026-01-19 22:00:00,CROWN-81061,CP-33638,United States,United Arab Emirates,4729.66,GBP,logistics fee,wire,CHAIN-1C42769A,vague trade narratives,suspicious
+TX-000177,2026-01-20 01:00:00,CROWN-81061,CP-55944,United Kingdom,Hong Kong,4970.24,EUR,equipment deposit,wallet,CHAIN-1C42769A,rapid outbound transfers,suspicious
+TX-000178,2026-01-20 02:00:00,ALPHA-74620,NOVA-57551,United States,Singapore,812.04,GBP,tax remittance,wallet,,none,legitimate
+TX-000179,2026-01-20 02:00:00,DELTA-33282,CROWN-20951,United Kingdom,Singapore,8590.35,USD,tax remittance,wire,,none,legitimate
+TX-000180,2026-01-20 03:00:00,BRIDGE-33858,NOVA-32535,United States,Hong Kong,2762.52,USD,software subscription,ach,,none,legitimate
+TX-000181,2026-01-20 03:00:00,CROWN-98259,ALPHA-74620,United Kingdom,United States,882.12,GBP,shipping invoice,ach,,none,legitimate
+TX-000182,2026-01-20 03:00:00,EAST-38612,EAST-46776,United States,United Kingdom,1882.95,EUR,tax remittance,card,,none,legitimate
+TX-000183,2026-01-20 16:00:00,SHELL-27260,DELTA-13062,United Kingdom,United States,40885.26,USD,import services,wallet,CHAIN-A82FBBE4,funding transfer before rapid split,suspicious
+TX-000184,2026-01-20 16:00:00,EAST-46776,BRIDGE-33858,United Kingdom,United Kingdom,2095.86,GBP,payroll batch,card,,none,legitimate
+TX-000185,2026-01-20 16:00:00,BRIDGE-53025,NOVA-57551,United Kingdom,Hong Kong,643.12,GBP,platform settlement,wire,,none,legitimate
+TX-000186,2026-01-20 17:00:00,CROWN-69602,CROWN-17543,United States,United States,4154.28,HKD,shipping invoice,ach,,none,legitimate
+TX-000187,2026-01-20 17:00:00,DELTA-13062,CP-75093,United Kingdom,Singapore,7877.63,GBP,logistics fee,ach,CHAIN-A82FBBE4,vague trade narratives,suspicious
+TX-000188,2026-01-20 19:00:00,DELTA-13062,CP-31817,United Kingdom,Singapore,7885.85,USD,equipment deposit,wire,CHAIN-A82FBBE4,structured splitting,suspicious
+TX-000189,2026-01-20 23:00:00,NOVA-64555,ALPHA-23880,United States,United States,5547.43,SGD,tax remittance,wire,,none,legitimate
+TX-000190,2026-01-21 01:00:00,DELTA-13062,CP-29076,United Kingdom,Singapore,8459.77,HKD,import services,ach,CHAIN-A82FBBE4,thin company profiles,suspicious
+TX-000191,2026-01-21 03:00:00,NOVA-51207,ALPHA-75305,United States,Hong Kong,6543.31,EUR,shipping invoice,wire,,none,legitimate
+TX-000192,2026-01-21 04:00:00,ALPHA-17329,EAST-38317,United Kingdom,Singapore,92.45,GBP,software subscription,card,,none,legitimate
+TX-000193,2026-01-21 05:00:00,CROWN-81061,CP-16223,United Kingdom,United Arab Emirates,5469.59,HKD,consulting invoice,wallet,CHAIN-1C42769A,shell company funding,suspicious
+TX-000194,2026-01-21 05:00:00,EAST-58324,BRIDGE-53025,United Kingdom,Singapore,33750.0,HKD,tax remittance,wallet,,none,legitimate
+TX-000195,2026-01-21 08:00:00,CROWN-81061,CP-99517,United Kingdom,United Arab Emirates,5269.08,GBP,solar panel shipment,ach,CHAIN-1C42769A,rapid outbound transfers,suspicious
+TX-000196,2026-01-21 13:00:00,CROWN-81061,CP-95819,United Kingdom,Hong Kong,6499.79,USD,equipment deposit,wire,CHAIN-1C42769A,structured splitting,suspicious
+TX-000197,2026-01-21 15:00:00,EAST-58379,EAST-46867,United Kingdom,Hong Kong,12807.8,EUR,tax remittance,wire,,none,legitimate
+TX-000198,2026-01-21 17:00:00,NOVA-11669,EAST-46118,United Kingdom,Singapore,4619.94,USD,monthly supplier payment,card,,none,legitimate
+TX-000199,2026-01-21 19:00:00,EAST-58324,NOVA-32535,United Kingdom,Hong Kong,810.51,SGD,payroll batch,ach,,none,legitimate
+TX-000200,2026-01-21 23:00:00,NOVA-11669,ALPHA-58451,United States,United Kingdom,918.22,EUR,software subscription,card,,none,legitimate
+TX-000201,2026-01-21 23:00:00,EAST-38612,CROWN-20951,United States,United Kingdom,903.78,SGD,platform settlement,card,,none,legitimate
+TX-000202,2026-01-22 01:00:00,EAST-46867,EAST-46118,United Kingdom,Singapore,6938.57,HKD,platform settlement,ach,,none,legitimate
+TX-000203,2026-01-22 02:00:00,DELTA-13062,CP-98734,United Kingdom,Hong Kong,8083.24,GBP,import services,wire,CHAIN-A82FBBE4,vague trade narratives,suspicious
+TX-000204,2026-01-22 03:00:00,ALPHA-22924,BRIDGE-39574,United States,United States,1053.84,EUR,software subscription,wallet,,none,legitimate
+TX-000205,2026-01-22 04:00:00,ALPHA-38972,BRIDGE-68892,United Kingdom,United Arab Emirates,774.28,USD,platform settlement,card,,none,legitimate
+TX-000206,2026-01-22 04:00:00,CROWN-20951,EAST-58324,United States,Hong Kong,1841.8,HKD,shipping invoice,ach,,none,legitimate
+TX-000207,2026-01-22 05:00:00,ALPHA-58451,BRIDGE-33858,United States,Singapore,2399.74,GBP,payroll batch,wire,,none,legitimate
+TX-000208,2026-01-22 05:00:00,EAST-68648,BRIDGE-33858,United States,United Arab Emirates,7199.98,USD,platform settlement,card,,none,legitimate
+TX-000209,2026-01-22 06:00:00,DELTA-13062,CP-97708,United Kingdom,United Arab Emirates,8578.77,SGD,import services,wire,CHAIN-A82FBBE4,structured splitting,suspicious
+TX-000210,2026-01-22 15:00:00,DELTA-33282,EAST-38612,United Kingdom,United Kingdom,13012.56,USD,software subscription,ach,,none,legitimate
+TX-000211,2026-01-22 16:00:00,BRIDGE-79938,NOVA-51207,United States,United Kingdom,7637.28,USD,monthly supplier payment,ach,,none,legitimate
+TX-000212,2026-01-22 17:00:00,EAST-46867,NOVA-73318,United Kingdom,Hong Kong,2489.15,SGD,tax remittance,wire,,none,legitimate
+TX-000213,2026-01-22 20:00:00,EAST-38612,DELTA-79479,United Kingdom,United Kingdom,7579.2,HKD,shipping invoice,ach,,none,legitimate
+TX-000214,2026-01-22 22:00:00,CROWN-98259,EAST-24981,United States,Singapore,1957.74,SGD,shipping invoice,card,,none,legitimate
+TX-000215,2026-01-22 23:00:00,ALPHA-22924,EAST-69642,United Kingdom,United Arab Emirates,5376.97,SGD,software subscription,wire,,none,legitimate
+TX-000216,2026-01-23 02:00:00,SHELL-39161,CROWN-81061,United Kingdom,United States,37931.68,SGD,equipment deposit,wallet,CHAIN-C1ED449C,funding transfer before rapid split,suspicious
+TX-000217,2026-01-23 04:00:00,NOVA-73318,CROWN-98259,United States,Hong Kong,2580.1,SGD,tax remittance,wallet,,none,legitimate
+TX-000218,2026-01-23 05:00:00,NOVA-64555,EAST-58324,United Kingdom,United Kingdom,4953.1,HKD,monthly supplier payment,ach,,none,legitimate
+TX-000219,2026-01-23 05:00:00,EAST-24981,EAST-58324,United States,United States,2021.72,GBP,monthly supplier payment,card,,none,legitimate
+TX-000220,2026-01-23 05:00:00,CROWN-81061,CP-51377,United States,Singapore,6948.17,EUR,import services,wallet,CHAIN-C1ED449C,rapid outbound transfers,suspicious
+TX-000221,2026-01-23 15:00:00,NOVA-35165,BRIDGE-14628,United Kingdom,United States,1755.43,HKD,platform settlement,card,,none,legitimate
+TX-000222,2026-01-23 15:00:00,DELTA-13062,CROWN-65541,United Kingdom,Singapore,2016.26,USD,tax remittance,card,,none,legitimate
+TX-000223,2026-01-23 18:00:00,CROWN-81061,CP-51324,United Kingdom,United Arab Emirates,7091.03,GBP,solar panel shipment,wire,CHAIN-C1ED449C,thin company profiles,suspicious
+TX-000224,2026-01-23 18:00:00,EAST-46867,EAST-69642,United States,Singapore,2861.63,GBP,platform settlement,wire,,none,legitimate
+TX-000225,2026-01-23 18:00:00,ALPHA-38972,NOVA-87685,United States,United Arab Emirates,517.43,USD,shipping invoice,ach,,none,legitimate
+TX-000226,2026-01-23 19:00:00,DELTA-12566,NOVA-51207,United States,Hong Kong,519.8,SGD,monthly supplier payment,wallet,,none,legitimate
+TX-000227,2026-01-23 19:00:00,ALPHA-75305,NOVA-73318,United Kingdom,United States,2414.99,HKD,monthly supplier payment,wire,,none,legitimate
+TX-000228,2026-01-23 19:00:00,NOVA-51207,CROWN-17543,United Kingdom,Singapore,1324.35,SGD,tax remittance,card,,none,legitimate
+TX-000229,2026-01-23 20:00:00,EAST-38612,EAST-68648,United States,Singapore,4224.39,GBP,shipping invoice,ach,,none,legitimate
+TX-000230,2026-01-23 20:00:00,EAST-35638,CROWN-69602,United States,United States,3658.54,EUR,platform settlement,wire,,none,legitimate
+TX-000231,2026-01-23 21:00:00,DELTA-15103,EAST-38612,United States,Hong Kong,8292.05,USD,tax remittance,ach,,none,legitimate
+TX-000232,2026-01-23 21:00:00,ALPHA-75305,DELTA-79479,United States,Hong Kong,10322.87,USD,shipping invoice,ach,,none,legitimate
+TX-000233,2026-01-23 22:00:00,NOVA-57551,EAST-46776,United States,Singapore,1951.17,SGD,shipping invoice,wire,,none,legitimate
+TX-000234,2026-01-23 22:00:00,ALPHA-75305,NOVA-66530,United States,United States,1850.27,USD,payroll batch,ach,,none,legitimate
+TX-000235,2026-01-23 22:00:00,NOVA-11669,ALPHA-74620,United States,Hong Kong,13769.32,EUR,shipping invoice,wire,,none,legitimate
+TX-000236,2026-01-23 23:00:00,BRIDGE-33858,ALPHA-87598,United States,United Arab Emirates,3055.45,USD,software subscription,card,,none,legitimate
+TX-000237,2026-01-24 01:00:00,EAST-58324,ALPHA-58451,United Kingdom,United Arab Emirates,2261.18,HKD,software subscription,ach,,none,legitimate
+TX-000238,2026-01-24 02:00:00,CROWN-98259,ALPHA-38972,United Kingdom,United States,2030.16,USD,monthly supplier payment,card,,none,legitimate
+TX-000239,2026-01-24 02:00:00,CROWN-81061,CP-85447,United States,Hong Kong,5108.49,HKD,import services,ach,CHAIN-C1ED449C,thin company profiles,suspicious
+TX-000240,2026-01-24 03:00:00,EAST-38317,NOVA-32535,United Kingdom,United States,6497.26,GBP,monthly supplier payment,wallet,,none,legitimate
+TX-000241,2026-01-24 04:00:00,CROWN-81061,CP-93504,United States,Singapore,6823.34,USD,consulting invoice,wallet,CHAIN-C1ED449C,thin company profiles,suspicious
+TX-000242,2026-01-24 04:00:00,EAST-28671,ALPHA-17329,United Kingdom,Singapore,2764.71,SGD,platform settlement,ach,,none,legitimate
+TX-000243,2026-01-24 05:00:00,BRIDGE-39574,CROWN-98259,United States,United Kingdom,5123.45,GBP,monthly supplier payment,card,,none,legitimate
+TX-000244,2026-01-24 16:00:00,EAST-28671,CROWN-20951,United Kingdom,United Arab Emirates,2834.74,USD,platform settlement,wallet,,none,legitimate
+TX-000245,2026-01-24 17:00:00,CROWN-81061,CP-33815,United States,Hong Kong,5999.05,SGD,consulting invoice,wallet,CHAIN-C1ED449C,shell company funding,suspicious
+TX-000246,2026-01-24 20:00:00,CROWN-81061,CP-80135,United Kingdom,Hong Kong,5961.6,GBP,solar panel shipment,wallet,CHAIN-C1ED449C,shell company funding,suspicious
+TX-000247,2026-01-24 22:00:00,ALPHA-60205,EAST-58324,United States,Hong Kong,11730.85,EUR,tax remittance,wire,,none,legitimate
+TX-000248,2026-01-25 00:00:00,ALPHA-23880,CROWN-29599,United Kingdom,United Arab Emirates,3711.16,GBP,shipping invoice,card,,none,legitimate
+TX-000249,2026-01-25 01:00:00,EAST-38612,EAST-21237,United States,United Arab Emirates,625.74,GBP,platform settlement,card,,none,legitimate
+TX-000250,2026-01-25 01:00:00,ALPHA-22924,DELTA-79479,United Kingdom,United Kingdom,6383.36,HKD,payroll batch,ach,,none,legitimate
+TX-000251,2026-01-25 04:00:00,BRIDGE-33858,ALPHA-22924,United States,United States,3509.18,SGD,platform settlement,wallet,,none,legitimate
+TX-000252,2026-01-25 15:00:00,ALPHA-60205,ALPHA-58451,United States,United Arab Emirates,6493.25,SGD,software subscription,ach,,none,legitimate
+TX-000253,2026-01-25 22:00:00,EAST-28671,EAST-21237,United Kingdom,United States,4904.63,EUR,tax remittance,ach,,none,legitimate
+TX-000254,2026-01-25 23:00:00,BRIDGE-53025,EAST-68648,United Kingdom,Singapore,2993.11,USD,shipping invoice,card,,none,legitimate
+TX-000255,2026-01-26 00:00:00,EAST-58324,NOVA-73318,United States,United Kingdom,2427.67,EUR,software subscription,wire,,none,legitimate
+TX-000256,2026-01-26 02:00:00,BRIDGE-33858,EAST-69642,United Kingdom,Singapore,988.43,HKD,software subscription,card,,none,legitimate
+TX-000257,2026-01-26 02:00:00,SHELL-53067,BRIDGE-68892,United States,United States,22647.53,EUR,solar panel shipment,wallet,CHAIN-DBBFEF77,funding transfer before rapid split,suspicious
+TX-000258,2026-01-26 03:00:00,BRIDGE-79938,NOVA-51207,United States,United Arab Emirates,3231.26,USD,payroll batch,card,,none,legitimate
+TX-000259,2026-01-26 16:00:00,EAST-58324,NOVA-57551,United States,Singapore,1174.07,USD,shipping invoice,card,,none,legitimate
+TX-000260,2026-01-26 16:00:00,EAST-24981,ALPHA-74620,United States,United Kingdom,959.78,USD,payroll batch,ach,,none,legitimate
+TX-000261,2026-01-26 17:00:00,NOVA-57551,ALPHA-58451,United Kingdom,Hong Kong,5245.97,HKD,platform settlement,ach,,none,legitimate
+TX-000262,2026-01-26 20:00:00,BRIDGE-68892,CP-33222,United Kingdom,Hong Kong,4761.31,HKD,import services,wire,CHAIN-DBBFEF77,rapid outbound transfers,suspicious
+TX-000263,2026-01-26 21:00:00,EAST-69642,EAST-38612,United Kingdom,Hong Kong,11384.47,SGD,tax remittance,wire,,none,legitimate
+TX-000264,2026-01-26 22:00:00,EAST-38317,NOVA-94197,United Kingdom,United Kingdom,734.78,SGD,shipping invoice,wire,,none,legitimate
+TX-000265,2026-01-26 23:00:00,EAST-38612,DELTA-12566,United Kingdom,Singapore,288.49,EUR,monthly supplier payment,card,,none,legitimate
+TX-000266,2026-01-26 23:00:00,EAST-46118,CROWN-29599,United States,United Arab Emirates,2040.37,EUR,payroll batch,wallet,,none,legitimate
+TX-000267,2026-01-27 00:00:00,DELTA-33282,NOVA-57551,United States,United Kingdom,18612.78,GBP,tax remittance,card,,none,legitimate
+TX-000268,2026-01-27 00:00:00,EAST-69642,ALPHA-17329,United States,Singapore,9030.24,GBP,software subscription,ach,,none,legitimate
+TX-000269,2026-01-27 02:00:00,CROWN-69602,BRIDGE-39574,United Kingdom,United Kingdom,1263.61,SGD,software subscription,wallet,,none,legitimate
+TX-000270,2026-01-27 03:00:00,BRIDGE-53025,NOVA-35165,United States,United Arab Emirates,570.82,GBP,payroll batch,wire,,none,legitimate
+TX-000271,2026-01-27 04:00:00,BRIDGE-33858,NOVA-87685,United Kingdom,United States,1494.24,EUR,monthly supplier payment,wallet,,none,legitimate
+TX-000272,2026-01-27 04:00:00,NOVA-35165,ALPHA-75305,United Kingdom,United Arab Emirates,3157.06,HKD,platform settlement,card,,none,legitimate
+TX-000273,2026-01-27 05:00:00,BRIDGE-14628,EAST-46776,United Kingdom,United Kingdom,1967.38,SGD,software subscription,ach,,none,legitimate
+TX-000274,2026-01-27 06:00:00,BRIDGE-68892,CP-42210,United Kingdom,United Arab Emirates,5154.13,HKD,logistics fee,wallet,CHAIN-DBBFEF77,structured splitting,suspicious
+TX-000275,2026-01-27 10:00:00,BRIDGE-68892,CP-72873,United States,United Arab Emirates,4662.2,USD,solar panel shipment,ach,CHAIN-DBBFEF77,shell company funding,suspicious
+TX-000276,2026-01-27 15:00:00,BRIDGE-68892,CP-91431,United States,United Arab Emirates,3900.27,EUR,import services,wallet,CHAIN-DBBFEF77,thin company profiles,suspicious
+TX-000277,2026-01-27 20:00:00,CROWN-65541,DELTA-33282,United States,Hong Kong,637.44,GBP,software subscription,wire,,none,legitimate
+TX-000278,2026-01-27 20:00:00,CROWN-17543,EAST-69642,United Kingdom,Singapore,2221.95,GBP,shipping invoice,wire,,none,legitimate
+TX-000279,2026-01-27 21:00:00,ALPHA-60205,NOVA-66530,United Kingdom,United Kingdom,997.86,GBP,shipping invoice,ach,,none,legitimate
+TX-000280,2026-01-28 01:00:00,BRIDGE-68892,CP-54436,United Kingdom,Hong Kong,4169.62,GBP,logistics fee,ach,CHAIN-DBBFEF77,shell company funding,suspicious
+TX-000281,2026-01-28 02:00:00,EAST-69642,ALPHA-38972,United States,Singapore,4979.71,GBP,monthly supplier payment,wallet,,none,legitimate
+TX-000282,2026-01-28 02:00:00,ALPHA-87598,BRIDGE-14628,United Kingdom,United States,6968.7,SGD,tax remittance,ach,,none,legitimate
+TX-000283,2026-01-28 03:00:00,EAST-35638,EAST-24981,United Kingdom,Hong Kong,3899.73,HKD,tax remittance,ach,,none,legitimate
+TX-000284,2026-01-28 03:00:00,DELTA-12566,BRIDGE-39574,United Kingdom,United Kingdom,1304.55,USD,monthly supplier payment,card,,none,legitimate
+TX-000285,2026-01-28 05:00:00,NOVA-73318,CROWN-27079,United States,United States,4483.29,EUR,monthly supplier payment,wire,,none,legitimate
+TX-000286,2026-01-28 19:00:00,CROWN-20951,ALPHA-75305,United Kingdom,United Arab Emirates,2640.63,SGD,monthly supplier payment,wallet,,none,legitimate
+TX-000287,2026-01-28 20:00:00,EAST-92269,DELTA-13062,United States,Hong Kong,1875.62,GBP,monthly supplier payment,wallet,,none,legitimate
+TX-000288,2026-01-28 21:00:00,ALPHA-75305,BRIDGE-68892,United Kingdom,Hong Kong,2288.22,EUR,software subscription,wallet,,none,legitimate
+TX-000289,2026-01-29 00:00:00,DELTA-79479,BRIDGE-33858,United Kingdom,Hong Kong,4581.22,HKD,platform settlement,wire,,none,legitimate
+TX-000290,2026-01-29 03:00:00,CROWN-69602,DELTA-15103,United States,United Kingdom,2077.1,SGD,shipping invoice,wallet,,none,legitimate
+TX-000291,2026-01-29 15:00:00,EAST-38612,CROWN-81061,United States,United Arab Emirates,2716.27,HKD,shipping invoice,card,,none,legitimate
+TX-000292,2026-01-29 17:00:00,BRIDGE-53025,NOVA-73318,United Kingdom,United States,6157.07,HKD,shipping invoice,card,,none,legitimate
+TX-000293,2026-01-29 17:00:00,ALPHA-23880,EAST-38612,United Kingdom,Hong Kong,2357.07,SGD,tax remittance,wire,,none,legitimate
+TX-000294,2026-01-29 17:00:00,CROWN-17543,CROWN-68271,United States,United States,3302.43,GBP,platform settlement,ach,,none,legitimate
+TX-000295,2026-01-29 18:00:00,EAST-38317,ALPHA-17329,United States,Singapore,1765.15,USD,monthly supplier payment,wire,,none,legitimate
+TX-000296,2026-01-29 21:00:00,EAST-68648,EAST-53359,United States,United Arab Emirates,22925.93,GBP,platform settlement,wallet,,none,legitimate
+TX-000297,2026-01-29 23:00:00,EAST-92269,CROWN-17543,United States,United States,1711.06,SGD,monthly supplier payment,wire,,none,legitimate
+TX-000298,2026-01-30 03:00:00,ALPHA-91219,EAST-92269,United States,United Kingdom,696.28,USD,monthly supplier payment,wallet,,none,legitimate
+TX-000299,2026-01-30 03:00:00,EAST-58379,EAST-35638,United Kingdom,Hong Kong,2094.23,USD,shipping invoice,card,,none,legitimate
+TX-000300,2026-01-30 03:00:00,CROWN-68271,CROWN-65541,United States,Hong Kong,7250.43,SGD,monthly supplier payment,ach,,none,legitimate
