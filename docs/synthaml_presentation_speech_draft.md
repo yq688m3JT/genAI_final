@@ -32,7 +32,7 @@ For evaluation, I compared SynthAML against a simpler baseline.
 
 The baseline generates suspicious records mostly using a large-amount rule. SynthAML generates chain-style behavior with timing, narratives, counterparties, and fund-flow consistency.
 
-I trained one classifier on SynthAML data and one on baseline data, then tested both on a hidden guided test set from the same typology. In this sample, SynthAML reached an F1 of 1.000, while the rule baseline reached 0.189. The important result is recall: SynthAML found the hidden chain-style examples, while the threshold baseline missed most of them.
+I trained one classifier on SynthAML data and one on baseline data, then tested both on a hidden guided test set from the same typology. In this sample, SynthAML reached an F1 of 1.000, while the rule baseline reached 0.133. The important result is recall: SynthAML found the hidden chain-style examples, while the threshold baseline missed most of them.
 
 This is not a production AML benchmark, but it shows why the GenAI-guided workflow is more useful than a simple rule-only generator for this narrow task.
 

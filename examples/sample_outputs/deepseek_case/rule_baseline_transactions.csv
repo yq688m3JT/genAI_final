@@ -1,0 +1,301 @@
+tx_id,timestamp,sender_account,receiver_account,origin_region,destination_region,amount,currency,narrative,channel,chain_id,risk_signal,label
+RB-000294,2026-01-05 09:00:00,EAST-35638,EAST-46867,United Kingdom,Singapore,2572.02,HKD,tax remittance,card,,none,legitimate
+RB-000074,2026-01-05 10:00:00,EAST-28671,ALPHA-87598,United States,Singapore,4470.44,USD,tax remittance,wire,,none,legitimate
+RB-000210,2026-01-05 10:00:00,NOVA-57551,CROWN-20951,United States,United Arab Emirates,6150.8,SGD,monthly supplier payment,wire,,none,legitimate
+RB-000200,2026-01-05 10:00:00,NOVA-35165,EAST-53359,United Kingdom,Singapore,1364.81,HKD,payroll batch,ach,,none,legitimate
+RB-000267,2026-01-05 10:00:00,ALPHA-38972,BRIDGE-33858,United Kingdom,Hong Kong,3202.31,SGD,software subscription,card,,none,legitimate
+RB-000195,2026-01-05 10:00:00,EAST-24981,BRIDGE-68892,United Kingdom,United Arab Emirates,4618.94,GBP,software subscription,wallet,,none,legitimate
+RB-000116,2026-01-05 14:00:00,BRIDGE-39574,EAST-53359,United States,Singapore,6644.46,SGD,monthly supplier payment,wallet,,none,legitimate
+RB-000152,2026-01-05 16:00:00,NOVA-11669,NOVA-87685,United States,United Arab Emirates,1150.71,GBP,software subscription,card,,none,legitimate
+RB-000209,2026-01-05 17:00:00,ALPHA-60205,EAST-58379,United Kingdom,Singapore,793.14,HKD,platform settlement,ach,,none,legitimate
+RB-000194,2026-01-05 17:00:00,EAST-46867,EAST-68648,United Kingdom,Singapore,2400.6,GBP,shipping invoice,wallet,,none,legitimate
+RB-000180,2026-01-05 22:00:00,BRIDGE-14628,EAST-58379,United Kingdom,Hong Kong,2411.9,USD,monthly supplier payment,wire,,none,legitimate
+RB-000175,2026-01-06 01:00:00,EAST-58379,NOVA-66530,United States,Hong Kong,15260.58,GBP,software subscription,card,,none,legitimate
+RB-000254,2026-01-06 02:00:00,CROWN-81061,EAST-28671,United Kingdom,Hong Kong,1697.81,GBP,software subscription,wallet,,none,legitimate
+RB-000002,2026-01-06 03:00:00,ALPHA-17329,DELTA-33282,United States,Singapore,41977.68,SGD,software subscription,ach,RULE-0002,large transfer threshold,suspicious
+RB-000025,2026-01-06 05:00:00,BRIDGE-68892,NOVA-57551,United Kingdom,Singapore,45501.11,GBP,tax remittance,ach,RULE-0025,large transfer threshold,suspicious
+RB-000018,2026-01-06 06:00:00,ALPHA-60205,EAST-46776,United Kingdom,Hong Kong,43463.76,GBP,payroll batch,card,RULE-0018,large transfer threshold,suspicious
+RB-000066,2026-01-06 07:00:00,CROWN-69602,EAST-38612,United States,Singapore,2373.21,USD,tax remittance,card,,none,legitimate
+RB-000120,2026-01-06 12:00:00,CROWN-17543,EAST-53359,United States,United Arab Emirates,7974.52,GBP,monthly supplier payment,wallet,,none,legitimate
+RB-000001,2026-01-06 14:00:00,CROWN-17543,NOVA-64555,United Kingdom,United Arab Emirates,44564.65,USD,platform settlement,wire,RULE-0001,large transfer threshold,suspicious
+RB-000076,2026-01-06 16:00:00,CROWN-17543,NOVA-32535,United States,Hong Kong,2741.43,USD,monthly supplier payment,ach,,none,legitimate
+RB-000030,2026-01-06 17:00:00,CROWN-29599,BRIDGE-68892,United Kingdom,Hong Kong,41352.98,SGD,tax remittance,wallet,RULE-0030,large transfer threshold,suspicious
+RB-000125,2026-01-06 21:00:00,BRIDGE-33858,ALPHA-74620,United States,United Arab Emirates,166.1,SGD,shipping invoice,wire,,none,legitimate
+RB-000221,2026-01-06 22:00:00,NOVA-73318,DELTA-13062,United States,Hong Kong,1048.56,SGD,payroll batch,wire,,none,legitimate
+RB-000222,2026-01-06 22:00:00,EAST-68648,NOVA-11669,United States,Singapore,1848.57,GBP,tax remittance,ach,,none,legitimate
+RB-000108,2026-01-07 02:00:00,BRIDGE-79938,NOVA-32535,United States,United Arab Emirates,1355.1,USD,payroll batch,card,,none,legitimate
+RB-000037,2026-01-07 02:00:00,DELTA-13062,EAST-53359,United States,United Arab Emirates,37721.05,SGD,tax remittance,wire,RULE-0037,large transfer threshold,suspicious
+RB-000081,2026-01-07 05:00:00,EAST-35638,EAST-21237,United States,Singapore,10383.99,GBP,tax remittance,card,,none,legitimate
+RB-000167,2026-01-07 05:00:00,NOVA-57551,EAST-38317,United States,Hong Kong,2666.05,USD,tax remittance,wallet,,none,legitimate
+RB-000084,2026-01-07 08:00:00,CROWN-17543,EAST-53359,United States,Hong Kong,34674.76,EUR,shipping invoice,wire,,none,legitimate
+RB-000202,2026-01-07 09:00:00,NOVA-94197,NOVA-64555,United States,Hong Kong,13304.14,SGD,payroll batch,card,,none,legitimate
+RB-000187,2026-01-07 14:00:00,BRIDGE-68892,CROWN-65541,United States,Singapore,4073.75,HKD,platform settlement,card,,none,legitimate
+RB-000205,2026-01-07 15:00:00,ALPHA-23880,EAST-46776,United States,Hong Kong,4169.95,HKD,platform settlement,wire,,none,legitimate
+RB-000106,2026-01-07 20:00:00,CROWN-17543,EAST-69642,United Kingdom,Hong Kong,4368.0,GBP,monthly supplier payment,wallet,,none,legitimate
+RB-000190,2026-01-08 01:00:00,NOVA-64555,DELTA-12566,United States,Hong Kong,9349.31,EUR,tax remittance,ach,,none,legitimate
+RB-000103,2026-01-08 02:00:00,ALPHA-87598,NOVA-94197,United Kingdom,United Arab Emirates,8345.5,GBP,shipping invoice,card,,none,legitimate
+RB-000159,2026-01-08 06:00:00,BRIDGE-53025,CROWN-17543,United States,United Arab Emirates,3721.71,EUR,platform settlement,wire,,none,legitimate
+RB-000036,2026-01-08 08:00:00,CROWN-27079,ALPHA-74620,United States,United Arab Emirates,44980.02,GBP,platform settlement,wire,RULE-0036,large transfer threshold,suspicious
+RB-000021,2026-01-08 08:00:00,ALPHA-87598,EAST-69642,United Kingdom,Singapore,43223.83,GBP,software subscription,wire,RULE-0021,large transfer threshold,suspicious
+RB-000010,2026-01-08 09:00:00,DELTA-33282,ALPHA-87598,United Kingdom,Hong Kong,45030.97,USD,payroll batch,wallet,RULE-0010,large transfer threshold,suspicious
+RB-000132,2026-01-08 13:00:00,CROWN-68271,BRIDGE-68892,United Kingdom,United Arab Emirates,2727.65,GBP,platform settlement,ach,,none,legitimate
+RB-000235,2026-01-08 16:00:00,DELTA-12566,EAST-92269,United States,United Arab Emirates,7715.44,HKD,platform settlement,card,,none,legitimate
+RB-000216,2026-01-08 23:00:00,BRIDGE-79938,CROWN-17543,United States,United Arab Emirates,2516.52,GBP,monthly supplier payment,ach,,none,legitimate
+RB-000295,2026-01-08 23:00:00,EAST-38317,EAST-28671,United States,Singapore,2207.68,USD,shipping invoice,wire,,none,legitimate
+RB-000272,2026-01-09 02:00:00,CROWN-20951,NOVA-73318,United States,United Arab Emirates,800.46,GBP,shipping invoice,card,,none,legitimate
+RB-000164,2026-01-09 03:00:00,CROWN-20951,DELTA-15103,United States,Singapore,3725.59,HKD,payroll batch,wallet,,none,legitimate
+RB-000146,2026-01-09 04:00:00,ALPHA-60205,NOVA-94197,United States,Singapore,4868.22,SGD,payroll batch,ach,,none,legitimate
+RB-000099,2026-01-09 05:00:00,DELTA-13062,BRIDGE-14628,United Kingdom,United Arab Emirates,16254.82,HKD,platform settlement,ach,,none,legitimate
+RB-000250,2026-01-09 07:00:00,CROWN-69602,EAST-21237,United States,United Arab Emirates,1414.63,HKD,tax remittance,ach,,none,legitimate
+RB-000233,2026-01-09 07:00:00,EAST-69642,CROWN-27079,United States,Singapore,2415.08,GBP,monthly supplier payment,card,,none,legitimate
+RB-000286,2026-01-09 09:00:00,EAST-46118,CROWN-69602,United States,Hong Kong,7273.67,HKD,payroll batch,card,,none,legitimate
+RB-000073,2026-01-09 11:00:00,DELTA-12566,EAST-68648,United States,Hong Kong,2849.09,HKD,payroll batch,wire,,none,legitimate
+RB-000089,2026-01-09 11:00:00,ALPHA-87598,CROWN-65541,United Kingdom,Hong Kong,18547.54,HKD,payroll batch,card,,none,legitimate
+RB-000070,2026-01-09 15:00:00,EAST-68648,ALPHA-17329,United States,United Arab Emirates,3033.59,EUR,shipping invoice,wire,,none,legitimate
+RB-000160,2026-01-09 17:00:00,NOVA-94197,ALPHA-87598,United States,Hong Kong,3019.5,EUR,shipping invoice,ach,,none,legitimate
+RB-000064,2026-01-09 18:00:00,EAST-28671,CROWN-81061,United Kingdom,United Arab Emirates,7059.71,HKD,platform settlement,wire,,none,legitimate
+RB-000023,2026-01-09 18:00:00,NOVA-35165,ALPHA-75305,United Kingdom,Singapore,45769.37,HKD,payroll batch,wallet,RULE-0023,large transfer threshold,suspicious
+RB-000121,2026-01-09 19:00:00,EAST-24981,BRIDGE-79938,United States,Hong Kong,22322.59,EUR,payroll batch,wallet,,none,legitimate
+RB-000290,2026-01-09 19:00:00,ALPHA-17329,BRIDGE-39574,United States,United Arab Emirates,2337.96,USD,tax remittance,wallet,,none,legitimate
+RB-000026,2026-01-09 20:00:00,ALPHA-60205,EAST-38612,United Kingdom,Singapore,42438.2,SGD,monthly supplier payment,wire,RULE-0026,large transfer threshold,suspicious
+RB-000003,2026-01-09 23:00:00,ALPHA-60205,BRIDGE-79938,United States,Hong Kong,46737.2,HKD,software subscription,ach,RULE-0003,large transfer threshold,suspicious
+RB-000204,2026-01-10 00:00:00,ALPHA-22924,EAST-92269,United States,Singapore,2627.55,SGD,shipping invoice,wire,,none,legitimate
+RB-000024,2026-01-10 01:00:00,CROWN-29599,EAST-21237,United Kingdom,Singapore,42402.6,EUR,platform settlement,wallet,RULE-0024,large transfer threshold,suspicious
+RB-000291,2026-01-10 01:00:00,EAST-58379,EAST-21237,United States,United Arab Emirates,2640.89,HKD,monthly supplier payment,wallet,,none,legitimate
+RB-000124,2026-01-10 02:00:00,ALPHA-58451,ALPHA-91219,United Kingdom,Hong Kong,1144.09,EUR,software subscription,wallet,,none,legitimate
+RB-000269,2026-01-10 04:00:00,EAST-24981,CROWN-27079,United Kingdom,United Arab Emirates,3481.77,HKD,tax remittance,ach,,none,legitimate
+RB-000251,2026-01-10 09:00:00,CROWN-20951,NOVA-35165,United Kingdom,Hong Kong,2420.28,USD,shipping invoice,wire,,none,legitimate
+RB-000208,2026-01-10 09:00:00,EAST-68648,ALPHA-17329,United States,Hong Kong,7973.28,GBP,platform settlement,wire,,none,legitimate
+RB-000004,2026-01-10 11:00:00,ALPHA-74620,DELTA-15103,United Kingdom,Hong Kong,42675.19,SGD,payroll batch,wire,RULE-0004,large transfer threshold,suspicious
+RB-000170,2026-01-10 12:00:00,BRIDGE-14628,CROWN-65541,United States,Hong Kong,17101.2,HKD,monthly supplier payment,ach,,none,legitimate
+RB-000094,2026-01-10 13:00:00,EAST-38317,CROWN-81061,United States,Hong Kong,767.73,EUR,software subscription,wire,,none,legitimate
+RB-000077,2026-01-10 15:00:00,CROWN-68271,NOVA-35165,United States,Hong Kong,2222.86,SGD,software subscription,card,,none,legitimate
+RB-000206,2026-01-10 17:00:00,EAST-46867,DELTA-12566,United Kingdom,Singapore,5730.66,EUR,monthly supplier payment,wallet,,none,legitimate
+RB-000225,2026-01-10 17:00:00,BRIDGE-39574,CROWN-81061,United States,Hong Kong,3999.6,SGD,platform settlement,ach,,none,legitimate
+RB-000186,2026-01-10 17:00:00,NOVA-73318,EAST-46776,United States,United Arab Emirates,4423.8,HKD,monthly supplier payment,wire,,none,legitimate
+RB-000278,2026-01-10 19:00:00,EAST-46867,NOVA-32535,United Kingdom,Hong Kong,5334.62,USD,platform settlement,ach,,none,legitimate
+RB-000069,2026-01-10 20:00:00,NOVA-64555,NOVA-32535,United Kingdom,United Arab Emirates,2285.22,SGD,payroll batch,wallet,,none,legitimate
+RB-000270,2026-01-11 01:00:00,BRIDGE-14628,EAST-53359,United States,Singapore,2413.59,GBP,software subscription,wallet,,none,legitimate
+RB-000265,2026-01-11 07:00:00,EAST-92269,EAST-28671,United Kingdom,United Arab Emirates,4018.6,HKD,monthly supplier payment,card,,none,legitimate
+RB-000246,2026-01-11 07:00:00,ALPHA-23880,NOVA-73318,United States,United Arab Emirates,14188.35,SGD,shipping invoice,card,,none,legitimate
+RB-000068,2026-01-11 08:00:00,BRIDGE-53025,CROWN-65541,United States,Hong Kong,12166.7,GBP,shipping invoice,wire,,none,legitimate
+RB-000093,2026-01-11 17:00:00,ALPHA-75305,ALPHA-91219,United Kingdom,Hong Kong,2274.02,USD,platform settlement,wallet,,none,legitimate
+RB-000258,2026-01-11 22:00:00,NOVA-66530,BRIDGE-68892,United States,Singapore,5790.36,USD,monthly supplier payment,ach,,none,legitimate
+RB-000142,2026-01-11 22:00:00,NOVA-11669,EAST-58324,United Kingdom,United Arab Emirates,5921.98,SGD,monthly supplier payment,wire,,none,legitimate
+RB-000239,2026-01-12 04:00:00,NOVA-51207,ALPHA-87598,United Kingdom,Hong Kong,1970.64,GBP,shipping invoice,card,,none,legitimate
+RB-000191,2026-01-12 05:00:00,NOVA-73318,ALPHA-23880,United Kingdom,United Arab Emirates,9164.79,GBP,shipping invoice,wallet,,none,legitimate
+RB-000133,2026-01-12 06:00:00,NOVA-11669,CROWN-27079,United Kingdom,Singapore,2578.2,USD,payroll batch,wallet,,none,legitimate
+RB-000115,2026-01-12 07:00:00,CROWN-81061,DELTA-15103,United Kingdom,Hong Kong,3405.2,EUR,tax remittance,card,,none,legitimate
+RB-000201,2026-01-12 09:00:00,ALPHA-22924,CROWN-81061,United Kingdom,United Arab Emirates,3831.53,USD,tax remittance,wire,,none,legitimate
+RB-000097,2026-01-12 10:00:00,BRIDGE-14628,EAST-21237,United States,United Arab Emirates,4624.88,EUR,shipping invoice,ach,,none,legitimate
+RB-000178,2026-01-12 11:00:00,CROWN-81061,EAST-38612,United States,Singapore,2500.25,HKD,software subscription,card,,none,legitimate
+RB-000050,2026-01-12 13:00:00,BRIDGE-79938,BRIDGE-53025,United Kingdom,Hong Kong,44964.67,SGD,shipping invoice,wire,RULE-0050,large transfer threshold,suspicious
+RB-000035,2026-01-12 14:00:00,DELTA-15103,ALPHA-17329,United States,Hong Kong,42508.54,HKD,software subscription,ach,RULE-0035,large transfer threshold,suspicious
+RB-000055,2026-01-12 14:00:00,NOVA-73318,EAST-28671,United States,Hong Kong,5668.1,GBP,platform settlement,wire,,none,legitimate
+RB-000034,2026-01-12 18:00:00,DELTA-15103,EAST-38612,United Kingdom,Singapore,38942.28,GBP,shipping invoice,wallet,RULE-0034,large transfer threshold,suspicious
+RB-000147,2026-01-12 19:00:00,EAST-58324,ALPHA-58451,United Kingdom,Singapore,1098.68,EUR,software subscription,card,,none,legitimate
+RB-000056,2026-01-12 20:00:00,EAST-35638,CROWN-98259,United States,Singapore,4333.28,USD,platform settlement,ach,,none,legitimate
+RB-000143,2026-01-12 23:00:00,EAST-58379,ALPHA-38972,United Kingdom,Singapore,13355.92,USD,tax remittance,card,,none,legitimate
+RB-000219,2026-01-13 01:00:00,DELTA-12566,ALPHA-60205,United Kingdom,United Arab Emirates,1480.57,GBP,payroll batch,wallet,,none,legitimate
+RB-000063,2026-01-13 03:00:00,CROWN-68271,CROWN-29599,United Kingdom,Singapore,7073.04,HKD,tax remittance,wallet,,none,legitimate
+RB-000229,2026-01-13 04:00:00,NOVA-51207,NOVA-87685,United States,Singapore,7277.67,HKD,platform settlement,wallet,,none,legitimate
+RB-000232,2026-01-13 05:00:00,NOVA-32535,EAST-53359,United Kingdom,Singapore,1155.79,GBP,software subscription,wire,,none,legitimate
+RB-000256,2026-01-13 07:00:00,EAST-68648,BRIDGE-33858,United Kingdom,Hong Kong,2375.81,SGD,payroll batch,card,,none,legitimate
+RB-000228,2026-01-13 08:00:00,EAST-68648,ALPHA-75305,United States,Singapore,3101.77,USD,monthly supplier payment,card,,none,legitimate
+RB-000051,2026-01-13 09:00:00,NOVA-73318,DELTA-15103,United States,Hong Kong,43797.77,HKD,tax remittance,wire,RULE-0051,large transfer threshold,suspicious
+RB-000226,2026-01-13 10:00:00,DELTA-33282,EAST-24981,United Kingdom,United Arab Emirates,7745.21,GBP,software subscription,card,,none,legitimate
+RB-000163,2026-01-13 14:00:00,DELTA-33282,EAST-21237,United States,United Arab Emirates,2382.9,EUR,tax remittance,wallet,,none,legitimate
+RB-000193,2026-01-13 14:00:00,NOVA-51207,EAST-38317,United States,United Arab Emirates,1329.59,EUR,payroll batch,card,,none,legitimate
+RB-000040,2026-01-13 14:00:00,EAST-58379,CROWN-20951,United States,United Arab Emirates,43110.82,HKD,shipping invoice,wire,RULE-0040,large transfer threshold,suspicious
+RB-000101,2026-01-13 17:00:00,NOVA-57551,DELTA-12566,United States,Singapore,1444.81,USD,software subscription,wire,,none,legitimate
+RB-000284,2026-01-13 19:00:00,ALPHA-87598,ALPHA-23880,United States,United Arab Emirates,1746.61,GBP,platform settlement,ach,,none,legitimate
+RB-000199,2026-01-13 22:00:00,BRIDGE-53025,ALPHA-23880,United States,United Arab Emirates,29116.63,SGD,tax remittance,ach,,none,legitimate
+RB-000214,2026-01-13 22:00:00,EAST-35638,NOVA-32535,United Kingdom,Singapore,3783.11,SGD,software subscription,wire,,none,legitimate
+RB-000119,2026-01-13 22:00:00,EAST-24981,DELTA-13062,United Kingdom,Singapore,9378.87,SGD,monthly supplier payment,card,,none,legitimate
+RB-000137,2026-01-14 03:00:00,EAST-58324,ALPHA-22924,United Kingdom,Hong Kong,3036.03,GBP,monthly supplier payment,ach,,none,legitimate
+RB-000031,2026-01-14 08:00:00,EAST-58379,DELTA-79479,United Kingdom,Singapore,44528.75,GBP,tax remittance,ach,RULE-0031,large transfer threshold,suspicious
+RB-000011,2026-01-14 08:00:00,NOVA-87685,NOVA-94197,United Kingdom,Singapore,46781.06,HKD,tax remittance,ach,RULE-0011,large transfer threshold,suspicious
+RB-000047,2026-01-14 10:00:00,ALPHA-23880,EAST-21237,United Kingdom,Hong Kong,43430.04,EUR,software subscription,ach,RULE-0047,large transfer threshold,suspicious
+RB-000008,2026-01-14 13:00:00,EAST-46867,EAST-46118,United States,Hong Kong,44442.48,USD,platform settlement,wire,RULE-0008,large transfer threshold,suspicious
+RB-000240,2026-01-14 14:00:00,NOVA-94197,NOVA-32535,United Kingdom,United Arab Emirates,4142.41,EUR,software subscription,wire,,none,legitimate
+RB-000198,2026-01-14 18:00:00,CROWN-98259,CROWN-27079,United States,United Arab Emirates,6193.2,USD,payroll batch,card,,none,legitimate
+RB-000017,2026-01-14 19:00:00,ALPHA-38972,NOVA-32535,United States,Hong Kong,42758.38,GBP,monthly supplier payment,ach,RULE-0017,large transfer threshold,suspicious
+RB-000028,2026-01-14 21:00:00,EAST-58324,CROWN-65541,United States,Singapore,43842.27,GBP,software subscription,wallet,RULE-0028,large transfer threshold,suspicious
+RB-000049,2026-01-14 21:00:00,CROWN-69602,CROWN-65541,United States,Hong Kong,44756.97,GBP,platform settlement,ach,RULE-0049,large transfer threshold,suspicious
+RB-000197,2026-01-14 22:00:00,BRIDGE-79938,EAST-24981,United Kingdom,Singapore,1233.52,GBP,platform settlement,wire,,none,legitimate
+RB-000123,2026-01-14 22:00:00,CROWN-20951,DELTA-13062,United Kingdom,Singapore,2289.48,HKD,platform settlement,card,,none,legitimate
+RB-000085,2026-01-14 22:00:00,DELTA-15103,NOVA-35165,United States,Singapore,1645.6,GBP,monthly supplier payment,wallet,,none,legitimate
+RB-000042,2026-01-15 02:00:00,CROWN-20951,NOVA-11669,United Kingdom,Singapore,42040.08,HKD,monthly supplier payment,ach,RULE-0042,large transfer threshold,suspicious
+RB-000217,2026-01-15 02:00:00,BRIDGE-33858,NOVA-32535,United Kingdom,Hong Kong,3522.28,USD,software subscription,ach,,none,legitimate
+RB-000292,2026-01-15 03:00:00,NOVA-73318,ALPHA-22924,United States,Singapore,2720.85,GBP,shipping invoice,wire,,none,legitimate
+RB-000218,2026-01-15 04:00:00,EAST-24981,NOVA-57551,United Kingdom,United Arab Emirates,1199.76,USD,tax remittance,ach,,none,legitimate
+RB-000111,2026-01-15 06:00:00,EAST-92269,CROWN-29599,United Kingdom,Singapore,2323.4,USD,monthly supplier payment,ach,,none,legitimate
+RB-000172,2026-01-15 07:00:00,CROWN-17543,ALPHA-38972,United States,Hong Kong,5233.14,USD,monthly supplier payment,ach,,none,legitimate
+RB-000128,2026-01-15 09:00:00,CROWN-65541,EAST-35638,United Kingdom,Singapore,1792.87,USD,tax remittance,wallet,,none,legitimate
+RB-000127,2026-01-15 09:00:00,BRIDGE-53025,NOVA-57551,United States,Hong Kong,5374.68,USD,platform settlement,card,,none,legitimate
+RB-000176,2026-01-15 11:00:00,EAST-35638,DELTA-15103,United Kingdom,Hong Kong,9397.06,GBP,payroll batch,wallet,,none,legitimate
+RB-000185,2026-01-15 12:00:00,EAST-53359,EAST-24981,United Kingdom,Hong Kong,7101.1,HKD,platform settlement,ach,,none,legitimate
+RB-000153,2026-01-15 20:00:00,DELTA-79479,EAST-38317,United Kingdom,United Arab Emirates,2505.54,USD,tax remittance,wire,,none,legitimate
+RB-000268,2026-01-15 20:00:00,EAST-58324,ALPHA-38972,United Kingdom,Singapore,1602.12,HKD,payroll batch,wallet,,none,legitimate
+RB-000059,2026-01-15 20:00:00,DELTA-15103,ALPHA-23880,United Kingdom,United Arab Emirates,5141.99,SGD,platform settlement,card,,none,legitimate
+RB-000046,2026-01-16 01:00:00,NOVA-51207,CROWN-27079,United Kingdom,Singapore,39023.16,USD,tax remittance,ach,RULE-0046,large transfer threshold,suspicious
+RB-000148,2026-01-16 01:00:00,NOVA-11669,EAST-46118,United States,Hong Kong,2955.03,EUR,tax remittance,wire,,none,legitimate
+RB-000122,2026-01-16 02:00:00,CROWN-68271,EAST-38317,United Kingdom,Singapore,3249.44,SGD,monthly supplier payment,wire,,none,legitimate
+RB-000079,2026-01-16 03:00:00,CROWN-20951,EAST-58324,United Kingdom,Hong Kong,1242.23,HKD,shipping invoice,ach,,none,legitimate
+RB-000044,2026-01-16 04:00:00,CROWN-81061,BRIDGE-39574,United States,Hong Kong,41329.32,HKD,tax remittance,ach,RULE-0044,large transfer threshold,suspicious
+RB-000117,2026-01-16 05:00:00,BRIDGE-53025,NOVA-64555,United States,Hong Kong,3352.11,USD,tax remittance,wire,,none,legitimate
+RB-000227,2026-01-16 06:00:00,ALPHA-17329,EAST-35638,United States,Singapore,770.87,SGD,payroll batch,card,,none,legitimate
+RB-000252,2026-01-16 06:00:00,ALPHA-58451,BRIDGE-33858,United Kingdom,Hong Kong,12304.96,GBP,payroll batch,wire,,none,legitimate
+RB-000293,2026-01-16 08:00:00,EAST-58324,ALPHA-22924,United States,Hong Kong,1492.12,HKD,platform settlement,wire,,none,legitimate
+RB-000145,2026-01-16 09:00:00,EAST-58324,NOVA-32535,United Kingdom,United Arab Emirates,6937.95,HKD,payroll batch,wire,,none,legitimate
+RB-000280,2026-01-16 09:00:00,DELTA-79479,NOVA-32535,United States,United Arab Emirates,3504.46,GBP,platform settlement,wire,,none,legitimate
+RB-000230,2026-01-16 10:00:00,ALPHA-38972,CROWN-29599,United Kingdom,Singapore,10983.0,EUR,tax remittance,wire,,none,legitimate
+RB-000241,2026-01-16 11:00:00,EAST-58379,BRIDGE-33858,United States,United Arab Emirates,6972.92,EUR,shipping invoice,ach,,none,legitimate
+RB-000086,2026-01-16 13:00:00,DELTA-13062,CROWN-68271,United States,Hong Kong,995.34,GBP,payroll batch,wallet,,none,legitimate
+RB-000058,2026-01-16 13:00:00,DELTA-13062,CROWN-69602,United Kingdom,Singapore,569.55,EUR,payroll batch,ach,,none,legitimate
+RB-000118,2026-01-16 13:00:00,ALPHA-22924,BRIDGE-39574,United Kingdom,United Arab Emirates,1659.45,HKD,tax remittance,ach,,none,legitimate
+RB-000196,2026-01-16 14:00:00,NOVA-94197,BRIDGE-33858,United Kingdom,United Arab Emirates,3794.08,SGD,platform settlement,wallet,,none,legitimate
+RB-000096,2026-01-16 14:00:00,EAST-92269,DELTA-33282,United States,Singapore,1829.08,EUR,platform settlement,wire,,none,legitimate
+RB-000150,2026-01-16 16:00:00,BRIDGE-33858,CROWN-20951,United Kingdom,United Arab Emirates,1680.89,EUR,tax remittance,wire,,none,legitimate
+RB-000126,2026-01-16 19:00:00,BRIDGE-39574,NOVA-35165,United Kingdom,Singapore,1278.29,EUR,software subscription,ach,,none,legitimate
+RB-000177,2026-01-16 20:00:00,CROWN-98259,EAST-24981,United Kingdom,Singapore,2206.25,EUR,shipping invoice,wallet,,none,legitimate
+RB-000088,2026-01-16 22:00:00,EAST-69642,BRIDGE-68892,United States,Singapore,15452.88,SGD,payroll batch,wallet,,none,legitimate
+RB-000277,2026-01-16 22:00:00,EAST-46867,NOVA-87685,United Kingdom,United Arab Emirates,4323.92,HKD,software subscription,card,,none,legitimate
+RB-000183,2026-01-16 23:00:00,CROWN-20951,ALPHA-22924,United States,Hong Kong,6017.42,EUR,monthly supplier payment,wire,,none,legitimate
+RB-000182,2026-01-17 00:00:00,BRIDGE-79938,NOVA-51207,United States,United Arab Emirates,1758.74,GBP,shipping invoice,wire,,none,legitimate
+RB-000015,2026-01-17 04:00:00,DELTA-13062,CROWN-29599,United Kingdom,United Arab Emirates,41844.8,GBP,tax remittance,wire,RULE-0015,large transfer threshold,suspicious
+RB-000236,2026-01-17 05:00:00,ALPHA-38972,ALPHA-58451,United Kingdom,United Arab Emirates,4562.45,EUR,shipping invoice,card,,none,legitimate
+RB-000264,2026-01-17 13:00:00,ALPHA-75305,DELTA-79479,United Kingdom,Singapore,1098.52,USD,monthly supplier payment,wallet,,none,legitimate
+RB-000038,2026-01-17 14:00:00,EAST-24981,EAST-58379,United Kingdom,United Arab Emirates,39715.91,USD,payroll batch,wire,RULE-0038,large transfer threshold,suspicious
+RB-000263,2026-01-17 14:00:00,EAST-38317,NOVA-32535,United States,United Arab Emirates,1647.72,GBP,monthly supplier payment,wallet,,none,legitimate
+RB-000188,2026-01-17 15:00:00,BRIDGE-39574,CROWN-98259,United Kingdom,Singapore,3402.8,GBP,monthly supplier payment,card,,none,legitimate
+RB-000141,2026-01-17 15:00:00,EAST-24981,CROWN-69602,United Kingdom,Singapore,13493.04,HKD,shipping invoice,wallet,,none,legitimate
+RB-000173,2026-01-17 15:00:00,EAST-92269,ALPHA-91219,United States,Hong Kong,2283.22,EUR,monthly supplier payment,card,,none,legitimate
+RB-000248,2026-01-17 17:00:00,EAST-68648,EAST-46776,United States,Hong Kong,11560.37,SGD,monthly supplier payment,wire,,none,legitimate
+RB-000080,2026-01-17 18:00:00,EAST-58324,ALPHA-58451,United States,Singapore,3796.17,HKD,software subscription,ach,,none,legitimate
+RB-000244,2026-01-17 18:00:00,EAST-38612,EAST-68648,United Kingdom,United Arab Emirates,374.76,GBP,payroll batch,card,,none,legitimate
+RB-000161,2026-01-17 18:00:00,DELTA-15103,EAST-38612,United Kingdom,Singapore,2363.51,USD,monthly supplier payment,ach,,none,legitimate
+RB-000189,2026-01-17 18:00:00,ALPHA-75305,NOVA-66530,United Kingdom,United Arab Emirates,3574.39,SGD,software subscription,wire,,none,legitimate
+RB-000224,2026-01-17 18:00:00,NOVA-66530,ALPHA-75305,United Kingdom,United Arab Emirates,2453.13,GBP,software subscription,wire,,none,legitimate
+RB-000273,2026-01-17 19:00:00,EAST-21237,EAST-58324,United Kingdom,Singapore,3488.64,SGD,shipping invoice,wallet,,none,legitimate
+RB-000168,2026-01-17 21:00:00,BRIDGE-68892,ALPHA-75305,United States,United Arab Emirates,16789.97,HKD,software subscription,wallet,,none,legitimate
+RB-000129,2026-01-17 21:00:00,CROWN-20951,EAST-38317,United States,United Arab Emirates,456.75,GBP,monthly supplier payment,wire,,none,legitimate
+RB-000060,2026-01-17 22:00:00,DELTA-15103,CROWN-17543,United Kingdom,United Arab Emirates,664.46,USD,tax remittance,wallet,,none,legitimate
+RB-000155,2026-01-17 22:00:00,DELTA-15103,NOVA-51207,United Kingdom,Hong Kong,1952.62,GBP,monthly supplier payment,ach,,none,legitimate
+RB-000022,2026-01-17 23:00:00,DELTA-13062,CROWN-65541,United States,Singapore,43140.05,USD,payroll batch,card,RULE-0022,large transfer threshold,suspicious
+RB-000260,2026-01-18 00:00:00,DELTA-12566,NOVA-51207,United Kingdom,United Arab Emirates,14339.88,HKD,shipping invoice,wire,,none,legitimate
+RB-000139,2026-01-18 03:00:00,CROWN-65541,EAST-24981,United Kingdom,Hong Kong,9039.69,EUR,tax remittance,ach,,none,legitimate
+RB-000045,2026-01-18 04:00:00,BRIDGE-39574,CROWN-27079,United States,United Arab Emirates,39655.22,EUR,monthly supplier payment,wallet,RULE-0045,large transfer threshold,suspicious
+RB-000013,2026-01-18 06:00:00,BRIDGE-68892,ALPHA-87598,United Kingdom,Singapore,43869.35,GBP,shipping invoice,card,RULE-0013,large transfer threshold,suspicious
+RB-000237,2026-01-18 07:00:00,DELTA-12566,ALPHA-75305,United States,Hong Kong,4502.86,GBP,monthly supplier payment,ach,,none,legitimate
+RB-000247,2026-01-18 08:00:00,DELTA-79479,ALPHA-17329,United States,Hong Kong,7323.49,HKD,tax remittance,ach,,none,legitimate
+RB-000057,2026-01-18 09:00:00,ALPHA-38972,ALPHA-87598,United States,Singapore,3475.9,SGD,payroll batch,wire,,none,legitimate
+RB-000007,2026-01-18 09:00:00,NOVA-57551,BRIDGE-68892,United States,Singapore,45805.63,USD,monthly supplier payment,ach,RULE-0007,large transfer threshold,suspicious
+RB-000156,2026-01-18 10:00:00,NOVA-87685,EAST-38317,United States,Singapore,1042.61,SGD,monthly supplier payment,wallet,,none,legitimate
+RB-000287,2026-01-18 13:00:00,EAST-46867,CROWN-27079,United States,Hong Kong,7164.15,EUR,platform settlement,wallet,,none,legitimate
+RB-000158,2026-01-18 14:00:00,EAST-38612,EAST-21237,United Kingdom,Singapore,2706.33,GBP,platform settlement,card,,none,legitimate
+RB-000107,2026-01-18 17:00:00,BRIDGE-53025,EAST-68648,United States,United Arab Emirates,999.58,EUR,tax remittance,wire,,none,legitimate
+RB-000211,2026-01-18 18:00:00,EAST-46776,EAST-24981,United Kingdom,Singapore,4890.34,HKD,tax remittance,ach,,none,legitimate
+RB-000029,2026-01-18 20:00:00,ALPHA-87598,DELTA-15103,United Kingdom,United Arab Emirates,46199.94,EUR,shipping invoice,ach,RULE-0029,large transfer threshold,suspicious
+RB-000054,2026-01-18 22:00:00,ALPHA-22924,DELTA-15103,United Kingdom,United Arab Emirates,46761.91,EUR,software subscription,card,RULE-0054,large transfer threshold,suspicious
+RB-000072,2026-01-18 23:00:00,BRIDGE-14628,CROWN-20951,United Kingdom,United Arab Emirates,2407.15,EUR,shipping invoice,wire,,none,legitimate
+RB-000067,2026-01-19 00:00:00,ALPHA-17329,NOVA-11669,United Kingdom,Hong Kong,2847.94,HKD,payroll batch,ach,,none,legitimate
+RB-000033,2026-01-19 01:00:00,CROWN-98259,ALPHA-91219,United Kingdom,Hong Kong,38406.7,HKD,monthly supplier payment,ach,RULE-0033,large transfer threshold,suspicious
+RB-000092,2026-01-19 02:00:00,BRIDGE-79938,NOVA-51207,United Kingdom,Singapore,3654.14,USD,payroll batch,card,,none,legitimate
+RB-000283,2026-01-19 04:00:00,BRIDGE-53025,ALPHA-58451,United States,Singapore,9069.08,EUR,shipping invoice,card,,none,legitimate
+RB-000154,2026-01-19 06:00:00,EAST-69642,ALPHA-38972,United Kingdom,Hong Kong,4756.7,HKD,payroll batch,card,,none,legitimate
+RB-000288,2026-01-19 07:00:00,ALPHA-17329,EAST-69642,United Kingdom,United Arab Emirates,6484.13,GBP,shipping invoice,ach,,none,legitimate
+RB-000215,2026-01-19 10:00:00,EAST-68648,ALPHA-23880,United States,Singapore,10549.72,GBP,shipping invoice,card,,none,legitimate
+RB-000255,2026-01-19 12:00:00,EAST-68648,ALPHA-87598,United States,United Arab Emirates,924.13,USD,software subscription,card,,none,legitimate
+RB-000274,2026-01-19 18:00:00,BRIDGE-33858,NOVA-87685,United States,United Arab Emirates,11981.46,HKD,payroll batch,wire,,none,legitimate
+RB-000100,2026-01-19 18:00:00,ALPHA-58451,DELTA-12566,United Kingdom,United Arab Emirates,9328.19,SGD,software subscription,wallet,,none,legitimate
+RB-000297,2026-01-19 18:00:00,EAST-38612,BRIDGE-53025,United States,Singapore,4917.42,USD,shipping invoice,wire,,none,legitimate
+RB-000234,2026-01-19 22:00:00,CROWN-65541,EAST-38317,United States,Singapore,5717.86,HKD,shipping invoice,wire,,none,legitimate
+RB-000171,2026-01-20 00:00:00,EAST-53359,EAST-38317,United Kingdom,United Arab Emirates,5227.81,EUR,payroll batch,ach,,none,legitimate
+RB-000282,2026-01-20 02:00:00,CROWN-20951,NOVA-11669,United Kingdom,Singapore,2662.07,USD,payroll batch,wallet,,none,legitimate
+RB-000276,2026-01-20 02:00:00,ALPHA-75305,ALPHA-23880,United States,Hong Kong,8022.93,GBP,platform settlement,card,,none,legitimate
+RB-000105,2026-01-20 03:00:00,ALPHA-60205,NOVA-66530,United Kingdom,Hong Kong,2660.23,SGD,platform settlement,wallet,,none,legitimate
+RB-000131,2026-01-20 05:00:00,NOVA-73318,NOVA-32535,United Kingdom,Singapore,2268.05,USD,monthly supplier payment,ach,,none,legitimate
+RB-000020,2026-01-20 05:00:00,EAST-38317,NOVA-35165,United States,Hong Kong,43365.72,USD,tax remittance,ach,RULE-0020,large transfer threshold,suspicious
+RB-000053,2026-01-20 07:00:00,NOVA-73318,CROWN-69602,United States,Singapore,46715.3,GBP,payroll batch,card,RULE-0053,large transfer threshold,suspicious
+RB-000075,2026-01-20 07:00:00,EAST-24981,EAST-68648,United Kingdom,United Arab Emirates,2878.18,SGD,tax remittance,wire,,none,legitimate
+RB-000243,2026-01-20 08:00:00,DELTA-15103,EAST-38612,United Kingdom,Singapore,9304.64,SGD,monthly supplier payment,ach,,none,legitimate
+RB-000281,2026-01-20 11:00:00,CROWN-17543,EAST-69642,United Kingdom,Hong Kong,4589.18,EUR,platform settlement,wallet,,none,legitimate
+RB-000213,2026-01-20 15:00:00,NOVA-57551,CROWN-20951,United States,Singapore,4963.64,EUR,platform settlement,ach,,none,legitimate
+RB-000078,2026-01-20 16:00:00,EAST-35638,EAST-24981,United States,Hong Kong,3911.47,HKD,tax remittance,ach,,none,legitimate
+RB-000134,2026-01-20 17:00:00,ALPHA-58451,NOVA-51207,United States,Hong Kong,3269.01,SGD,platform settlement,ach,,none,legitimate
+RB-000113,2026-01-20 19:00:00,ALPHA-60205,BRIDGE-53025,United States,Singapore,3987.96,USD,software subscription,wire,,none,legitimate
+RB-000257,2026-01-20 21:00:00,EAST-53359,EAST-58324,United Kingdom,Singapore,2599.33,USD,payroll batch,wire,,none,legitimate
+RB-000259,2026-01-20 23:00:00,ALPHA-74620,EAST-28671,United States,United Arab Emirates,1883.46,SGD,tax remittance,ach,,none,legitimate
+RB-000275,2026-01-21 04:00:00,EAST-68648,DELTA-79479,United States,United Arab Emirates,9751.59,HKD,software subscription,wire,,none,legitimate
+RB-000212,2026-01-21 05:00:00,EAST-46118,CROWN-65541,United States,United Arab Emirates,3206.3,GBP,payroll batch,card,,none,legitimate
+RB-000181,2026-01-21 05:00:00,CROWN-20951,ALPHA-58451,United States,Singapore,7599.16,HKD,platform settlement,ach,,none,legitimate
+RB-000087,2026-01-21 06:00:00,DELTA-79479,BRIDGE-53025,United Kingdom,Hong Kong,2587.77,EUR,platform settlement,ach,,none,legitimate
+RB-000231,2026-01-21 07:00:00,NOVA-66530,ALPHA-17329,United Kingdom,Hong Kong,11213.31,EUR,tax remittance,wire,,none,legitimate
+RB-000109,2026-01-21 08:00:00,EAST-21237,ALPHA-38972,United States,Singapore,931.45,GBP,monthly supplier payment,wallet,,none,legitimate
+RB-000144,2026-01-21 09:00:00,ALPHA-23880,DELTA-15103,United Kingdom,Singapore,2072.29,HKD,tax remittance,card,,none,legitimate
+RB-000104,2026-01-21 09:00:00,CROWN-29599,EAST-46776,United Kingdom,Singapore,1253.37,GBP,tax remittance,card,,none,legitimate
+RB-000032,2026-01-21 09:00:00,ALPHA-23880,ALPHA-58451,United Kingdom,United Arab Emirates,47083.93,USD,monthly supplier payment,wallet,RULE-0032,large transfer threshold,suspicious
+RB-000289,2026-01-21 09:00:00,ALPHA-74620,EAST-58324,United Kingdom,United Arab Emirates,2531.85,SGD,platform settlement,wire,,none,legitimate
+RB-000098,2026-01-21 10:00:00,ALPHA-74620,NOVA-57551,United Kingdom,Hong Kong,3887.48,GBP,tax remittance,wallet,,none,legitimate
+RB-000165,2026-01-21 11:00:00,BRIDGE-14628,BRIDGE-79938,United States,Hong Kong,1146.02,SGD,platform settlement,ach,,none,legitimate
+RB-000242,2026-01-21 11:00:00,NOVA-94197,EAST-24981,United Kingdom,Hong Kong,2775.94,GBP,payroll batch,wire,,none,legitimate
+RB-000082,2026-01-21 11:00:00,EAST-38317,ALPHA-17329,United States,Singapore,1971.34,EUR,tax remittance,wire,,none,legitimate
+RB-000285,2026-01-21 13:00:00,ALPHA-87598,CROWN-29599,United Kingdom,Singapore,6323.83,HKD,tax remittance,card,,none,legitimate
+RB-000262,2026-01-21 15:00:00,ALPHA-91219,EAST-28671,United States,Hong Kong,2498.08,SGD,tax remittance,wire,,none,legitimate
+RB-000299,2026-01-21 19:00:00,DELTA-15103,EAST-24981,United Kingdom,United Arab Emirates,4491.76,USD,monthly supplier payment,ach,,none,legitimate
+RB-000207,2026-01-21 19:00:00,NOVA-51207,ALPHA-22924,United Kingdom,Hong Kong,2620.3,SGD,tax remittance,wallet,,none,legitimate
+RB-000052,2026-01-21 23:00:00,ALPHA-87598,CROWN-65541,United Kingdom,United Arab Emirates,45784.41,EUR,monthly supplier payment,card,RULE-0052,large transfer threshold,suspicious
+RB-000019,2026-01-22 00:00:00,EAST-46776,ALPHA-23880,United States,Hong Kong,43337.92,HKD,shipping invoice,card,RULE-0019,large transfer threshold,suspicious
+RB-000065,2026-01-22 02:00:00,BRIDGE-68892,EAST-38612,United States,United Arab Emirates,4623.06,USD,shipping invoice,wallet,,none,legitimate
+RB-000095,2026-01-22 02:00:00,ALPHA-60205,DELTA-79479,United Kingdom,Hong Kong,8264.03,EUR,monthly supplier payment,wire,,none,legitimate
+RB-000300,2026-01-22 03:00:00,CROWN-69602,CROWN-17543,United Kingdom,United Arab Emirates,11961.17,SGD,platform settlement,wallet,,none,legitimate
+RB-000135,2026-01-22 03:00:00,NOVA-64555,CROWN-27079,United States,Singapore,5321.74,USD,platform settlement,ach,,none,legitimate
+RB-000061,2026-01-22 06:00:00,EAST-58324,EAST-53359,United States,Hong Kong,7539.69,USD,payroll batch,wire,,none,legitimate
+RB-000043,2026-01-22 08:00:00,NOVA-66530,NOVA-57551,United States,Hong Kong,45223.39,EUR,payroll batch,wire,RULE-0043,large transfer threshold,suspicious
+RB-000041,2026-01-22 08:00:00,CROWN-69602,ALPHA-87598,United States,Singapore,38342.49,HKD,software subscription,wallet,RULE-0041,large transfer threshold,suspicious
+RB-000009,2026-01-22 10:00:00,BRIDGE-14628,EAST-46118,United Kingdom,United Arab Emirates,46811.36,GBP,monthly supplier payment,card,RULE-0009,large transfer threshold,suspicious
+RB-000091,2026-01-22 12:00:00,EAST-92269,CROWN-17543,United Kingdom,United Arab Emirates,5745.16,SGD,monthly supplier payment,wire,,none,legitimate
+RB-000174,2026-01-22 13:00:00,NOVA-87685,ALPHA-23880,United Kingdom,Hong Kong,3576.24,HKD,tax remittance,card,,none,legitimate
+RB-000157,2026-01-22 14:00:00,BRIDGE-14628,ALPHA-38972,United Kingdom,Hong Kong,8402.33,GBP,shipping invoice,wallet,,none,legitimate
+RB-000102,2026-01-22 16:00:00,ALPHA-58451,NOVA-87685,United States,Hong Kong,2951.54,GBP,software subscription,ach,,none,legitimate
+RB-000179,2026-01-22 22:00:00,NOVA-11669,CROWN-20951,United Kingdom,Singapore,10612.56,SGD,shipping invoice,wallet,,none,legitimate
+RB-000027,2026-01-22 22:00:00,EAST-58324,NOVA-87685,United States,United Arab Emirates,41323.27,SGD,platform settlement,ach,RULE-0027,large transfer threshold,suspicious
+RB-000271,2026-01-22 22:00:00,ALPHA-58451,DELTA-13062,United Kingdom,United Arab Emirates,1770.16,SGD,platform settlement,card,,none,legitimate
+RB-000192,2026-01-22 23:00:00,ALPHA-91219,CROWN-17543,United Kingdom,United Arab Emirates,5045.49,HKD,shipping invoice,wire,,none,legitimate
+RB-000223,2026-01-23 04:00:00,EAST-24981,ALPHA-74620,United States,Singapore,1260.4,SGD,tax remittance,wire,,none,legitimate
+RB-000039,2026-01-23 04:00:00,CROWN-29599,DELTA-13062,United States,Singapore,38262.96,USD,tax remittance,ach,RULE-0039,large transfer threshold,suspicious
+RB-000110,2026-01-23 12:00:00,BRIDGE-14628,NOVA-64555,United Kingdom,Singapore,4580.58,SGD,tax remittance,wire,,none,legitimate
+RB-000016,2026-01-23 13:00:00,DELTA-33282,NOVA-66530,United States,United Arab Emirates,46144.62,GBP,monthly supplier payment,wallet,RULE-0016,large transfer threshold,suspicious
+RB-000238,2026-01-23 14:00:00,CROWN-20951,CROWN-98259,United Kingdom,Singapore,4415.51,SGD,shipping invoice,wallet,,none,legitimate
+RB-000249,2026-01-23 15:00:00,DELTA-33282,ALPHA-58451,United States,Singapore,4092.45,SGD,software subscription,ach,,none,legitimate
+RB-000162,2026-01-23 17:00:00,EAST-58324,NOVA-57551,United States,United Arab Emirates,5892.33,GBP,payroll batch,wire,,none,legitimate
+RB-000151,2026-01-23 19:00:00,ALPHA-75305,BRIDGE-14628,United States,Singapore,1969.39,USD,shipping invoice,wire,,none,legitimate
+RB-000203,2026-01-23 19:00:00,DELTA-15103,ALPHA-74620,United Kingdom,Singapore,2607.43,USD,shipping invoice,wallet,,none,legitimate
+RB-000253,2026-01-23 21:00:00,EAST-38317,NOVA-94197,United Kingdom,Hong Kong,837.76,SGD,shipping invoice,wallet,,none,legitimate
+RB-000062,2026-01-23 21:00:00,DELTA-12566,ALPHA-38972,United Kingdom,Singapore,5912.2,EUR,platform settlement,ach,,none,legitimate
+RB-000279,2026-01-23 22:00:00,EAST-38612,EAST-46867,United Kingdom,United Arab Emirates,8215.25,EUR,payroll batch,wire,,none,legitimate
+RB-000083,2026-01-23 22:00:00,DELTA-79479,CROWN-27079,United Kingdom,Singapore,3511.11,HKD,shipping invoice,wallet,,none,legitimate
+RB-000169,2026-01-24 02:00:00,ALPHA-91219,EAST-58324,United Kingdom,Singapore,4209.13,HKD,tax remittance,card,,none,legitimate
+RB-000112,2026-01-24 06:00:00,EAST-68648,ALPHA-74620,United States,United Arab Emirates,7653.5,USD,platform settlement,wire,,none,legitimate
+RB-000245,2026-01-24 08:00:00,NOVA-94197,DELTA-12566,United States,United Arab Emirates,2803.97,USD,payroll batch,wallet,,none,legitimate
+RB-000220,2026-01-24 08:00:00,EAST-68648,DELTA-12566,United States,Hong Kong,3002.54,GBP,payroll batch,wire,,none,legitimate
+RB-000005,2026-01-24 09:00:00,BRIDGE-33858,ALPHA-60205,United Kingdom,Hong Kong,40447.73,HKD,tax remittance,wallet,RULE-0005,large transfer threshold,suspicious
+RB-000006,2026-01-24 12:00:00,CROWN-27079,ALPHA-74620,United States,United Arab Emirates,46842.35,GBP,shipping invoice,wallet,RULE-0006,large transfer threshold,suspicious
+RB-000012,2026-01-24 13:00:00,ALPHA-22924,DELTA-15103,United States,Hong Kong,39982.17,USD,shipping invoice,wallet,RULE-0012,large transfer threshold,suspicious
+RB-000136,2026-01-24 16:00:00,NOVA-94197,EAST-24981,United Kingdom,United Arab Emirates,909.04,HKD,monthly supplier payment,card,,none,legitimate
+RB-000114,2026-01-25 01:00:00,CROWN-81061,EAST-28671,United States,United Arab Emirates,5753.79,GBP,payroll batch,wallet,,none,legitimate
+RB-000261,2026-01-25 03:00:00,EAST-38612,EAST-68648,United States,Singapore,6113.05,GBP,shipping invoice,ach,,none,legitimate
+RB-000140,2026-01-25 03:00:00,ALPHA-87598,EAST-92269,United Kingdom,United Arab Emirates,1590.43,SGD,shipping invoice,card,,none,legitimate
+RB-000090,2026-01-25 03:00:00,ALPHA-23880,BRIDGE-79938,United States,United Arab Emirates,1376.38,HKD,software subscription,wallet,,none,legitimate
+RB-000296,2026-01-25 03:00:00,NOVA-66530,ALPHA-75305,United Kingdom,United Arab Emirates,1720.73,GBP,tax remittance,card,,none,legitimate
+RB-000138,2026-01-25 04:00:00,NOVA-32535,DELTA-13062,United States,United Arab Emirates,2423.89,EUR,shipping invoice,ach,,none,legitimate
+RB-000166,2026-01-25 04:00:00,BRIDGE-33858,EAST-28671,United Kingdom,Singapore,981.41,EUR,shipping invoice,card,,none,legitimate
+RB-000014,2026-01-25 05:00:00,NOVA-64555,NOVA-57551,United Kingdom,Hong Kong,39732.68,SGD,monthly supplier payment,wallet,RULE-0014,large transfer threshold,suspicious
+RB-000298,2026-01-25 12:00:00,CROWN-27079,ALPHA-58451,United Kingdom,United Arab Emirates,2007.4,USD,monthly supplier payment,wallet,,none,legitimate
+RB-000071,2026-01-25 21:00:00,EAST-68648,ALPHA-38972,United Kingdom,Hong Kong,2039.35,GBP,payroll batch,ach,,none,legitimate
+RB-000149,2026-01-25 22:00:00,CROWN-65541,NOVA-32535,United Kingdom,Hong Kong,2534.73,EUR,shipping invoice,wallet,,none,legitimate
+RB-000184,2026-01-25 23:00:00,BRIDGE-14628,CROWN-27079,United States,United Arab Emirates,12344.45,GBP,shipping invoice,wire,,none,legitimate
+RB-000130,2026-01-26 02:00:00,EAST-28671,CROWN-27079,United States,Hong Kong,5923.06,HKD,payroll batch,card,,none,legitimate
+RB-000048,2026-01-26 03:00:00,EAST-46867,CROWN-65541,United States,Hong Kong,42734.94,EUR,monthly supplier payment,card,RULE-0048,large transfer threshold,suspicious
+RB-000266,2026-01-26 04:00:00,EAST-69642,ALPHA-58451,United States,Hong Kong,17800.32,SGD,tax remittance,card,,none,legitimate

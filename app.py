@@ -186,8 +186,10 @@ with st.sidebar:
     records = st.slider("Records", 50, 1000, 250, step=50)
     suspicious_ratio = st.slider("Suspicious share", 0.05, 0.35, 0.18, step=0.01)
     seed = st.number_input("Random seed", min_value=1, value=42)
-    use_llm = st.toggle("Use OpenAI extraction when API key is available", value=False)
-    model = st.text_input("OpenAI model", value="gpt-4o-mini")
+    use_llm = st.toggle("Use LLM extraction when API key is available", value=False)
+    provider = st.selectbox("LLM provider", ["deepseek", "openai"])
+    default_model = "deepseek-v4-pro" if provider == "deepseek" else "gpt-4o-mini"
+    model = st.text_input("Model", value=default_model)
     st.divider()
     st.caption("Reviewer mode")
     st.selectbox("Review queue", ["New typology intake", "Model QA package", "Export review"])
@@ -220,7 +222,7 @@ with intake_col:
         label_visibility="collapsed",
     )
 
-config = extract_typology(typology_text, use_llm=use_llm, model=model)
+config = extract_typology(typology_text, use_llm=use_llm, model=model, provider=provider)
 data = generate_guided_transactions(
     config,
     n_records=records,

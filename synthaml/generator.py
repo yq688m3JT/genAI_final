@@ -163,13 +163,11 @@ def _make_suspicious_chain(
         }
     ]
 
-    remaining = total
-    for split_idx in range(splits):
-        if split_idx == splits - 1 or remaining < config.amount_min * 0.35:
-            amount = remaining
-        else:
-            amount = min(max(config.amount_min * 0.35, total * rng.uniform(0.08, 0.28)), remaining)
-        remaining -= amount
+    weights = [rng.uniform(0.8, 1.2) for _ in range(splits)]
+    raw_amounts = [total * weight / sum(weights) for weight in weights]
+    split_amounts = [round(amount, 2) for amount in raw_amounts[:-1]]
+    split_amounts.append(round(total - sum(split_amounts), 2))
+    for amount in split_amounts:
         rows.append(
             {
                 "timestamp": start + timedelta(hours=rng.randint(1, config.time_window_hours)),

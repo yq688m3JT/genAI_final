@@ -99,22 +99,32 @@ METHOD_KEYWORDS = {
 }
 
 
-def extract_typology(text: str, use_llm: bool = False, model: str = "gpt-4o-mini") -> TypologyConfig:
+def extract_typology(
+    text: str,
+    use_llm: bool = False,
+    model: str = "gpt-4o-mini",
+    provider: str = "openai",
+    api_key: str | None = None,
+) -> TypologyConfig:
     """Extract a structured typology from a warning report.
 
     Args:
         text: Warning report or case description.
         use_llm: If true and an API key is present, use OpenAI for extraction.
-        model: OpenAI model name.
+        model: Model name for the selected provider.
+        provider: "openai" or "deepseek".
+        api_key: Optional runtime key. If omitted, reads provider env var.
     """
 
     cleaned = _normalize_text(text)
-    if use_llm and os.getenv("OPENAI_API_KEY"):
+    provider = provider.lower().strip()
+    if use_llm and _provider_key(provider, api_key):
         try:
-            return _extract_with_openai(cleaned, model)
+            config = _extract_with_openai_compatible(cleaned, model, provider, api_key)
+            return _correct_region_roles(config, cleaned)
         except Exception:
-            return _extract_with_heuristics(cleaned)
-    return _extract_with_heuristics(cleaned)
+            return _correct_region_roles(_extract_with_heuristics(cleaned), cleaned)
+    return _correct_region_roles(_extract_with_heuristics(cleaned), cleaned)
 
 
 def _normalize_text(text: str) -> str:
@@ -221,10 +231,87 @@ def _make_name(industry: str, methods: list[str]) -> str:
     return f"{industry.title()} Typology: {method.title()}"
 
 
-def _extract_with_openai(text: str, model: str) -> TypologyConfig:
+def _correct_region_roles(config: TypologyConfig, text: str) -> TypologyConfig:
+    lowered = text.lower()
+    origin_regions = _regions_in_role_span(
+        lowered,
+        [
+            r"originate(?:s|d)? in (?P<span>[^.]+?)(?:,?\s+then|\.)",
+            r"originat(?:e|es|ed) from (?P<span>[^.]+?)(?:,?\s+then|\.)",
+            r"payments? from (?P<span>[^.]+?)(?:,?\s+then|\.)",
+        ],
+    )
+    destination_regions = _regions_in_role_span(
+        lowered,
+        [
+            r"to counterparties in (?P<span>[^.]+)(?:\.)",
+            r"split (?:quickly )?to (?P<span>[^.]+)(?:\.)",
+            r"sent (?:quickly )?to (?P<span>[^.]+)(?:\.)",
+            r"moved (?:quickly )?to (?P<span>[^.]+)(?:\.)",
+        ],
+    )
+    if not origin_regions and not destination_regions:
+        return config
+
+    return TypologyConfig(
+        name=config.name,
+        industry=config.industry,
+        origin_regions=origin_regions or config.origin_regions,
+        destination_regions=destination_regions or config.destination_regions,
+        suspicious_methods=config.suspicious_methods,
+        narrative_terms=config.narrative_terms,
+        amount_min=config.amount_min,
+        amount_max=config.amount_max,
+        split_count_min=config.split_count_min,
+        split_count_max=config.split_count_max,
+        time_window_hours=config.time_window_hours,
+        risk_summary=config.risk_summary,
+    )
+
+
+def _regions_in_role_span(text: str, patterns: list[str]) -> list[str]:
+    for pattern in patterns:
+        match = re.search(pattern, text)
+        if not match:
+            continue
+        span = match.group("span")
+        hits = []
+        for key, label in REGION_KEYWORDS.items():
+            match_for_region = re.search(rf"\b{re.escape(key)}\b", span)
+            if match_for_region:
+                hits.append((match_for_region.start(), label))
+        regions = []
+        for _position, label in sorted(hits, key=lambda item: item[0]):
+            if label not in regions:
+                regions.append(label)
+        if regions:
+            return regions
+    return []
+
+
+def _provider_key(provider: str, api_key: str | None = None) -> str | None:
+    if api_key:
+        return api_key
+    if provider == "deepseek":
+        return os.getenv("DEEPSEEK_API_KEY")
+    return os.getenv("OPENAI_API_KEY")
+
+
+def _provider_base_url(provider: str) -> str | None:
+    if provider == "deepseek":
+        return "https://api.deepseek.com"
+    return None
+
+
+def _extract_with_openai_compatible(
+    text: str,
+    model: str,
+    provider: str,
+    api_key: str | None = None,
+) -> TypologyConfig:
     from openai import OpenAI
 
-    client = OpenAI()
+    client = OpenAI(api_key=_provider_key(provider, api_key), base_url=_provider_base_url(provider))
     schema = {
         "name": "string",
         "industry": "string",
@@ -243,12 +330,17 @@ def _extract_with_openai(text: str, model: str) -> TypologyConfig:
     prompt = (
         "Extract only defensive AML synthetic-data generation constraints from this "
         "warning. Avoid tactical evasion advice. Return strict JSON matching this "
-        f"shape: {json.dumps(schema)}\n\nWarning:\n{text}"
+        f"shape: {json.dumps(schema)}\n\n"
+        "Important role rules: origin_regions are where payments or funds originate. "
+        "destination_regions are where funds are sent, split, consolidated, or moved to. "
+        "For example, if text says payments originate in A and split to B, A belongs "
+        "in origin_regions and B belongs in destination_regions.\n\n"
+        f"Warning:\n{text}"
     )
-    response = client.chat.completions.create(
-        model=model,
-        temperature=0.1,
-        messages=[
+    request = {
+        "model": model,
+        "temperature": 0.1,
+        "messages": [
             {
                 "role": "system",
                 "content": (
@@ -258,8 +350,11 @@ def _extract_with_openai(text: str, model: str) -> TypologyConfig:
             },
             {"role": "user", "content": prompt},
         ],
-        response_format={"type": "json_object"},
-    )
+        "response_format": {"type": "json_object"},
+    }
+    if provider == "deepseek":
+        request["extra_body"] = {"thinking": {"type": "disabled"}}
+    response = client.chat.completions.create(**request)
     payload = json.loads(response.choices[0].message.content or "{}")
     merged = DEFAULT_CONFIG.to_dict() | payload
     return TypologyConfig(

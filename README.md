@@ -49,7 +49,14 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-Optional LLM extraction:
+Optional LLM extraction with DeepSeek V4 Pro:
+
+```bash
+export DEEPSEEK_API_KEY="your_key_here"
+streamlit run app.py
+```
+
+The app sidebar defaults to `deepseek` and `deepseek-v4-pro`. OpenAI-compatible extraction is also supported:
 
 ```bash
 export OPENAI_API_KEY="your_key_here"
@@ -98,11 +105,34 @@ Sample evaluation from the included typology:
 | Training data | Precision | Recall | F1 |
 | --- | ---: | ---: | ---: |
 | Guided SynthAML data | 1.000 | 1.000 | 1.000 |
-| Rule baseline data | 0.667 | 0.110 | 0.189 |
+| Rule baseline data | 0.636 | 0.074 | 0.133 |
 
 This is a small synthetic evaluation, not proof of production AML performance. It shows that a model trained on guided chain-style data transfers better to a hidden chain-style test set than a model trained only on amount-threshold examples.
 
 The app itself presents the artifact as a B2B compliance workbench with a scenario intake panel, extracted typology brief, quality gates, synthetic ledger, evaluation dashboard, and export package.
+
+### DeepSeek V4 Pro Real Case
+
+I also ran the sample typology through DeepSeek V4 Pro using the OpenAI-compatible DeepSeek API. The key was supplied at runtime and was not written to the repository.
+
+The real run artifacts are saved under `examples/sample_outputs/deepseek_case/`.
+
+DeepSeek extracted:
+
+- Origins: United States, United Kingdom
+- Destinations: Hong Kong, Singapore, United Arab Emirates
+- Industry: solar equipment exports
+- Amount range: $4,000 to $45,000
+- Methods: shell-company counterparties, structured splitting, vague invoice narratives, Friday cutoff clustering
+
+DeepSeek case evaluation:
+
+| Training data | Precision | Recall | F1 |
+| --- | ---: | ---: | ---: |
+| Guided SynthAML data | 1.000 | 1.000 | 1.000 |
+| Rule baseline data | 1.000 | 0.064 | 0.120 |
+
+The first DeepSeek run misassigned origin and destination regions, which is a realistic LLM failure. I added a deterministic role-correction guardrail for explicit phrases such as "originate in" and "to counterparties in"; the final run preserves the region roles correctly.
 
 ## Evaluation and Results
 

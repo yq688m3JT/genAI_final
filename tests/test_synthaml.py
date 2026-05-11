@@ -26,3 +26,4 @@ def test_suspicious_chains_conserve_funds():
     checks = validate_fund_conservation(frame)
     assert not checks.empty
     assert checks["passes"].all()
+    assert (frame["amount"] > 0).all()

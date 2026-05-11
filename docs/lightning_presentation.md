@@ -33,7 +33,7 @@ Result from the included sample:
 | Training data | Precision | Recall | F1 |
 | --- | ---: | ---: | ---: |
 | Guided SynthAML data | 1.000 | 1.000 | 1.000 |
-| Rule baseline data | 0.643 | 0.098 | 0.170 |
+| Rule baseline data | 0.636 | 0.074 | 0.133 |
 
 Takeaway: threshold examples do not transfer well to chain-style typology behavior.
 
